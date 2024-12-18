@@ -1,0 +1,78 @@
+---
+interface Props {
+  currentPage: number;
+  totalPages: number;
+  baseUrl: string;
+}
+
+const { currentPage, totalPages, baseUrl } = Astro.props;
+
+// Generate array of page numbers to show
+const getPageNumbers = () => {
+  const pageNumbers = [];
+  const delta = 2; // Number of pages to show before and after current page
+
+  for (let i = 1; i <= totalPages; i++) {
+    if (
+      i === 1 || // First page
+      i === totalPages || // Last page
+      (i >= currentPage - delta && i <= currentPage + delta) // Pages around current page
+    ) {
+      pageNumbers.push(i);
+    } else if (pageNumbers[pageNumbers.length - 1] !== '...') {
+      // Add ellipsis if not already added
+      pageNumbers.push('...');
+    }
+  }
+
+  return pageNumbers;
+};
+
+const pageNumbers = getPageNumbers();
+---
+
+<nav class="flex justify-center items-center space-x-2 mt-12" aria-label="Pagination">
+  <!-- Previous page -->
+  {currentPage > 1 && (
+    <a
+      href={`${baseUrl}${currentPage - 1 === 1 ? '' : `/${currentPage - 1}`}`}
+      class="px-4 py-2 text-sm font-medium text-purple-900 bg-white border border-purple-300 rounded-lg hover:bg-purple-50 transition-colors duration-300"
+      aria-label="Previous page"
+    >
+      Previous
+    </a>
+  )}
+
+  <!-- Page numbers -->
+  <div class="flex items-center space-x-2">
+    {pageNumbers.map((pageNum) => (
+      pageNum === '...' ? (
+        <span class="px-4 py-2 text-gray-500">...</span>
+      ) : (
+        <a
+          href={`${baseUrl}${pageNum === 1 ? '' : `/${pageNum}`}`}
+          class={`px-4 py-2 text-sm font-medium rounded-lg transition-colors duration-300 ${
+            currentPage === pageNum
+              ? 'bg-purple-900 text-white'
+              : 'text-purple-900 bg-white border border-purple-300 hover:bg-purple-50'
+          }`}
+          aria-current={currentPage === pageNum ? 'page' : undefined}
+          aria-label={`Page ${pageNum}`}
+        >
+          {pageNum}
+        </a>
+      ))
+    )}
+  </div>
+
+  <!-- Next page -->
+  {currentPage < totalPages && (
+    <a
+      href={`${baseUrl}/${currentPage + 1}`}
+      class="px-4 py-2 text-sm font-medium text-purple-900 bg-white border border-purple-300 rounded-lg hover:bg-purple-50 transition-colors duration-300"
+      aria-label="Next page"
+    >
+      Next
+    </a>
+  )}
+</nav>

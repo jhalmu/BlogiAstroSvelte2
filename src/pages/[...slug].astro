@@ -1,0 +1,111 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+
+export async function getStaticPaths() {
+  const pages = await getCollection('pages');
+  return pages.map((page) => ({
+    params: { slug: page.slug },
+    props: { page },
+  }));
+}
+
+interface Props {
+  page: CollectionEntry<'pages'>;
+}
+
+const { page } = Astro.props;
+const { Content } = await page.render();
+
+const breadcrumbPaths = [
+  { label: 'Home', href: '/' },
+  { label: page.data.title }
+];
+---
+
+<Layout title={page.data.title}>
+  <article class="max-w-4xl mx-auto px-4 py-12">
+    <Breadcrumb paths={breadcrumbPaths} />
+    
+    <header class="mb-8">
+      <h1 class="text-4xl md:text-5xl font-poppins font-bold text-purple-900 mb-4">
+        {page.data.title}
+      </h1>
+      <p class="text-gray-600 text-lg">
+        {page.data.description}
+      </p>
+      {page.data.lastUpdated && (
+        <p class="text-sm text-gray-500 mt-2">
+          Last updated: {new Date(page.data.lastUpdated).toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+          })}
+        </p>
+      )}
+    </header>
+
+    <div class="prose prose-lg max-w-none">
+      <Content />
+    </div>
+  </article>
+</Layout>
+
+<style is:global>
+  .prose {
+    color: #111827;
+  }
+  
+  .prose h1 {
+    @apply text-4xl font-bold text-gray-900 mt-8 mb-4;
+  }
+  
+  .prose h2 {
+    @apply text-3xl font-bold text-gray-900 mt-6 mb-4;
+  }
+  
+  .prose h3 {
+    @apply text-2xl font-bold text-gray-900 mt-4 mb-3;
+  }
+  
+  .prose p {
+    @apply text-gray-900 mb-4 leading-relaxed;
+  }
+  
+  .prose ul {
+    @apply list-disc list-inside text-gray-900 mb-4;
+  }
+  
+  .prose ol {
+    @apply list-decimal list-inside text-gray-900 mb-4;
+  }
+  
+  .prose li {
+    @apply mb-2;
+  }
+  
+  .prose a {
+    @apply text-purple-800 hover:underline;
+  }
+  
+  .prose blockquote {
+    @apply pl-4 border-l-4 border-purple-800 text-gray-800 my-4;
+  }
+  
+  .prose pre {
+    @apply bg-white text-gray-800 p-4 rounded-lg overflow-x-auto my-4 border border-gray-200 shadow-sm;
+  }
+  
+  .prose code {
+    @apply bg-gray-50 text-gray-800 px-1.5 py-0.5 rounded text-sm font-mono;
+  }
+
+  .prose pre code {
+    @apply bg-transparent p-0 text-base;
+  }
+  
+  .prose img {
+    @apply rounded-lg shadow-md my-4;
+  }
+</style>

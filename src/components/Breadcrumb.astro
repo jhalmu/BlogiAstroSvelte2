@@ -1,0 +1,84 @@
+---
+interface Path {
+  label: string;
+  href?: string;
+}
+
+interface Props {
+  paths: Path[];
+  prevPage?: {
+    url: string;
+    title: string;
+  };
+  nextPage?: {
+    url: string;
+    title: string;
+  };
+}
+
+const { paths, prevPage, nextPage } = Astro.props;
+---
+
+<nav class="flex justify-between items-center w-full mb-8" aria-label="Breadcrumb and page navigation">
+  <div class="flex items-center space-x-2">
+    {paths.map((path, index) => (
+      <>
+        {index > 0 && <span class="text-gray-400">/</span>}
+        {path.href ? (
+          <a
+            href={path.href}
+            class="text-purple-800 hover:text-purple-600 transition-colors duration-200"
+          >
+            {path.label}
+          </a>
+        ) : (
+          <span class="text-gray-600">{path.label}</span>
+        )}
+      </>
+    ))}
+  </div>
+
+  <div class="flex items-center space-x-4">
+    {prevPage && (
+      <a
+        href={prevPage.url}
+        class="flex items-center text-purple-800 hover:text-purple-600 transition-colors duration-200"
+        title={`Previous: ${prevPage.title}`}
+      >
+        <svg 
+          xmlns="http://www.w3.org/2000/svg" 
+          class="h-5 w-5" 
+          viewBox="0 0 20 20" 
+          fill="currentColor"
+        >
+          <path 
+            fill-rule="evenodd" 
+            d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" 
+            clip-rule="evenodd" 
+          />
+        </svg>
+      </a>
+    )}
+    
+    {nextPage && (
+      <a
+        href={nextPage.url}
+        class="flex items-center text-purple-800 hover:text-purple-600 transition-colors duration-200"
+        title={`Next: ${nextPage.title}`}
+      >
+        <svg 
+          xmlns="http://www.w3.org/2000/svg" 
+          class="h-5 w-5" 
+          viewBox="0 0 20 20" 
+          fill="currentColor"
+        >
+          <path 
+            fill-rule="evenodd" 
+            d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" 
+            clip-rule="evenodd" 
+          />
+        </svg>
+      </a>
+    )}
+  </div>
+</nav>

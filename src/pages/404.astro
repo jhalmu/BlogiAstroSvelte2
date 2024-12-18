@@ -1,0 +1,23 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="404 - Page Not Found">
+  <div class="min-h-[70vh] flex items-center justify-center px-4">
+    <div class="text-center">
+      <h1 class="text-9xl font-bold text-purple-900 mb-4">404</h1>
+      <div class="bg-purple-100 text-purple-900 text-xl px-6 py-3 rounded-lg mb-8 inline-block">
+        Page Not Found
+      </div>
+      <p class="text-gray-600 mb-8 max-w-md mx-auto">
+        Oops! The page you're looking for seems to have vanished into the digital void.
+      </p>
+      <a
+        href="/"
+        class="inline-block bg-purple-900 text-white px-6 py-3 rounded-lg hover:bg-purple-800 transition-colors duration-200"
+      >
+        Return Home
+      </a>
+    </div>
+  </div>
+</Layout>

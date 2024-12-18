@@ -1,0 +1,184 @@
+---
+import { getCollection } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+
+export async function getStaticPaths() {
+  try {
+    const posts = await getCollection('blog');
+    return posts.map((post: CollectionEntry<'blog'>) => ({
+      params: { slug: post.slug },
+      props: { post },
+    }));
+  } catch (error) {
+    console.error('Error generating static paths:', error);
+    return [];
+  }
+}
+
+interface Props {
+  post: CollectionEntry<'blog'>;
+}
+
+const { post } = Astro.props;
+
+if (!post) {
+  console.error('No post found in props');
+  return new Response('Post not found', { status: 404 });
+}
+
+let Content;
+try {
+  const { Content: PostContent } = await post.render();
+  Content = PostContent;
+} catch (error) {
+  console.error('Error rendering post:', error);
+  return new Response('Error rendering post', { status: 500 });
+}
+
+// Get first image from content or use default
+function getFirstImage(content: string): string {
+  const imgMatch = content.match(/<img[^>]+src="([^">]+)"/);
+  return imgMatch ? imgMatch[1] : '/og-default.jpg';
+}
+
+// Get text preview without HTML tags
+function getTextPreview(content: string): string {
+  return content
+    .replace(/<[^>]*>/g, '')
+    .replace(/\n+/g, ' ')
+    .trim()
+    .slice(0, 200) + '...';
+}
+
+const breadcrumbPaths = [
+  { label: 'Home', href: '/' },
+  { label: 'Blog', href: '/blog' },
+  { label: post.data.title }
+];
+
+// SEO data
+const postImage = getFirstImage(post.body);
+const postDescription = post.data.excerpt || getTextPreview(post.body);
+
+const formatDate = (dateString: string) => {
+  try {
+    return new Date(dateString).toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    });
+  } catch (error) {
+    console.error('Error formatting date:', error);
+    return dateString;
+  }
+};
+
+const formattedDate = formatDate(post.data.date);
+const formattedUpdateDate = post.data.updated ? formatDate(post.data.updated) : null;
+
+---
+
+<Layout
+  title={post.data.title}
+  description={postDescription}
+  image={postImage}
+  type="article"
+  publishDate={post.data.date}
+  author={post.data.author}
+  tags={post.data.tags}
+>
+  <article class="max-w-4xl mx-auto px-4 py-12 text-gray-900">
+    <Breadcrumb paths={breadcrumbPaths} />
+    
+    <header class="mb-8">
+      <h1 class="text-4xl md:text-5xl font-poppins font-bold text-purple-900 mb-4">
+        {post.data.title}
+      </h1>
+      
+      <div class="flex flex-wrap gap-2 mb-4">
+        {post.data.tags && post.data.tags.map((tag: string) => (
+          <span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm">
+            {tag}
+          </span>
+        ))}
+      </div>
+      <div class="text-gray-700 space-y-1">
+        <div>
+          <time datetime={post.data.date}>{formattedDate}</time>
+          <span class="mx-2">•</span>
+          <span>{post.data.author}</span>
+        </div>
+        {formattedUpdateDate && (
+          <div class="text-sm">
+            <span class="text-purple-700 font-medium">Updated:</span>
+            <time datetime={post.data.updated} class="ml-1">{formattedUpdateDate}</time>
+          </div>
+        )}
+      </div>
+    </header>
+
+    <div class="prose prose-lg max-w-none prose-headings:text-purple-900 prose-a:text-purple-700 hover:prose-a:text-purple-500">
+      {Content ? <Content /> : <p>Error loading content</p>}
+    </div>
+  </article>
+</Layout>
+
+<style is:global>
+  .prose {
+    color: #111827;
+  }
+  
+  .prose h1 {
+    @apply text-4xl font-bold text-gray-900 mt-8 mb-4;
+  }
+  
+  .prose h2 {
+    @apply text-3xl font-bold text-gray-900 mt-6 mb-4;
+  }
+  
+  .prose h3 {
+    @apply text-2xl font-bold text-gray-900 mt-4 mb-3;
+  }
+  
+  .prose p {
+    @apply text-gray-900 mb-4 leading-relaxed;
+  }
+  
+  .prose ul {
+    @apply list-disc list-inside text-gray-900 mb-4;
+  }
+  
+  .prose ol {
+    @apply list-decimal list-inside text-gray-900 mb-4;
+  }
+  
+  .prose li {
+    @apply mb-2;
+  }
+  
+  .prose a {
+    @apply text-purple-800 hover:underline;
+  }
+  
+  .prose blockquote {
+    @apply pl-4 border-l-4 border-purple-800 text-gray-800 my-4;
+  }
+  
+  .prose pre {
+    @apply bg-white text-gray-800 p-4 rounded-lg overflow-x-auto my-4 border border-gray-200 shadow-sm;
+  }
+  
+  .prose code {
+    @apply bg-gray-50 text-gray-800 px-1.5 py-0.5 rounded text-sm font-mono;
+  }
+
+  .prose pre code {
+    @apply bg-transparent p-0 text-base;
+  }
+  
+  .prose img {
+    @apply rounded-lg shadow-md my-4;
+  }
+</style>

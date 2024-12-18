@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <!-- Glow filter -->
     <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur in="SourceGraphic" stdDeviation="1" result="blur" />
+      <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur" />
       <feColorMatrix in="blur" type="matrix" values="0 0 0 0 0.576   0 0 0 0 0.2   0 0 0 0 0.917  0 0 0 1 0" result="glow" />
       <feMerge>
         <feMergeNode in="glow" />
@@ -25,37 +25,37 @@
       </stop>
       <animateTransform attributeName="gradientTransform"
         type="rotate"
-        from="0 16 16"
-        to="360 16 16"
+        from="0 256 256"
+        to="360 256 256"
         dur="10s"
         repeatCount="indefinite" />
     </linearGradient>
   </defs>
   
-  <!-- Background -->
-  <rect width="32" height="32" rx="8" fill="#581c87"/>
+  <!-- Background with rotating gradient -->
+  <rect width="512" height="512" rx="128" fill="#581c87"/>
   
   <!-- Glowing border -->
-  <rect width="30" height="30" x="1" y="1" rx="7" 
+  <rect width="496" height="496" x="8" y="8" rx="120" 
     stroke="url(#rotating-gradient)" 
-    stroke-width="0.5" 
+    stroke-width="4" 
     fill="none" 
     filter="url(#glow)">
     <animate attributeName="stroke-width" 
-      values="0.5; 1; 0.5"
+      values="4; 6; 4"
       dur="2s"
       repeatCount="indefinite" />
   </rect>
   
   <!-- JH Letters -->
-  <g fill="#ffffff" font-family="Poppins, sans-serif" font-weight="700" font-size="16">
-    <text x="16" y="21" text-anchor="middle" filter="url(#glow)">JH</text>
+  <g fill="#ffffff" font-family="Poppins, sans-serif" font-weight="700" font-size="240">
+    <text x="256" y="320" text-anchor="middle" filter="url(#glow)">JH</text>
   </g>
   
   <!-- Decorative Element -->
-  <path d="M8 24 L24 24" stroke="url(#rotating-gradient)" stroke-width="1" stroke-linecap="round" filter="url(#glow)">
+  <path d="M128 384 L384 384" stroke="url(#rotating-gradient)" stroke-width="16" stroke-linecap="round" filter="url(#glow)">
     <animate attributeName="stroke-width" 
-      values="1; 1.5; 1"
+      values="16; 20; 16"
       dur="2s"
       repeatCount="indefinite" />
   </path>

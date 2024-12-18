@@ -1,0 +1,76 @@
+---
+const navItems = [
+  { href: '/', text: 'Home' },
+  { href: '/blog', text: 'Blog' },
+  { href: '/about', text: 'About' },
+  { href: '/contact', text: 'Contact' },
+  { href: '/subscribe', text: 'Subscribe' },
+  { href: '/login', text: 'Login' }
+];
+---
+
+<nav class="h-52 relative">
+  <!-- Inverted mountain background -->
+  <div class="absolute inset-0 bg-no-repeat bg-bottom bg-cover" style="background-image: url('/mountains-nav.svg')"></div>
+  
+  <!-- Navigation content -->
+  <div class="relative z-10 flex flex-col h-full px-12">
+    <!-- Top navigation links -->
+    <div class="flex justify-end space-x-8 pt-7">
+      {navItems.map(item => (
+        <a
+          href={item.href}
+          class="text-purple-900 hover:text-purple-600 font-medium transition-colors duration-300"
+        >
+          {item.text}
+        </a>
+      ))}
+    </div>
+    
+    <!-- Brand section -->
+    <div class="flex items-center space-x-8 mt-8">
+      <a href="/" class="block">
+        <img 
+          src="/avatar.jpg" 
+          alt="Blog author's profile picture" 
+          class="w-28 h-28 rounded-full object-cover border-2 border-purple-200 shadow-md hover:border-purple-300 transition-colors duration-300" 
+          loading="eager"
+          decoding="async"
+        />
+      </a>
+      <h1 class="text-3xl md:text-5xl lg:text-6xl font-['Playfair_Display'] font-semibold text-purple-900 opacity-70 tracking-wide hover:opacity-90 transition-opacity duration-300">
+        <span class="font-light">Juha</span> 
+        <span class="font-bold">Halmu</span>
+      </h1>
+    </div>
+  </div>
+</nav>
+
+<script>
+  const button = document.querySelector(".mobile-menu-button");
+  const menu = document.querySelector(".mobile-menu");
+  const menuIcon = document.querySelector(".mobile-menu-icon");
+  const closeIcon = document.querySelector(".mobile-menu-close");
+
+  if (button && menu && menuIcon && closeIcon) {
+    button.addEventListener("click", () => {
+      menu.classList.toggle("hidden");
+      menuIcon.classList.toggle("hidden");
+      closeIcon.classList.toggle("hidden");
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener("click", (e) => {
+      if (!button.contains(e.target as Node) && !menu.contains(e.target as Node)) {
+        menu.classList.add("hidden");
+        menuIcon.classList.remove("hidden");
+        closeIcon.classList.add("hidden");
+      }
+    });
+  }
+
+  // Prevent clicks inside the menu from closing it
+  menu?.addEventListener("click", (e) => {
+    e.stopPropagation();
+  });
+</script>

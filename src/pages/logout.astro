@@ -1,0 +1,11 @@
+---
+---
+
+<script>
+  // Clear any authentication tokens or session data
+  localStorage.removeItem('authToken');
+  sessionStorage.clear();
+  
+  // Redirect to home page
+  window.location.href = '/';
+</script>

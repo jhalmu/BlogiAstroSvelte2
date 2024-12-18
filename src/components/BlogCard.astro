@@ -1,0 +1,70 @@
+---
+interface Props {
+  title: string;
+  excerpt?: string;
+  content?: string;
+  date: string;
+  slug: string;
+  tags: string[];
+}
+
+const { title, excerpt, content, date, slug, tags } = Astro.props;
+
+// Function to get preview text from content
+function getContentPreview(content: string): string {
+  // Remove HTML tags and markdown syntax
+  const cleanText = content
+    .replace(/<[^>]*>/g, '') // Remove HTML tags
+    .replace(/[#*`_~\[\]]/g, '') // Remove markdown syntax
+    .replace(/\n+/g, ' ') // Replace newlines with spaces
+    .trim();
+  
+  // Get first 160 characters, try to end at a complete sentence or word
+  const maxLength = 160;
+  if (cleanText.length <= maxLength) return cleanText;
+  
+  const truncated = cleanText.slice(0, maxLength);
+  const lastPeriod = truncated.lastIndexOf('.');
+  const lastSpace = truncated.lastIndexOf(' ');
+  
+  // Try to end at a sentence, otherwise end at a word
+  const endIndex = lastPeriod > maxLength * 0.5 ? lastPeriod + 1 : lastSpace;
+  return truncated.slice(0, endIndex) + '...';
+}
+
+// Get the text to display in the card
+const displayText = excerpt || (content ? getContentPreview(content) : '');
+---
+
+<article class="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col h-full" data-tags={JSON.stringify(tags)}>
+  <div class="p-6 flex-grow">
+    <p class="text-sm text-gray-500 mb-3">{date}</p>
+    <h2 class="text-xl font-bold text-purple-900 mb-3 hover:text-purple-700 transition-colors duration-200">
+      <a href={`/blog/${slug}`}>
+        {title}
+      </a>
+    </h2>
+    <p class="text-gray-600 mb-4 line-clamp-3">
+      {displayText}
+    </p>
+  </div>
+
+  <div class="px-6 pb-4">
+    {tags.length > 0 && (
+      <div class="flex flex-wrap gap-2 mb-4">
+        {tags.map(tag => (
+          <span class="text-sm px-3 py-1 bg-purple-100 text-purple-800 rounded-full">
+            {tag}
+          </span>
+        ))}
+      </div>
+    )}
+    
+    <a
+      href={`/blog/${slug}`}
+      class="block w-full text-center py-3 bg-purple-50 hover:bg-purple-100 text-purple-800 rounded-lg transition-colors duration-200"
+    >
+      Read More
+    </a>
+  </div>
+</article>
