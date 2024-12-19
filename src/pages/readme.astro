@@ -1,0 +1,88 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HeroImage from '../components/HeroImage.astro';
+import { getEntry } from 'astro:content';
+
+const page = await getEntry('pages', 'readme');
+const { Content } = await page.render();
+
+const { title, excerpt, image } = page.data;
+
+---
+
+<Layout title={title}>
+  <main>
+    <HeroImage
+      title={title}
+      description={excerpt}
+      tags={["Documentation", "Project"]}
+      image={image}
+    />
+
+    <div class="container mx-auto px-4 py-8 max-w-3xl">
+      <article class="prose prose-lg mx-auto">
+        <Content />
+      </article>
+    </div>
+  </main>
+</Layout>
+
+<style is:global>
+  .prose {
+    color: #111827;
+  }
+  
+  .prose h1 {
+    @apply text-4xl font-bold text-gray-900 mt-8 mb-4;
+  }
+  
+  .prose h2 {
+    @apply text-3xl font-bold text-gray-900 mt-6 mb-4;
+  }
+  
+  .prose h3 {
+    @apply text-2xl font-bold text-gray-900 mt-4 mb-3;
+  }
+  
+  .prose p {
+    @apply text-gray-900 mb-4 leading-relaxed;
+  }
+  
+  .prose ul {
+    @apply list-disc list-inside text-gray-900 mb-4;
+  }
+  
+  .prose ol {
+    @apply list-decimal list-inside text-gray-900 mb-4;
+  }
+  
+  .prose li {
+    @apply mb-2;
+  }
+  
+  .prose a {
+    @apply text-purple-800 hover:underline;
+  }
+  
+  .prose blockquote {
+    @apply pl-4 border-l-4 border-purple-800 text-gray-800 my-4;
+  }
+  
+  .prose pre {
+    @apply bg-gray-50 text-gray-900 p-4 rounded-lg overflow-x-auto my-4 border border-gray-200 shadow-sm;
+    font-family: 'Menlo', 'Monaco', 'Courier New', monospace;
+  }
+  
+  .prose code {
+    @apply bg-gray-50 text-gray-800 px-1.5 py-0.5 rounded text-sm font-mono;
+  }
+
+  .prose pre code {
+    @apply bg-transparent p-0 text-base whitespace-pre;
+    color: inherit;
+  }
+  
+  .prose img {
+    @apply rounded-lg shadow-md my-4;
+  }
+</style>

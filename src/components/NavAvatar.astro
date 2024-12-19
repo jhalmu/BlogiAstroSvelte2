@@ -9,7 +9,7 @@ const { src = '/avatar.jpg', alt = "Blog author's profile picture" } =
 ---
 
 <div class='nav-avatar-wrapper'>
-  <div class="avatar-tint">
+  <div class='avatar-tint'>
     <img
       src={src}
       alt={alt}
@@ -19,7 +19,7 @@ const { src = '/avatar.jpg', alt = "Blog author's profile picture" } =
       width='112'
       height='112'
     />
-    <div class="color-overlay"></div>
+    <div class='color-overlay'></div>
   </div>
 </div>
 
@@ -27,13 +27,13 @@ const { src = '/avatar.jpg', alt = "Blog author's profile picture" } =
   .nav-avatar-wrapper {
     position: relative;
     display: inline-block;
-    opacity: 0.7;
+    opacity: 0.6;
   }
 
   .avatar-tint {
     position: relative;
     border-radius: 50%;
-    background-color: rgba(147, 51, 234, 0.35);
+    background-color: rgba(147, 51, 234, 0.2);
     &::before {
       content: '';
       position: absolute;
@@ -41,8 +41,8 @@ const { src = '/avatar.jpg', alt = "Blog author's profile picture" } =
       border-radius: 50%;
       background: linear-gradient(
         135deg,
-        rgba(147, 51, 234, 0.4),
-        rgba(168, 85, 247, 0.2)
+        rgba(147, 51, 234, 0.25),
+        rgba(168, 85, 247, 0.15)
       );
       z-index: 1;
     }
@@ -51,42 +51,42 @@ const { src = '/avatar.jpg', alt = "Blog author's profile picture" } =
   .nav-avatar {
     position: relative;
     z-index: 2;
-    border: 2px solid rgba(147, 51, 234, 0.3);
+    border: 2px solid rgba(147, 51, 234, 0.2);
     box-shadow:
       0 4px 6px -1px rgba(0, 0, 0, 0.1),
       0 2px 4px -1px rgba(0, 0, 0, 0.06),
       0 0 0 2px rgba(147, 51, 234, 0.1);
-    filter: contrast(1.1) saturate(1.2) brightness(1.1);
+    filter: brightness(1.2) contrast(0.9) saturate(1.1);
     transform: translateZ(0);
-    mix-blend-mode: soft-light;
+    mix-blend-mode: normal;
   }
 
   .color-overlay {
     position: absolute;
     inset: 0;
     border-radius: 50%;
-    background: rgba(147, 51, 234, 0.2);
+    background: rgba(147, 51, 234, 0.1);
     mix-blend-mode: color;
     pointer-events: none;
   }
 
   .nav-avatar-wrapper:hover .nav-avatar {
-    border-color: rgba(147, 51, 234, 0.4);
+    border-color: rgba(147, 51, 234, 0.3);
     box-shadow:
       0 10px 15px -3px rgba(0, 0, 0, 0.1),
       0 4px 6px -2px rgba(0, 0, 0, 0.05),
-      0 0 0 4px rgba(147, 51, 234, 0.2);
+      0 0 0 4px rgba(147, 51, 234, 0.15);
     transform: translateY(-2px);
   }
 
-  .nav-avatar::after {
+  .nav-avatar-wrapper:hover .avatar-tint::after {
     content: '';
     position: absolute;
-    inset: 0;
+    inset: -2px;
     border-radius: 50%;
     background: linear-gradient(
       45deg,
-      rgba(147, 51, 234, 0.3) 0%,
+      rgba(147, 51, 234, 0.2) 0%,
       transparent 60%
     );
     pointer-events: none;

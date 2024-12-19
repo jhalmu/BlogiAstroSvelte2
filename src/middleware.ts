@@ -9,6 +9,8 @@ const publicRoutes = [
   '/contact',
   '/subscribe',
   '/blog',  // Make the blog list public
+  '/readme', // README.md page
+  '/about-cascade', // AI Development Story page
 ];
 
 export const onRequest = defineMiddleware(async ({ url, cookies, redirect }, next) => {

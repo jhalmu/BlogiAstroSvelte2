@@ -39,9 +39,10 @@ const { page, posts, totalPages, prevPageTitle, nextPageTitle } = Astro.props;
 ---
 
 <Layout title={`Blog - Page ${page} | Juha Halmu`}>
-  <div class="container mx-auto px-4" style="margin-top: calc(3.5rem)">
-    {/* Blog Posts Grid */}
-    <div class="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+  <div class="container mx-auto px-4 mt-14">
+    <!-- Blog Posts Grid -->
+    <div class="sr-only" role="status">Page {page} of {totalPages}</div>
+    <div class="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3" role="feed" aria-label="Blog posts">
       {posts.map((post) => (
         <BlogCard
           title={post.data.title}
@@ -59,33 +60,65 @@ const { page, posts, totalPages, prevPageTitle, nextPageTitle } = Astro.props;
       ))}
     </div>
 
-    {/* Pagination */}
-    <div class="mt-12 flex justify-center gap-4">
-      <a
-        href={page === 2 ? "/blog" : `/blog/${page - 1}`}
-        class="inline-flex items-center px-6 py-3 rounded-lg bg-purple-600 text-white hover:bg-purple-700 transition-colors duration-200"
-      >
-        <span>Previous Page</span>
-        {prevPageTitle && (
-          <span class="ml-2 text-sm opacity-75">
-            ({prevPageTitle})
-          </span>
-        )}
-      </a>
-      
-      {page < totalPages && (
-        <a
-          href={`/blog/${page + 1}`}
-          class="inline-flex items-center px-6 py-3 rounded-lg bg-purple-600 text-white hover:bg-purple-700 transition-colors duration-200"
-        >
-          <span>Next Page</span>
-          {nextPageTitle && (
-            <span class="ml-2 text-sm opacity-75">
-              ({nextPageTitle})
-            </span>
+    <!-- Pagination -->
+    <nav 
+      class="mt-12 mb-24" 
+      aria-label="Blog pagination"
+      role="navigation"
+    >
+      <div class="flex justify-center gap-4">
+        <div class="sr-only" id="pagination-heading">Blog pages navigation</div>
+        <ul class="flex gap-4" role="list" aria-labelledby="pagination-heading">
+          <li>
+            <a
+              href={page === 2 ? "/blog" : `/blog/${page - 1}`}
+              class="inline-flex items-center px-6 py-3 rounded-lg bg-purple-600 text-white hover:bg-purple-700 transition-colors duration-200"
+              aria-label={`Go to previous page${prevPageTitle ? ` (${prevPageTitle})` : ''}`}
+              rel="prev"
+            >
+              <span aria-hidden="true" class="mr-2">←</span>
+              <span>Previous</span>
+              {prevPageTitle && (
+                <span class="ml-2 text-sm opacity-75" aria-hidden="true">
+                  ({prevPageTitle})
+                </span>
+              )}
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="/blog"
+              class="inline-flex items-center px-6 py-3 rounded-lg bg-gradient-to-r from-purple-500 to-indigo-600 text-white hover:from-purple-600 hover:to-indigo-700 transition-all duration-200 shadow-md hover:shadow-lg"
+              aria-label="Return to first page of blog posts"
+              role="link"
+            >
+              <span aria-hidden="true" class="mr-2">•</span>
+              Blog Index
+              <span aria-hidden="true" class="ml-2">•</span>
+            </a>
+          </li>
+          
+          {page < totalPages && (
+            <li>
+              <a
+                href={`/blog/${page + 1}`}
+                class="inline-flex items-center px-6 py-3 rounded-lg bg-purple-600 text-white hover:bg-purple-700 transition-colors duration-200"
+                aria-label={`Go to next page${nextPageTitle ? ` (${nextPageTitle})` : ''}`}
+                rel="next"
+              >
+                <span>Next</span>
+                {nextPageTitle && (
+                  <span class="ml-2 text-sm opacity-75" aria-hidden="true">
+                    ({nextPageTitle})
+                  </span>
+                )}
+                <span aria-hidden="true" class="ml-2">→</span>
+              </a>
+            </li>
           )}
-        </a>
-      )}
-    </div>
+        </ul>
+      </div>
+    </nav>
   </div>
 </Layout>

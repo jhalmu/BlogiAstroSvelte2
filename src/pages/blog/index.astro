@@ -71,19 +71,21 @@ const nextPageTitle = sortedPosts[POSTS_PER_PAGE]?.data.title;
 
     {/* Pagination */}
     {totalPages > 1 && (
-      <div class="mt-12 flex justify-center gap-4">
+      <nav class="mt-12 mb-24 flex justify-center gap-4" aria-label="Blog pagination">
         <a
           href="/blog/2"
           class="inline-flex items-center px-6 py-3 rounded-lg bg-purple-600 text-white hover:bg-purple-700 transition-colors duration-200"
+          aria-label={`Go to next page${nextPageTitle ? ` (${nextPageTitle})` : ''}`}
         >
-          <span>Next Page</span>
+          <span>Next</span>
           {nextPageTitle && (
-            <span class="ml-2 text-sm opacity-75">
+            <span class="ml-2 text-sm opacity-75" aria-hidden="true">
               ({nextPageTitle})
             </span>
           )}
+          <span aria-hidden="true" class="ml-2">→</span>
         </a>
-      </div>
+      </nav>
     )}
   </div>
 </Layout>

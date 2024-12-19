@@ -1,60 +1,61 @@
 ---
-import { getCollection } from 'astro:content';
-import type { CollectionEntry } from 'astro:content';
-import Layout from '../../layouts/Layout.astro';
-import HeroImage from '../../components/HeroImage.astro';
+import type { CollectionEntry } from 'astro:content'
+import { getCollection } from 'astro:content'
+import HeroImage from '../../components/HeroImage.astro'
+import Layout from '../../layouts/Layout.astro'
 
 export async function getStaticPaths() {
-  const posts = await getCollection('blog');
+  const posts = await getCollection('blog')
   return posts.map((post: CollectionEntry<'blog'>) => ({
     params: { slug: post.slug },
     props: { post },
-  }));
+  }))
 }
 
 interface Props {
-  post: CollectionEntry<'blog'>;
+  post: CollectionEntry<'blog'>
 }
 
-const { post } = Astro.props;
-const { Content } = await post.render();
+const { post } = Astro.props
+const { Content } = await post.render()
 
 // Helper functions
 function getFirstImage(content: string): string {
-  const imgMatch = content.match(/<img[^>]+src="([^">]+)"/);
-  return imgMatch ? imgMatch[1] : '/og-default.jpg';
+  const imgMatch = content.match(/<img[^>]+src="([^">]+)"/)
+  return imgMatch ? imgMatch[1] : '/og-default.jpg'
 }
 
 function getTextPreview(content: string): string {
-  return content
-    .replace(/<[^>]*>/g, '')
-    .replace(/\n+/g, ' ')
-    .trim()
-    .slice(0, 200) + '...';
+  return (
+    content
+      .replace(/<[^>]*>/g, '')
+      .replace(/\n+/g, ' ')
+      .trim()
+      .slice(0, 200) + '...'
+  )
 }
 
-const description = post.data.excerpt || getTextPreview(post.body);
+const description = post.data.excerpt || getTextPreview(post.body)
 const defaultImage = {
   src: '/images/blog/default-hero.jpg',
-  alt: 'Default blog post hero image'
-};
-const image = post.data.image || defaultImage;
+  alt: 'Default blog post hero image',
+}
+const image = post.data.image || defaultImage
 
-const tags = post.data.tags;
-
+const tags = post.data.tags
 ---
 
-<Layout 
+<Layout
   title={post.data.title}
   description={description}
   image={image.src}
-  type="article"
+  type='article'
   publishDate={post.data.date}
   author={post.data.author}
   tags={post.data.tags}
 >
   <main>
-    <HeroImage 
+    <HeroImage
       title={post.data.title}
       description={post.data.description}
       image={image}
@@ -63,9 +64,9 @@ const tags = post.data.tags;
       tags={tags}
       priority={true}
     />
-    
-    <div class="container mx-auto px-4 py-8 max-w-3xl">
-      <article class="prose prose-lg mx-auto">
+
+    <div class='container mx-auto px-4 py-8 pb-24 mt-16 max-w-3xl'>
+      <article class='prose prose-lg mx-auto'>
         <Content />
       </article>
     </div>
@@ -76,47 +77,51 @@ const tags = post.data.tags;
   .prose {
     color: #111827;
   }
-  
+
   .prose h1 {
     @apply text-4xl font-bold text-gray-900 mt-8 mb-4;
   }
-  
+
   .prose h2 {
     @apply text-3xl font-bold text-gray-900 mt-6 mb-4;
   }
-  
+
   .prose h3 {
     @apply text-2xl font-bold text-gray-900 mt-4 mb-3;
   }
-  
+
   .prose p {
-    @apply text-gray-900 mb-4 leading-relaxed;
+    @apply text-gray-900 mb-8 leading-relaxed;
   }
-  
+
+  .prose p:last-child {
+    @apply mb-16;
+  }
+
   .prose ul {
-    @apply list-disc list-inside text-gray-900 mb-4;
+    @apply list-disc list-inside text-gray-900 mb-8;
   }
-  
+
   .prose ol {
-    @apply list-decimal list-inside text-gray-900 mb-4;
+    @apply list-decimal list-inside text-gray-900 mb-8;
   }
-  
+
   .prose li {
     @apply mb-2;
   }
-  
+
   .prose a {
     @apply text-purple-800 hover:underline;
   }
-  
+
   .prose blockquote {
     @apply pl-4 border-l-4 border-purple-800 text-gray-800 my-4;
   }
-  
+
   .prose pre {
     @apply bg-white text-gray-800 p-4 rounded-lg overflow-x-auto my-4 border border-gray-200 shadow-sm;
   }
-  
+
   .prose code {
     @apply bg-gray-50 text-gray-800 px-1.5 py-0.5 rounded text-sm font-mono;
   }
@@ -124,7 +129,7 @@ const tags = post.data.tags;
   .prose pre code {
     @apply bg-transparent p-0 text-base;
   }
-  
+
   .prose img {
     @apply rounded-lg shadow-md my-4;
   }

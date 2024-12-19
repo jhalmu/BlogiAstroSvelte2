@@ -2,7 +2,15 @@ import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 
 export default defineConfig({
-  output: 'hybrid',  
+  site: 'https://juhahalmu.net',
+  output: 'hybrid',
+  prefetch: {
+    prefetchAll: true,
+    defaultStrategy: 'hover'
+  },
+  prerender: {
+    forcePrerenderRoutes: ['/rss.xml']
+  },
   integrations: [tailwind()],
   markdown: {
     shikiConfig: {

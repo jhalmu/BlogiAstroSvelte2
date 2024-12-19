@@ -16,7 +16,7 @@ export interface Props {
 
 const {
   title,
-  description = "Juha Halmu's personal blog about technology, programming, and web development",
+  description = "Juha Halmun blogi teknologiasta, ohjelmoinnista ja web-kehityksestä",
   image = '/og-default.jpg',
   canonicalURL = Astro.url.href,
   type = 'website',
@@ -26,7 +26,7 @@ const {
 } = Astro.props;
 
 // Format tags for meta keywords
-const keywords = [...tags, 'blog', 'technology', 'programming', 'web development'].join(', ');
+const keywords = [...tags, 'blogi', 'teknologia', 'ohjelmointi', 'web-kehitys'].join(', ');
 
 // Generate structured data
 const structuredData = {
@@ -46,7 +46,7 @@ const structuredData = {
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fi">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -85,7 +85,7 @@ const structuredData = {
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@400;700&family=Montserrat:wght@300;400;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@400;700&family=Montserrat:wght@300;400;600;700&family=Poppins:wght@400;500;600;700&family=Abril+Fatface&display=swap" rel="stylesheet">
     
     <!-- Structured Data -->
     <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
@@ -95,22 +95,31 @@ const structuredData = {
     
     <meta name="generator" content={Astro.generator} />
   </head>
-  <body class="min-h-screen flex flex-col bg-lavender-50">
-    <div class="min-h-screen bg-gradient-to-b from-purple-950 via-purple-900 to-purple-800 relative">
-      <!-- Background mountain -->
-      <div class="absolute bottom-0 left-0 right-0 h-[50vh] bg-no-repeat bg-bottom bg-cover" style="background-image: url('/mountains.svg')"></div>
-      
-      <!-- Content -->
-      <div class="relative min-h-screen flex flex-col pt-[100px] p-2 sm:p-4 md:p-6">
-        <div class="w-full max-w-6xl mx-auto bg-gradient-to-br from-lavender-50 to-lavender-100 rounded-lg shadow-2xl overflow-hidden border border-lavender-200">
-          <Navigation />
-          <main class="p-4 sm:p-6 md:p-8 font-[Lato] overflow-x-hidden">
-            <slot />
-          </main>
-          <Footer />
-        </div>
+  <body class="grid min-h-screen grid-rows-[auto_1fr_auto] bg-gradient-to-b from-purple-950 via-purple-900 to-purple-800">
+    <!-- Background mountain -->
+    <div class="fixed bottom-0 left-0 right-0 h-[50vh] bg-no-repeat bg-bottom bg-cover pointer-events-none" style="background-image: url('/mountains.svg')"></div>
+    
+    <!-- Skip to main content link -->
+    <a 
+      href="#main-content" 
+      class="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 focus:z-50 focus:p-4 focus:bg-white focus:text-purple-900"
+    >
+      Skip to main content
+    </a>
+
+    <header class="relative z-10">
+      <Navigation />
+    </header>
+    
+    <main id="main-content" class="relative z-10 pt-[100px] p-2 sm:p-4 md:p-6">
+      <div class="w-full max-w-6xl mx-auto bg-gradient-to-br from-lavender-50 to-lavender-100 rounded-2xl shadow-2xl overflow-hidden border border-lavender-200">
+        <slot />
       </div>
-    </div>
+    </main>
+
+    <footer class="relative z-10">
+      <Footer />
+    </footer>
   </body>
 </html>
 
@@ -129,5 +138,24 @@ const structuredData = {
     body {
       font-size: 15px;
     }
+  }
+</style>
+
+<style is:global>
+  /* Focus styles */
+  :focus-visible {
+    outline: 2px solid #6B21A8;
+    outline-offset: 2px;
+  }
+
+  /* Hide focus ring when using mouse */
+  :focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  /* Improve text contrast */
+  ::selection {
+    background-color: #6B21A8;
+    color: white;
   }
 </style>

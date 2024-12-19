@@ -1,3 +1,14 @@
+---
+title: "README"
+date: "2023-12-19"
+author: "Juha Halmu"
+excerpt: "Project documentation and features"
+tags: ["Documentation", "Project"]
+image:
+  src: "/images/blog/default-hero.jpg"
+  alt: "Project Documentation"
+---
+
 # BlogiAstroSvelte
 
 A modern, fast blog built with Astro and styled with TailwindCSS. This blog features a clean, responsive design and excellent performance thanks to Astro's hybrid rendering capabilities.
@@ -29,20 +40,17 @@ A modern, fast blog built with Astro and styled with TailwindCSS. This blog feat
 ## Getting Started
 
 1. Clone the repository:
-
 ```bash
 git clone https://github.com/jhalmu/BlogiAstroSvelte.git
 cd BlogiAstroSvelte
 ```
 
 2. Install dependencies:
-
 ```bash
 npm install
 ```
 
 3. Start the development server:
-
 ```bash
 npm run dev
 ```
@@ -91,7 +99,6 @@ The project uses Astro's hybrid rendering configuration with TailwindCSS integra
 ## Social Media Integration
 
 The blog includes social media links to:
-
 - BlueSky
 - LinkedIn
 - GitHub

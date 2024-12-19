@@ -13,8 +13,14 @@ const pages = defineCollection({
   schema: pagesSchema,
 });
 
+// Readme collection schema
+const readme = defineCollection({
+  type: 'content',
+});
+
 // Export collections
 export const collections = {
   blog,
   pages,
+  readme,
 };

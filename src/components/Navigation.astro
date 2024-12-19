@@ -1,9 +1,11 @@
 ---
-import NavAvatar from './NavAvatar.astro';
+import NavAvatar from './NavAvatar.astro'
+import SocialLinks from './SocialLinks.astro'
 
 const navItems = [
   { href: '/', text: 'Home' },
   { href: '/blog', text: 'Blog' },
+  { href: '/readme', text: 'Readme.md' },
 ]
 
 const currentPath = Astro.url.pathname
@@ -21,53 +23,60 @@ const currentPath = Astro.url.pathname
   <!-- Navigation content -->
   <div class='relative z-10 flex flex-col h-full px-12'>
     <!-- Top navigation links -->
-    <div class='flex justify-end space-x-8 pt-7' role='menubar'>
-      {
-        navItems.map((item) => {
-          const isActive =
-            currentPath === item.href ||
-            (item.href !== '/' && currentPath.startsWith(item.href))
-          return (
-            <a
-              href={item.href}
-              role='menuitem'
-              class:list={[
-                'relative py-1 transition-all duration-300',
-                isActive
-                  ? 'font-bold text-gray-950'
-                  : 'font-medium text-gray-700 hover:text-gray-900',
-                'visited:text-gray-700 visited:font-medium',
-                !isActive && [
-                  'after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5',
-                  'after:bg-gray-900 after:transform after:scale-x-0',
-                  'after:transition-transform after:duration-300 after:origin-bottom-right',
-                  'hover:after:scale-x-100 hover:after:origin-bottom-left',
-                ],
-              ]}
-              aria-current={isActive ? 'page' : undefined}
-              aria-label={`${item.text} ${isActive ? '(current page)' : ''}`}
-              tabindex={isActive ? '-1' : '0'}
-            >
-              <span class='sr-only'>{isActive ? 'Current page: ' : ''}</span>
-              {item.text}
-            </a>
-          )
-        })
-      }
+    <div class='flex justify-end pt-7'>
+      <SocialLinks />
     </div>
 
-    <!-- Brand section -->
+    <!-- Brand section with navigation -->
     <div class='flex items-center space-x-8 mt-8'>
       <a href='/' class='block' aria-label='Home page'>
         <NavAvatar />
       </a>
-      <h1
-        class="text-3xl md:text-5xl lg:text-6xl font-['Playfair_Display'] font-semibold text-purple-900 opacity-70 tracking-wide hover:opacity-90 transition-opacity duration-300"
-        id='site-title'
-      >
-        <span class='font-light'>Juha</span>
-        <span class='font-bold'>Halmu</span>
-      </h1>
+      <div class="flex items-baseline space-x-16">
+        <h1
+          class="text-3xl md:text-5xl lg:text-6xl font-['Abril_Fatface'] text-purple-50 opacity-80 tracking-normal hover:opacity-90 transition-opacity duration-300 text-shadow"
+          id='site-title'
+        >
+          <span class='tracking-normal'>Juha</span>
+          <span class='tracking-normal'>Halmu</span>
+        </h1>
+        
+        <div class="flex space-x-10" role="menubar">
+          {
+            navItems.map((item) => {
+              const isActive =
+                currentPath === item.href ||
+                (item.href !== '/' && currentPath.startsWith(item.href))
+              return (
+                <a
+                  href={item.href}
+                  role='menuitem'
+                  class:list={[
+                    'relative py-1 transition-all duration-300 text-lg font-["Montserrat"] tracking-wide',
+                    isActive
+                      ? 'font-semibold text-white border-b-2 border-purple-100'
+                      : 'font-medium text-purple-100 hover:text-white',
+                    'visited:text-purple-100 visited:font-medium',
+                    !isActive && [
+                      'after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5',
+                      'after:bg-purple-100 after:transform after:scale-x-0',
+                      'after:transition-transform after:duration-500 after:origin-bottom-right',
+                      'hover:after:scale-x-100 hover:after:origin-bottom-left',
+                      'hover:translate-y-[-2px]',
+                    ],
+                  ]}
+                  aria-current={isActive ? 'page' : undefined}
+                  aria-label={`${item.text} ${isActive ? '(current page)' : ''}`}
+                  tabindex={isActive ? '-1' : '0'}
+                >
+                  <span class='sr-only'>{isActive ? 'Current page: ' : ''}</span>
+                  {item.text}
+                </a>
+              )
+            })
+          }
+        </div>
+      </div>
     </div>
   </div>
 </nav>
@@ -83,6 +92,24 @@ const currentPath = Astro.url.pathname
   /* Hide focus ring when using mouse */
   a:focus:not(:focus-visible) {
     outline: none;
+  }
+
+  .text-shadow {
+    text-shadow:
+      8px 12px 4px rgba(147, 51, 234, 0.25),
+      6px 16px 8px rgba(168, 85, 247, 0.2),
+      12px 24px 32px rgba(147, 51, 234, 0.15),
+      16px 36px 64px rgba(168, 85, 247, 0.1),
+      20px 48px 96px rgba(147, 51, 234, 0.05);
+  }
+
+  .text-shadow:hover {
+    text-shadow:
+      8px 12px 4px rgba(147, 51, 234, 0.25),
+      6px 16px 8px rgba(168, 85, 247, 0.2),
+      12px 24px 32px rgba(147, 51, 234, 0.15),
+      16px 36px 64px rgba(168, 85, 247, 0.1),
+      20px 48px 96px rgba(147, 51, 234, 0.05);
   }
 </style>
 
@@ -103,13 +130,13 @@ const currentPath = Astro.url.pathname
         case 'ArrowRight':
         case 'ArrowDown':
           e.preventDefault()
-          nextItem = items[index + 1] || items[0]
+          nextItem = items[(index + 1) % items.length]
           nextItem.focus()
           break
         case 'ArrowLeft':
         case 'ArrowUp':
           e.preventDefault()
-          nextItem = items[index - 1] || items[items.length - 1]
+          nextItem = items[(index - 1 + items.length) % items.length]
           nextItem.focus()
           break
         case 'Home':
@@ -119,6 +146,11 @@ const currentPath = Astro.url.pathname
         case 'End':
           e.preventDefault()
           items[items.length - 1].focus()
+          break
+        case 'Enter':
+        case ' ':
+          e.preventDefault()
+          item.click()
           break
       }
     })
