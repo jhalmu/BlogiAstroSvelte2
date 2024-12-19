@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
 import BlogCard from '../components/BlogCard.astro';
+import DevBanner from '../components/DevBanner.astro';
 import { getCollection } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
 import { validateBlogPost } from '../utils/content';
@@ -15,13 +16,9 @@ const validPosts = allPosts
 ---
 
 <Layout title="Welcome to My Blog">
-  <div class="container mx-auto px-4" style="margin-top: calc(3.5rem)">
-    <Hero>
-      <div class="container mx-auto px-4 h-full flex flex-col items-center justify-center text-white">
-        <h1 class="text-5xl md:text-6xl font-bold text-center mb-4">Welcome to My Blog</h1>
-        <p class="text-xl md:text-2xl text-center max-w-2xl">Exploring ideas, sharing stories, and documenting discoveries.</p>
-      </div>
-    </Hero>
+  <DevBanner />
+  <div class="container mx-auto px-4">
+    <Hero />
     
     <section class="py-16">
       <div class="container mx-auto px-4">
