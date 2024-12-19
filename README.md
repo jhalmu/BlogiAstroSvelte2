@@ -16,6 +16,8 @@ A modern, fast blog built with Astro and styled with TailwindCSS. This blog feat
 - Hybrid rendering mode
 - Social media integration
 - Finnish language support
+# Test Deployment
+- Testing GitHub Actions deployment
 
 ## Tech Stack
 
