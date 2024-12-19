@@ -1,9 +1,13 @@
 import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
+import node from '@astrojs/node';
 
 export default defineConfig({
   site: 'https://juhahalmu.net',
   output: 'hybrid',
+  adapter: node({
+    mode: 'standalone',
+  }),
   prefetch: {
     prefetchAll: true,
     defaultStrategy: 'hover'
