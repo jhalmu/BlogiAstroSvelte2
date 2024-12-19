@@ -5,6 +5,9 @@ updated: "2023-12-18"
 excerpt: "How artificial intelligence is reshaping web development"
 author: "Juha Halmu"
 tags: ["AI", "Web Development", "Technology"]
+image:
+  src: "/images/blog/ai-in-web-development.jpg"
+  alt: "AI-powered web development dashboard"
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi.

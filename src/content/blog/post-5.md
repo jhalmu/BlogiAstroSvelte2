@@ -4,6 +4,9 @@ date: "2023-12-01"
 excerpt: "Techniques and strategies for building faster web applications"
 author: "Juha Halmu"
 tags: ["Performance", "Web Development", "Optimization"]
+image:
+  src: "/images/blog/performance-optimization.jpg"
+  alt: "Performance optimization concept illustration"
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut gravida lorem. Ut turpis felis, pulvinar a semper sed, adipiscing id dolor.

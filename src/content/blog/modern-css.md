@@ -1,9 +1,12 @@
 ---
 title: "Modern CSS Techniques"
-date: "2023-12-17"
-excerpt: "Exploring modern CSS features and best practices"
+date: "2023-12-18"
 author: "Juha Halmu"
+excerpt: "Discover the latest CSS features and techniques for modern web design"
 tags: ["CSS", "Web Design", "Frontend"]
+image:
+  src: "/images/blog/modern-css.jpg"
+  alt: "Modern CSS styling demonstration"
 ---
 
 CSS has evolved significantly over the years. Let's explore some modern techniques that make styling websites easier and more powerful.

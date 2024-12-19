@@ -1,38 +1,27 @@
 ---
-title: "About"
-description: "Learn more about me and my journey in web development"
-lastUpdated: "2023-12-18"
+title: "About Me"
+description: "Learn more about who I am and what I do"
+image:
+  src: "/images/about-hero.jpg"
+  alt: "A photo of me working on web development"
+tags: ["personal", "technology", "coding", "life"]
+excludeTags: ["person", "people", "face", "girl", "boy", "man", "woman", "animal", "city", "building", "urban"]
+preferredColors: ["lavender", "purple", "violet", "blue", "indigo"]
+orientation: "landscape"
+minWidth: 1200
+minHeight: 600
+overlayOpacity: 50
+rounded: "rounded-xl"
+lastUpdated: "2024-12-19T00:00:00Z"
 ---
 
-# About Me
+I specialize in modern web technologies, focusing on creating efficient and user-friendly applications. My expertise includes:
 
-Welcome to my digital space! I'm Juha Halmu, a passionate developer and tech enthusiast who loves exploring and sharing knowledge about web development, programming, and technology.
+- Frontend Development
+- Backend Architecture
+- Cloud Solutions
+- Performance Optimization
 
-## What I Do
+## My Approach
 
-I create content about:
-- Web Development
-- JavaScript & TypeScript
-- Modern Frontend Frameworks
-- Software Architecture
-- Best Practices & Tips
-
-## My Journey
-
-I've been working in software development for several years, constantly learning and adapting to new technologies. This blog is my way of sharing what I've learned along the way and contributing to the developer community.
-
-## The Blog
-
-This blog is built with modern technologies including:
-- Astro
-- TypeScript
-- Tailwind CSS
-- Markdown
-
-It serves as both a learning platform and a way to document my journey in technology. Here, you'll find articles about web development, programming tips, and thoughts on the latest tech trends.
-
-## Get in Touch
-
-I'm always interested in connecting with fellow developers and tech enthusiasts. Feel free to reach out through the [contact page](/contact) or connect with me on social media.
-
-Thanks for stopping by!
+I believe in writing clean, maintainable code and sharing knowledge with the community. Through this blog, I aim to contribute to the collective knowledge of developers worldwide.

@@ -4,6 +4,9 @@ date: "2023-12-15"
 excerpt: ""
 author: "Juha Halmu"
 tags: ["TypeScript", "JavaScript", "Programming"]
+image:
+  src: "/images/blog/typescript.jpg"
+  alt: "TypeScript logo"
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.

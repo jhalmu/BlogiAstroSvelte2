@@ -1,0 +1,80 @@
+{
+  "getting-started": {
+    "slug": "getting-started",
+    "imagePath": "/images/blog/getting-started-placeholder.webp",
+    "width": 1200,
+    "height": 630
+  },
+  "javascript-tips": {
+    "slug": "javascript-tips",
+    "imagePath": "/images/blog/javascript-tips-placeholder.webp",
+    "width": 1200,
+    "height": 630
+  },
+  "modern-css": {
+    "slug": "modern-css",
+    "imagePath": "/images/blog/modern-css-placeholder.webp",
+    "width": 1200,
+    "height": 630
+  },
+  "post-1": {
+    "slug": "post-1",
+    "imagePath": "/images/blog/post-1-placeholder.webp",
+    "width": 1200,
+    "height": 630
+  },
+  "post-10": {
+    "slug": "post-10",
+    "imagePath": "/images/blog/post-10-placeholder.webp",
+    "width": 1200,
+    "height": 630
+  },
+  "post-2": {
+    "slug": "post-2",
+    "imagePath": "/images/blog/post-2-placeholder.webp",
+    "width": 1200,
+    "height": 630
+  },
+  "post-3": {
+    "slug": "post-3",
+    "imagePath": "/images/blog/post-3-placeholder.webp",
+    "width": 1200,
+    "height": 630
+  },
+  "post-4": {
+    "slug": "post-4",
+    "imagePath": "/images/blog/post-4-placeholder.webp",
+    "width": 1200,
+    "height": 630
+  },
+  "post-5": {
+    "slug": "post-5",
+    "imagePath": "/images/blog/post-5-placeholder.webp",
+    "width": 1200,
+    "height": 630
+  },
+  "post-6": {
+    "slug": "post-6",
+    "imagePath": "/images/blog/post-6-placeholder.webp",
+    "width": 1200,
+    "height": 630
+  },
+  "post-7": {
+    "slug": "post-7",
+    "imagePath": "/images/blog/post-7-placeholder.webp",
+    "width": 1200,
+    "height": 630
+  },
+  "post-8": {
+    "slug": "post-8",
+    "imagePath": "/images/blog/post-8-placeholder.webp",
+    "width": 1200,
+    "height": 630
+  },
+  "post-9": {
+    "slug": "post-9",
+    "imagePath": "/images/blog/post-9-placeholder.webp",
+    "width": 1200,
+    "height": 630
+  }
+}

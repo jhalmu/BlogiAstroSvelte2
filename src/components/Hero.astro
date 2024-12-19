@@ -1,32 +1,44 @@
 ---
-import Avatar from './Avatar.astro';
+import Avatar from './Avatar.astro'
 ---
 
-<section class="relative py-20 md:py-32 overflow-hidden rounded-3xl">
-  <div class="absolute inset-0 bg-[radial-gradient(circle_at_-20%_-20%,#1e40af,#1e40af_20%,#581c87_40%,#6b21a8_60%,#7e22ce_80%,#1e40af_100%)] opacity-90 rounded-3xl"></div>
-  <div class="absolute inset-0 bg-[radial-gradient(circle_at_-20%_-20%,rgba(255,255,255,0.2),transparent_70%)] rounded-3xl"></div>
-  
-  <!-- Large Avatar Background -->
-  <div class="absolute -top-20 -left-[22%] z-20">
-    <Avatar size="2xl" opacity={0.4} tint="rgba(255, 255, 255, 0.3)" />
-  </div>
-  
-  <div class="relative container mx-auto px-4 z-10 -mt-12">
-    <div class="max-w-3xl mx-auto text-center">
-      <h1 class="font-montserrat font-bold text-4xl md:text-6xl text-white mb-6 leading-tight">
-        Welcome to My Digital Garden
-      </h1>
-      <p class="font-montserrat font-light text-xl md:text-2xl text-purple-100 mb-8">
-        Exploring ideas, sharing thoughts, and documenting the journey
-      </p>
-      <a 
-        href="/blog" 
-        class="inline-block bg-white text-purple-900 font-semibold px-8 py-4 rounded-lg 
-               hover:bg-purple-100 transition-colors duration-300 
-               shadow-lg hover:shadow-xl transform hover:-translate-y-1"
-      >
-        Read Latest Posts
-      </a>
+<div class="container mx-auto px-4">
+  <section class='relative py-20 md:py-32 overflow-hidden rounded-3xl mt-8 w-full min-h-[550px] flex items-center'>
+    <div
+      class='absolute inset-0 bg-[radial-gradient(circle_at_-20%_-20%,#1e40af,#1e40af_20%,#581c87_40%,#6b21a8_60%,#7e22ce_80%,#1e40af_100%)] opacity-90 rounded-3xl'
+    >
     </div>
-  </div>
-</section>
+    <div
+      class='absolute inset-0 bg-[radial-gradient(circle_at_-20%_-20%,rgba(255,255,255,0.2),transparent_70%)] rounded-3xl'
+    >
+    </div>
+
+    <!-- Large Avatar Background -->
+    <div class='absolute -top-20 -left-[22%] z-20'>
+      <Avatar size='2xl' opacity={0.4} tint='rgba(255, 255, 255, 0.3)' />
+    </div>
+
+    <div class='relative w-full z-10'>
+      <div class='max-w-3xl mx-auto text-center'>
+        <h1
+          class='font-montserrat font-bold text-4xl md:text-6xl text-white mb-6 leading-tight'
+        >
+          Welcome to My Digital Garden
+        </h1>
+        <p
+          class='font-montserrat font-light text-xl md:text-2xl text-purple-100 mb-8'
+        >
+          Exploring ideas, sharing thoughts, and documenting the journey
+        </p>
+        <a
+          href='/blog'
+          class='inline-block bg-white text-purple-900 font-semibold px-8 py-4 rounded-lg
+                hover:bg-purple-100 transition-colors duration-300
+                shadow-lg hover:shadow-xl transform hover:-translate-y-1'
+        >
+          Read Latest Posts
+        </a>
+      </div>
+    </div>
+  </section>
+</div>

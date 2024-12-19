@@ -1,14 +1,21 @@
 ---
-title: "Subscribe"
-description: "Stay updated with the latest content and never miss a post"
-lastUpdated: "2023-12-18"
+title: Subscribe
+description: Stay updated with the latest content and never miss a post
+image:
+  src: "/placeholder-subscribe.jpg"
+  alt: "Modern desk setup with laptop and newsletter content"
+  width: 1200
+  height: 630
+tags: ["subscribe", "newsletter", "updates", "rss"]
+excludeTags: ["person", "people", "face", "girl", "boy", "man", "woman", "animal", "city", "building", "urban"]
+preferredColors: ["lavender", "purple", "violet", "blue", "indigo"]
+orientation: "landscape"
+minWidth: 1200
+minHeight: 600
+overlayOpacity: 50
+rounded: "rounded-xl"
+lastUpdated: "2024-12-19T00:00:00Z"
 ---
-
-# Stay Updated
-
-Never miss a post! Subscribe to get the latest content delivered directly to your inbox.
-
-## Why Subscribe?
 
 As a subscriber, you'll get:
 - New blog posts straight to your inbox
@@ -17,23 +24,10 @@ As a subscriber, you'll get:
 - Tech tips and best practices
 - Industry insights and analysis
 
-## Ways to Follow
+### Ways to Connect
 
-### RSS Feed
-If you prefer RSS, you can subscribe to my [RSS feed](/rss.xml) to get updates in your favorite RSS reader.
-
-### Social Media
-Follow me on social media for additional content and updates:
+Subscribe to my [RSS feed](/rss.xml) to get updates in your favorite RSS reader, or follow me on social media:
 - [BlueSky](https://bsky.app)
 - [GitHub](https://github.com)
 
-## Newsletter Coming Soon!
-
-I'm working on setting up a newsletter. Check back soon for more details about subscribing to regular email updates.
-
-In the meantime, you can:
-1. Follow the RSS feed
-2. Connect on social media
-3. Bookmark this blog
-
-Thanks for your interest in my content!
+*Newsletter coming soon! In the meantime, bookmark this blog and follow the RSS feed for instant updates.*

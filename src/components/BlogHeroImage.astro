@@ -1,0 +1,58 @@
+---
+import { getPexelsImage } from '../utils/pexels';
+
+interface Props {
+  title: string;
+  overlayOpacity?: number;
+  tintColor?: string;
+  tags?: string[];
+}
+
+const {
+  title,
+  overlayOpacity = 50,
+  tintColor = 'rgb(79, 70, 229)',
+  tags = ['blog']
+} = Astro.props;
+
+const image = await getPexelsImage({ tags });
+---
+
+<div class="container mx-auto px-4">
+  <section class='relative py-20 md:py-32 overflow-hidden rounded-3xl mt-8 w-full min-h-[550px] flex items-center'>
+    <div
+      class='absolute inset-0 bg-[radial-gradient(circle_at_-20%_-20%,#1e40af,#1e40af_20%,#581c87_40%,#6b21a8_60%,#7e22ce_80%,#1e40af_100%)] opacity-90 rounded-3xl'
+    >
+    </div>
+    <div
+      class='absolute inset-0 bg-[radial-gradient(circle_at_-20%_-20%,rgba(255,255,255,0.2),transparent_70%)] rounded-3xl'
+    >
+    </div>
+
+    {/* Background image */}
+    {image && (
+      <img
+        src={image.src}
+        alt={image.alt || title}
+        class="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-60"
+        loading="eager"
+        decoding="async"
+      />
+    )}
+    
+    <div class='relative w-full z-10'>
+      <div class='max-w-3xl mx-auto text-center'>
+        <h1 class='font-montserrat font-bold text-4xl md:text-6xl text-white mb-6 leading-tight'>
+          {title}
+        </h1>
+      </div>
+      <slot />
+    </div>
+  </section>
+</div>
+
+<style>
+  div {
+    transition: all 0.3s ease-in-out;
+  }
+</style>

@@ -1,9 +1,12 @@
 ---
 title: "Essential JavaScript Tips and Tricks"
-date: "2023-12-16"
-excerpt: "Improve your JavaScript skills with these modern techniques"
+date: "2023-12-18"
 author: "Juha Halmu"
+excerpt: "Improve your JavaScript skills with these essential tips and best practices"
 tags: ["JavaScript", "Programming", "Web Development"]
+image:
+  src: "/images/blog/javascript-tips.jpg"
+  alt: "JavaScript code on a computer screen"
 ---
 
 JavaScript is constantly evolving, and keeping up with modern practices can greatly improve your code. Here are some essential tips and tricks.

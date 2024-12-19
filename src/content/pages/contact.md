@@ -1,14 +1,23 @@
 ---
-title: "Contact"
-description: "Get in touch with me for collaborations, questions, or just to say hello"
-lastUpdated: "2023-12-18"
+title: Contact
+description: Get in touch with me for collaborations, questions, or just to say hello
+image:
+  src: "/placeholder-contact.jpg"
+  alt: "Modern desk setup with communication devices"
+  width: 1200
+  height: 630
+tags: ["contact", "social", "communication"]
+excludeTags: ["person", "people", "face", "girl", "boy", "man", "woman", "animal", "city", "building", "urban"]
+preferredColors: ["lavender", "purple", "violet", "blue", "indigo"]
+orientation: "landscape"
+minWidth: 1200
+minHeight: 600
+overlayOpacity: 50
+rounded: "rounded-xl"
+lastUpdated: "2024-12-19T00:00:00Z"
 ---
 
 # Get in Touch
-
-I'd love to hear from you! Whether you have a question about web development, want to discuss a potential collaboration, or just want to say hello, feel free to reach out.
-
-## Connect With Me
 
 You can find me on various platforms:
 
@@ -18,11 +27,7 @@ You can find me on various platforms:
 
 ## Send a Message
 
-The best way to reach me is through email:
-
-📧 [contact@example.com](mailto:contact@example.com)
-
-*Note: Replace with your actual email address*
+The best way to reach me is through email at [email protected]. I typically respond within 24-48 hours.
 
 ## Response Time
 

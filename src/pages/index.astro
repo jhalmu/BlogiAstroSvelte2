@@ -4,19 +4,28 @@ import Hero from '../components/Hero.astro';
 import BlogCard from '../components/BlogCard.astro';
 import { getCollection } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
+import { validateBlogPost } from '../utils/content';
 
-const posts = (await getCollection('blog'))
+// Get and validate blog posts
+const allPosts = await getCollection('blog');
+const validPosts = allPosts
+  .filter(validateBlogPost)
   .sort((a: CollectionEntry<'blog'>, b: CollectionEntry<'blog'>) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf())
   .slice(0, 3);
 ---
 
 <Layout title="Welcome to My Blog">
-  <Hero />
+  <Hero>
+    <div class="container mx-auto px-4 h-full flex flex-col items-center justify-center text-white">
+      <h1 class="text-5xl md:text-6xl font-bold text-center mb-4">Welcome to My Blog</h1>
+      <p class="text-xl md:text-2xl text-center max-w-2xl">Exploring ideas, sharing stories, and documenting discoveries.</p>
+    </div>
+  </Hero>
   
   <section class="py-16 bg-purple-50">
     <div class="container mx-auto px-4">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {posts.map((post: CollectionEntry<'blog'>) => (
+        {validPosts.map((post: CollectionEntry<'blog'>) => (
           <BlogCard
             title={post.data.title}
             excerpt={post.data.excerpt}

@@ -1,9 +1,12 @@
 ---
 title: "The Art of Modern Web Development"
 date: "2023-12-18"
-excerpt: "Exploring the latest trends and best practices in modern web development"
 author: "Juha Halmu"
+excerpt: "Exploring the latest trends and best practices in modern web development"
 tags: ["Web Development", "JavaScript", "React"]
+image:
+  src: "/images/blog/modern-web-dev.jpg"
+  alt: "Modern web development illustration"
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.

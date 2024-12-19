@@ -2,19 +2,14 @@
 import { getCollection } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
-import Breadcrumb from '../../components/Breadcrumb.astro';
+import HeroImage from '../../components/HeroImage.astro';
 
 export async function getStaticPaths() {
-  try {
-    const posts = await getCollection('blog');
-    return posts.map((post: CollectionEntry<'blog'>) => ({
-      params: { slug: post.slug },
-      props: { post },
-    }));
-  } catch (error) {
-    console.error('Error generating static paths:', error);
-    return [];
-  }
+  const posts = await getCollection('blog');
+  return posts.map((post: CollectionEntry<'blog'>) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
 }
 
 interface Props {
@@ -22,28 +17,14 @@ interface Props {
 }
 
 const { post } = Astro.props;
+const { Content } = await post.render();
 
-if (!post) {
-  console.error('No post found in props');
-  return new Response('Post not found', { status: 404 });
-}
-
-let Content;
-try {
-  const { Content: PostContent } = await post.render();
-  Content = PostContent;
-} catch (error) {
-  console.error('Error rendering post:', error);
-  return new Response('Error rendering post', { status: 500 });
-}
-
-// Get first image from content or use default
+// Helper functions
 function getFirstImage(content: string): string {
   const imgMatch = content.match(/<img[^>]+src="([^">]+)"/);
   return imgMatch ? imgMatch[1] : '/og-default.jpg';
 }
 
-// Get text preview without HTML tags
 function getTextPreview(content: string): string {
   return content
     .replace(/<[^>]*>/g, '')
@@ -52,77 +33,43 @@ function getTextPreview(content: string): string {
     .slice(0, 200) + '...';
 }
 
-const breadcrumbPaths = [
-  { label: 'Home', href: '/' },
-  { label: 'Blog', href: '/blog' },
-  { label: post.data.title }
-];
-
-// SEO data
-const postImage = getFirstImage(post.body);
-const postDescription = post.data.excerpt || getTextPreview(post.body);
-
-const formatDate = (dateString: string) => {
-  try {
-    return new Date(dateString).toLocaleDateString('en-US', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric'
-    });
-  } catch (error) {
-    console.error('Error formatting date:', error);
-    return dateString;
-  }
+const description = post.data.excerpt || getTextPreview(post.body);
+const defaultImage = {
+  src: '/images/blog/default-hero.jpg',
+  alt: 'Default blog post hero image'
 };
+const image = post.data.image || defaultImage;
 
-const formattedDate = formatDate(post.data.date);
-const formattedUpdateDate = post.data.updated ? formatDate(post.data.updated) : null;
+const tags = post.data.tags;
 
 ---
 
-<Layout
+<Layout 
   title={post.data.title}
-  description={postDescription}
-  image={postImage}
+  description={description}
+  image={image.src}
   type="article"
   publishDate={post.data.date}
   author={post.data.author}
   tags={post.data.tags}
 >
-  <article class="max-w-4xl mx-auto px-4 py-12 text-gray-900">
-    <Breadcrumb paths={breadcrumbPaths} />
+  <main>
+    <HeroImage 
+      title={post.data.title}
+      description={post.data.description}
+      image={image}
+      overlayOpacity={50}
+      lastUpdated={post.data.date}
+      tags={tags}
+      priority={true}
+    />
     
-    <header class="mb-8">
-      <h1 class="text-4xl md:text-5xl font-poppins font-bold text-purple-900 mb-4">
-        {post.data.title}
-      </h1>
-      
-      <div class="flex flex-wrap gap-2 mb-4">
-        {post.data.tags && post.data.tags.map((tag: string) => (
-          <span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm">
-            {tag}
-          </span>
-        ))}
-      </div>
-      <div class="text-gray-700 space-y-1">
-        <div>
-          <time datetime={post.data.date}>{formattedDate}</time>
-          <span class="mx-2">•</span>
-          <span>{post.data.author}</span>
-        </div>
-        {formattedUpdateDate && (
-          <div class="text-sm">
-            <span class="text-purple-700 font-medium">Updated:</span>
-            <time datetime={post.data.updated} class="ml-1">{formattedUpdateDate}</time>
-          </div>
-        )}
-      </div>
-    </header>
-
-    <div class="prose prose-lg max-w-none prose-headings:text-purple-900 prose-a:text-purple-700 hover:prose-a:text-purple-500">
-      {Content ? <Content /> : <p>Error loading content</p>}
+    <div class="container mx-auto px-4 py-8 max-w-3xl">
+      <article class="prose prose-lg mx-auto">
+        <Content />
+      </article>
     </div>
-  </article>
+  </main>
 </Layout>
 
 <style is:global>

@@ -1,29 +1,20 @@
-import { z, defineCollection } from 'astro:content';
+import { defineCollection } from 'astro:content';
+import { blogSchema, pagesSchema } from '../types/content';
 
-const blogSchema = z.object({
-  title: z.string(),
-  date: z.string(),
-  updated: z.string().optional(),
-  excerpt: z.string().optional(),
-  author: z.string(),
-  tags: z.array(z.string()),
-});
-
-const pageSchema = z.object({
-  title: z.string(),
-  description: z.string(),
-  lastUpdated: z.string().optional(),
-});
-
-const blogCollection = defineCollection({
+// Blog collection schema
+const blog = defineCollection({
+  type: 'content', // Explicitly set type as content
   schema: blogSchema,
 });
 
-const pageCollection = defineCollection({
-  schema: pageSchema,
+// Pages collection schema
+const pages = defineCollection({
+  type: 'content', // Explicitly set type as content
+  schema: pagesSchema,
 });
 
+// Export collections
 export const collections = {
-  blog: blogCollection,
-  pages: pageCollection,
+  blog,
+  pages,
 };

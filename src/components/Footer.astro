@@ -66,9 +66,21 @@ const currentYear = new Date().getFullYear();
           </svg>
         </a>
       </div>
-      <p class="text-sm">
-        {currentYear} My Blog. All rights reserved.
-      </p>
+      
+      <div class="text-sm space-y-1">
+        <p>&copy; {currentYear} My Blog. All rights reserved.</p>
+        <p class="text-xs text-purple-700">
+          Photos provided by 
+          <a 
+            href="https://www.pexels.com" 
+            class="underline hover:text-purple-900 transition-colors duration-300"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Pexels
+          </a>
+        </p>
+      </div>
     </div>
   </div>
 </footer>

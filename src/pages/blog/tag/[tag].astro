@@ -1,0 +1,52 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../../layouts/Layout.astro';
+import BlogCard from '../../../components/BlogCard.astro';
+import HeroImage from '../../../components/HeroImage.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  const tags = [...new Set(posts.flatMap(post => post.data.tags || []))];
+  
+  return tags.map(tag => ({
+    params: { tag: tag.toLowerCase() },
+    props: { tag, posts: posts.filter(post => post.data.tags?.includes(tag)) }
+  }));
+}
+
+const { tag, posts } = Astro.props;
+
+// Default hero image for tag pages
+const heroImage = {
+  src: '/images/blog/default-hero.jpg',
+  alt: `Posts tagged with ${tag}`
+};
+---
+
+<Layout 
+  title={`Posts tagged with "${tag}" - Blog`}
+  description={`Browse all blog posts tagged with ${tag}`}
+>
+  <main class="min-h-screen">
+    <HeroImage
+      title={`Posts tagged with "${tag}"`}
+      description={`Browse all ${posts.length} post${posts.length === 1 ? '' : 's'} tagged with ${tag}`}
+      image={heroImage}
+      tags={[tag]}
+    />
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {posts.map(post => (
+          <BlogCard
+            title={post.data.title}
+            excerpt={post.data.excerpt}
+            date={post.data.date}
+            slug={post.slug}
+            tags={post.data.tags || []}
+          />
+        ))}
+      </div>
+    </div>
+  </main>
+</Layout>

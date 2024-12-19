@@ -1,156 +1,89 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import BlogCard from '../../components/BlogCard.astro';
-import Breadcrumb from '../../components/Breadcrumb.astro';
-import Pagination from '../../components/Pagination.astro';
-import { getCollection, type CollectionEntry } from 'astro:content';
+import HeroImage from '../../components/HeroImage.astro';
+import { getCollection } from 'astro:content';
+import { validateBlogPost, sortBlogPosts, getAllTags } from '../../utils/content';
 
 // Pagination settings
 const POSTS_PER_PAGE = 6;
 const currentPage = 1;
 
-let posts: CollectionEntry<'blog'>[] = [];
-let allTags: string[] = [];
-let paginatedPosts: CollectionEntry<'blog'>[] = [];
-let totalPages = 1;
+// Get and validate blog posts
+const allPosts = await getCollection('blog');
+const validPosts = allPosts.filter(validateBlogPost);
+const sortedPosts = sortBlogPosts(validPosts);
 
-try {
-  posts = (await getCollection('blog'))
-    .sort((a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf());
+// Get all unique tags
+const allTags = getAllTags(validPosts);
+const tagNames = allTags.map(tag => tag.name);
 
-  // Calculate pagination
-  totalPages = Math.ceil(posts.length / POSTS_PER_PAGE);
-  const start = (currentPage - 1) * POSTS_PER_PAGE;
-  const end = start + POSTS_PER_PAGE;
-  paginatedPosts = posts.slice(start, end);
+// Calculate pagination
+const totalPages = Math.ceil(sortedPosts.length / POSTS_PER_PAGE);
+const start = (currentPage - 1) * POSTS_PER_PAGE;
+const end = start + POSTS_PER_PAGE;
+const paginatedPosts = sortedPosts.slice(start, end);
 
-  // Get unique tags
-  allTags = [...new Set(posts.flatMap(post => post.data.tags || []))].sort();
-} catch (error) {
-  console.error('Error loading blog posts:', error);
-}
+// Hero image for the blog index
+const heroImage = {
+  src: "/images/blog/default-hero.jpg",
+  alt: "Welcome to my blog",
+  width: 1200,
+  height: 630
+};
 
-// Get the blog page content
-const blogPage = (await getCollection('pages')).find(page => page.slug === 'blog');
+const description = "Explore my thoughts, insights, and experiences in software development, design, and technology.";
+const tags = ["blog", "writing", "tech"];
 
-const breadcrumbPaths = [
-  { label: 'Home', href: '/' },
-  { label: 'Blog' }
-];
-
-// Get next page's first post title for navigation
-const nextPageTitle = posts[POSTS_PER_PAGE] ? posts[POSTS_PER_PAGE].data.title : null;
-
+// Get next page title for navigation
+const nextPageTitle = sortedPosts[POSTS_PER_PAGE]?.data.title;
 ---
 
-<Layout title="Blog Posts">
-  <article class="max-w-4xl mx-auto px-4 py-12">
-    <Breadcrumb 
-      paths={breadcrumbPaths}
-      nextPage={nextPageTitle ? {
-        url: '/blog/2',
-        title: nextPageTitle
-      } : undefined}
+<Layout title="Blog | Juha Halmu">
+  <div class="container mx-auto px-4" style="margin-top: calc(3.5rem)">
+    {/* Hero Section */}
+    <HeroImage
+      image={heroImage}
+      title="Blog"
+      description={description}
+      tags={tags}
+      priority={true}
     />
     
-    <div class="flex flex-col md:flex-row justify-between items-start gap-8 mb-12">
-      <header>
-        <h1 class="text-4xl md:text-5xl font-poppins font-bold text-purple-900 mb-4">
-          {blogPage.data.title}
-        </h1>
-        <p class="text-gray-600 text-lg">
-          {blogPage.data.description}
-        </p>
-      </header>
-
-      {allTags.length > 0 && (
-        <div class="w-full md:w-auto">
-          <h2 class="text-xl font-poppins font-semibold text-purple-800 mb-4">Filter by Tags</h2>
-          <div class="flex flex-wrap gap-2">
-            {allTags.map(tag => (
-              <button
-                class="px-4 py-2 rounded-full bg-purple-100 text-purple-800 hover:bg-purple-200 transition-colors duration-300"
-                data-tag={tag}
-              >
-                {tag}
-              </button>
-            ))}
-          </div>
-        </div>
-      )}
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    {/* Blog Posts Grid */}
+    <div class="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
       {paginatedPosts.map((post) => (
         <BlogCard
           title={post.data.title}
           excerpt={post.data.excerpt}
           content={post.body}
-          date={new Date(post.data.date).toLocaleDateString('en-US', {
+          date={post.data.date ? new Date(post.data.date).toLocaleDateString('en-US', {
             year: 'numeric',
             month: 'long',
             day: 'numeric'
-          })}
+          }) : ''}
           slug={post.slug}
           tags={post.data.tags || []}
+          image={post.data.image?.src}
         />
       ))}
-      {paginatedPosts.length === 0 && (
-        <div class="col-span-full text-center py-12 text-gray-500">
-          No blog posts found.
-        </div>
-      )}
     </div>
 
+    {/* Pagination */}
     {totalPages > 1 && (
-      <Pagination
-        currentPage={currentPage}
-        totalPages={totalPages}
-        baseUrl="/blog"
-      />
+      <div class="mt-12 flex justify-center gap-4">
+        <a
+          href="/blog/2"
+          class="inline-flex items-center px-6 py-3 rounded-lg bg-purple-600 text-white hover:bg-purple-700 transition-colors duration-200"
+        >
+          <span>Next Page</span>
+          {nextPageTitle && (
+            <span class="ml-2 text-sm opacity-75">
+              ({nextPageTitle})
+            </span>
+          )}
+        </a>
+      </div>
     )}
-  </article>
+  </div>
 </Layout>
-
-<style>
-  button[data-tag].active {
-    @apply bg-purple-700 text-white;
-  }
-</style>
-
-<script>
-  // Client-side filtering
-  const buttons = document.querySelectorAll<HTMLButtonElement>('button[data-tag]');
-  const cards = document.querySelectorAll<HTMLElement>('.grid > article');
-  let activeTag: string | null = null;
-
-  buttons.forEach(button => {
-    button.addEventListener('click', () => {
-      const tag = button.getAttribute('data-tag');
-      if (!tag) return;
-      
-      // Toggle active state
-      if (activeTag === tag) {
-        // Deactivate current tag
-        button.classList.remove('active');
-        activeTag = null;
-        // Show all cards
-        cards.forEach(card => {
-          card.style.display = '';
-        });
-      } else {
-        // Deactivate previous tag
-        buttons.forEach(b => b.classList.remove('active'));
-        // Activate new tag
-        button.classList.add('active');
-        activeTag = tag;
-        // Filter cards
-        cards.forEach(card => {
-          const cardTagsAttr = card.getAttribute('data-tags');
-          const cardTags = cardTagsAttr ? JSON.parse(cardTagsAttr) : [];
-          card.style.display = cardTags.includes(tag) ? '' : 'none';
-        });
-      }
-    });
-  });
-</script>

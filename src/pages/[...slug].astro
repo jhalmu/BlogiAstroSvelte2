@@ -1,55 +1,46 @@
 ---
-import { getCollection, type CollectionEntry } from 'astro:content';
+import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
-import Breadcrumb from '../components/Breadcrumb.astro';
+import HeroImage from '../components/HeroImage.astro';
 
 export async function getStaticPaths() {
   const pages = await getCollection('pages');
-  return pages.map((page) => ({
+  return pages.map(page => ({
     params: { slug: page.slug },
-    props: { page },
+    props: { page }
   }));
-}
-
-interface Props {
-  page: CollectionEntry<'pages'>;
 }
 
 const { page } = Astro.props;
 const { Content } = await page.render();
 
-const breadcrumbPaths = [
-  { label: 'Home', href: '/' },
-  { label: page.data.title }
-];
+// Debug information
+console.log('Page data:', {
+  title: page.data.title,
+  image: page.data.image,
+  slug: page.slug
+});
+console.log('Image:', page.data.image)
 ---
 
 <Layout title={page.data.title}>
-  <article class="max-w-4xl mx-auto px-4 py-12">
-    <Breadcrumb paths={breadcrumbPaths} />
-    
-    <header class="mb-8">
-      <h1 class="text-4xl md:text-5xl font-poppins font-bold text-purple-900 mb-4">
-        {page.data.title}
-      </h1>
-      <p class="text-gray-600 text-lg">
-        {page.data.description}
-      </p>
-      {page.data.lastUpdated && (
-        <p class="text-sm text-gray-500 mt-2">
-          Last updated: {new Date(page.data.lastUpdated).toLocaleDateString('en-US', {
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric'
-          })}
-        </p>
-      )}
-    </header>
-
-    <div class="prose prose-lg max-w-none">
-      <Content />
+  <main>
+    {page.data.image && (
+      <HeroImage 
+        title={page.data.title}
+        description={page.data.description}
+        image={page.data.image}
+        overlayOpacity={page.data.overlayOpacity}
+        lastUpdated={page.data.lastUpdated}
+        priority={true}
+      />
+    )}
+    <div class="container mx-auto px-4 py-8">
+      <article class="prose prose-lg max-w-4xl mx-auto">
+        <Content />
+      </article>
     </div>
-  </article>
+  </main>
 </Layout>
 
 <style is:global>

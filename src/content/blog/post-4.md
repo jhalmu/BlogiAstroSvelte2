@@ -4,6 +4,9 @@ date: "2023-12-05"
 excerpt: "Modern layout techniques for responsive web design"
 author: "Juha Halmu"
 tags: ["CSS", "Web Design", "Responsive Design"]
+image:
+  src: "/images/blog/css-grid-flexbox.jpg"
+  alt: "CSS Grid and Flexbox layout examples"
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.

@@ -6,9 +6,10 @@ interface Props {
   date: string;
   slug: string;
   tags: string[];
+  image?: string;
 }
 
-const { title, excerpt, content, date, slug, tags } = Astro.props;
+const { title, excerpt, content, date, slug, tags, image } = Astro.props;
 
 // Function to get preview text from content
 function getContentPreview(content: string): string {
@@ -53,9 +54,12 @@ const displayText = excerpt || (content ? getContentPreview(content) : '');
     {tags.length > 0 && (
       <div class="flex flex-wrap gap-2 mb-4">
         {tags.map(tag => (
-          <span class="text-sm px-3 py-1 bg-purple-100 text-purple-800 rounded-full">
+          <a
+            href={`/blog/tag/${tag.toLowerCase()}`}
+            class="text-sm px-3 py-1 bg-purple-100 text-purple-800 rounded-full hover:bg-purple-200 transition-colors duration-200"
+          >
             {tag}
-          </span>
+          </a>
         ))}
       </div>
     )}
