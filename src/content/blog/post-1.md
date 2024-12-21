@@ -1,6 +1,5 @@
 
-#
-  -$2title: 'The Art of Modern Web Development'
+# -$2title: 'The Art of Modern Web Development'
 
 date: '2023-12-18'
 author: 'Juha Halmu'
@@ -9,7 +8,7 @@ tags: ['Web Development', 'JavaScript', 'React']
 image:
   src: '/images/blog/modern-web-dev.jpg'
 
-##   alt: 'Modern web development illustration'
+## alt: 'Modern web development illustration'
 
 ## Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
 

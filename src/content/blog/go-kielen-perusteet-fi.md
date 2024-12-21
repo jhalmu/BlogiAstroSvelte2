@@ -1,6 +1,5 @@
 
-#
-  -$2title: 'Go kielen perusteet'
+# -$2title: 'Go kielen perusteet'
 
 date: '2024-05-29'
 author: 'Juha Halmu'
@@ -95,7 +94,7 @@ text
 text
 
 ```text
-        '@context': '<<<<https://schema.org',>>>>
+        '@context': '<<<<<<https://schema.org',>>>>>>
 
 ```text
 
@@ -230,7 +229,7 @@ text
 text
 
 ```text
-        'url': '<<<<https://juhahalmu.fi/blog/go-kielen-perusteet-fi',>>>>
+        'url': '<<<<<<https://juhahalmu.fi/blog/go-kielen-perusteet-fi',>>>>>>
 
 ```text
 
@@ -318,7 +317,7 @@ text
 text
 
 ```text
-        'url': '<<<<https://juhahalmu.fi/blog/go-kielen-perusteet-fi',>>>>
+        'url': '<<<<<<https://juhahalmu.fi/blog/go-kielen-perusteet-fi',>>>>>>
 
 ```text
 
@@ -406,7 +405,7 @@ text
 text
 
 ```text
-        'url': '<<<<https://juhahalmu.fi/blog/go-kielen-perusteet-fi',>>>>
+        'url': '<<<<<<https://juhahalmu.fi/blog/go-kielen-perusteet-fi',>>>>>>
 
 ```text
 
@@ -461,7 +460,7 @@ text
 ```text
 text
 
-##   }
+## }
 
 ## # Go kielen perusteet
 

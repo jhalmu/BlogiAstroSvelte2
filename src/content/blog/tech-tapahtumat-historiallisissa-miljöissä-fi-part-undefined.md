@@ -1,6 +1,5 @@
 
-#
-  -$2title: Tech-tapahtumat historiallisissa miljöissä
+# -$2title: Tech-tapahtumat historiallisissa miljöissä
 
 description: Teknologiatapahtumien järjestäminen historiallisissa tiloissa
 pubDate: '2024-09-01T00:01:50.356Z'
@@ -50,7 +49,7 @@ text
 text
 
 ```text
-    url: <<<<https://juhahalmu.fi/blog/tech-tapahtumat-historiallisissa-miljöissä-fi>>>>
+    url: <<<<<<https://juhahalmu.fi/blog/tech-tapahtumat-historiallisissa-miljöissä-fi>>>>>>
 
 ```text
 
@@ -108,7 +107,7 @@ text
 text
 
 ```text
-    url: <<<<https://juhahalmu.fi/blog/tech-tapahtumat-historiallisissa-miljöissä-fi>>>>
+    url: <<<<<<https://juhahalmu.fi/blog/tech-tapahtumat-historiallisissa-miljöissä-fi>>>>>>
 
 ```text
 
@@ -185,7 +184,7 @@ text
 text
 
 ```text
-    url: <<<<https://juhahalmu.fi/blog/tech-tapahtumat-historiallisissa-miljöissä-fi>>>>
+    url: <<<<<<https://juhahalmu.fi/blog/tech-tapahtumat-historiallisissa-miljöissä-fi>>>>>>
 
 ```text
 
@@ -590,13 +589,10 @@ text
 ```text
 text
 
-##       website: juhahalmu.fi
+## website: juhahalmu.fi
 
-##
   -$2## # Tech-tapahtumat historiallisissa miljöissä
 
 Teknologiatapahtumien järjestäminen historiallisissa tiloissa
 
-## ##
-
-  -$2_Tämän artikkelin on kirjoittanut tekoäly yhteistyössä Juha Halmun kanssa._
+## -$2_Tämän artikkelin on kirjoittanut tekoäly yhteistyössä Juha Halmun kanssa._

@@ -1,6 +1,5 @@
 
-#
-  -$2title: Etätyöpaikat historiallisissa kaupungeissa
+# -$2title: Etätyöpaikat historiallisissa kaupungeissa
 
 description: Parhaat työskentelypaikat Suomen vanhoissa kaupungeissa
 pubDate: '2024-04-12T23:58:59.495Z'
@@ -77,7 +76,7 @@ text
 text
 
 ```text
-      <<<<https://juhahalmu.fi/blog/etätyöpaikat-historiallisissa-kaupungeissa-fi>>>>
+      <<<<<<https://juhahalmu.fi/blog/etätyöpaikat-historiallisissa-kaupungeissa-fi>>>>>>
 
 ```text
 
@@ -99,7 +98,7 @@ text
 text
 
 ```text
-    url: <<<<https://juhahalmu.fi/blog/etätyöpaikat-historiallisissa-kaupungeissa-fi>>>>
+    url: <<<<<<https://juhahalmu.fi/blog/etätyöpaikat-historiallisissa-kaupungeissa-fi>>>>>>
 
 ```text
 
@@ -115,10 +114,7 @@ text
 
 ```text
 
-##
-
-
-```text
+## ```text
 
 text
 
@@ -170,7 +166,7 @@ text
 text
 
 ```text
-    url: <<<<https://juhahalmu.fi/blog/etätyöpaikat-historiallisissa-kaupungeissa-fi>>>>
+    url: <<<<<<https://juhahalmu.fi/blog/etätyöpaikat-historiallisissa-kaupungeissa-fi>>>>>>
 
 ```text
 
@@ -233,9 +229,7 @@ text
   -$2Nettiyhteydet ja fasiliteetit
   -$2Yhteisölliset työtilat
 
-## ##
-
-  -$2-Tämän artikkelin on kirjoittanut tekoäly yhteistyössä Juha Halmun
+## -$2-Tämän artikkelin on kirjoittanut tekoäly yhteistyössä Juha Halmun
 
 ```text
 text
@@ -267,7 +261,7 @@ text
 text
 
 ```text
-    url: <<<<https://juhahalmu.fi/blog/etätyöpaikat-historiallisissa-kaupungeissa-fi>>>>
+    url: <<<<<<https://juhahalmu.fi/blog/etätyöpaikat-historiallisissa-kaupungeissa-fi>>>>>>
 
 ```text
 
@@ -672,9 +666,8 @@ text
 ```text
 text
 
-##       website: juhahalmu.fi
+## website: juhahalmu.fi
 
-##
   -$2## # Etätyöpaikat historiallisissa kaupungeissa
 
 Parhaat työskentelypaikat Suomen vanhoissa kaupungeissa
@@ -686,6 +679,4 @@ Parhaat työskentelypaikat Suomen vanhoissa kaupungeissa
   -$2Nettiyhteydet ja fasiliteetit
   -$2Yhteisölliset työtilat
 
-## ##
-
-  -$2_Tämän artikkelin on kirjoittanut tekoäly yhteistyössä Juha Halmun kanssa._
+## -$2_Tämän artikkelin on kirjoittanut tekoäly yhteistyössä Juha Halmun kanssa._

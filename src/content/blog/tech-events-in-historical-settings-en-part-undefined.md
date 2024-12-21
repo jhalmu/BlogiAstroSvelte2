@@ -1,6 +1,5 @@
 
-#
-  -$2title: Tech Events in Historical Settings
+# -$2title: Tech Events in Historical Settings
 
 description: Organizing tech events in historical venues
 pubDate: '2024-08-16T00:01:50.357Z'
@@ -50,7 +49,7 @@ text
 text
 
 ```text
-    url: <<<<https://juhahalmu.fi/blog/tech-events-in-historical-settings-en>>>>
+    url: <<<<<<https://juhahalmu.fi/blog/tech-events-in-historical-settings-en>>>>>>
 
 ```text
 
@@ -108,7 +107,7 @@ text
 text
 
 ```text
-    url: <<<<https://juhahalmu.fi/blog/tech-events-in-historical-settings-en>>>>
+    url: <<<<<<https://juhahalmu.fi/blog/tech-events-in-historical-settings-en>>>>>>
 
 ```text
 
@@ -135,10 +134,7 @@ text
 
 ```text
 
-##
-
-
-```text
+## ```text
 
 text
 
@@ -176,7 +172,7 @@ text
 text
 
 ```text
-    url: <<<<https://juhahalmu.fi/blog/tech-events-in-historical-settings-en>>>>
+    url: <<<<<<https://juhahalmu.fi/blog/tech-events-in-historical-settings-en>>>>>>
 
 ```text
 
@@ -581,13 +577,10 @@ text
 ```text
 text
 
-##       website: juhahalmu.fi
+## website: juhahalmu.fi
 
-##
   -$2## # Tech Events in Historical Settings
 
 Organizing tech events in historical venues
 
-## ##
-
-  -$2_This article was written by AI in collaboration with Juha Halmu._
+## -$2_This article was written by AI in collaboration with Juha Halmu._

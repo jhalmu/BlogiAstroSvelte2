@@ -1,6 +1,5 @@
 
-#
-  -$2title: Tech-meetupit historiallisissa miljöissä
+# -$2title: Tech-meetupit historiallisissa miljöissä
 
 description: Teknologiatapahtumien järjestäminen vanhoissa rakennuksissa
 pubDate: '2024-07-29T23:58:59.497Z'
@@ -24,10 +23,7 @@ text
 
 ```text
 
-##
-
-
-```text
+## ```text
 
 text
 
@@ -68,7 +64,7 @@ text
 text
 
 ```text
-    url: <<<<https://juhahalmu.fi/blog/tech-meetupit-historiallisissa-miljöissä-fi>>>>
+    url: <<<<<<https://juhahalmu.fi/blog/tech-meetupit-historiallisissa-miljöissä-fi>>>>>>
 
 ```text
 
@@ -84,10 +80,7 @@ text
 
 ```text
 
-##
-
-
-```text
+## ```text
 
 text
 
@@ -139,7 +132,7 @@ text
 text
 
 ```text
-    url: <<<<https://juhahalmu.fi/blog/tech-meetupit-historiallisissa-miljöissä-fi>>>>
+    url: <<<<<<https://juhahalmu.fi/blog/tech-meetupit-historiallisissa-miljöissä-fi>>>>>>
 
 ```text
 
@@ -188,7 +181,7 @@ text
 text
 
 ```text
-    url: <<<<https://juhahalmu.fi/blog/tech-meetupit-historiallisissa-miljöissä-fi>>>>
+    url: <<<<<<https://juhahalmu.fi/blog/tech-meetupit-historiallisissa-miljöissä-fi>>>>>>
 
 ```text
 
@@ -593,7 +586,7 @@ text
 ```text
 text
 
-##       website: juhahalmu.fi
+## website: juhahalmu.fi
 
 ## # Tech-meetupit historiallisissa miljöissä
 
@@ -606,6 +599,4 @@ Teknologiatapahtumien järjestäminen vanhoissa rakennuksissa
   -$2Tunnelman luominen
   -$2Suosituimmat tilat
 
-## ##
-
-  -$2_Lyhyt muistiinpano teknologiasta ja historiasta. Kirjoitettu tekoälyn avustuksella._
+## -$2_Lyhyt muistiinpano teknologiasta ja historiasta. Kirjoitettu tekoälyn avustuksella._

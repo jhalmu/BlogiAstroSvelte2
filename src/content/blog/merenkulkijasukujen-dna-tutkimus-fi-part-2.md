@@ -1,6 +1,5 @@
 
-#
-  -$2title: Merenkulkijasukujen DNA-tutkimus
+# -$2title: Merenkulkijasukujen DNA-tutkimus
 
 description: DNA-tutkimus merenkulkijasukujen jäljittämisessä
 pubDate: '2024-05-19T00:00:22.407Z'
@@ -26,10 +25,7 @@ text
 
 ```text
 
-##
-
-
-```text
+## ```text
 
 text
 
@@ -81,7 +77,7 @@ text
 text
 
 ```text
-    url: <<<<https://juhahalmu.fi/blog/merenkulkijasukujen-dna-tutkimus-fi>>>>
+    url: <<<<<<https://juhahalmu.fi/blog/merenkulkijasukujen-dna-tutkimus-fi>>>>>>
 
 ```text
 
@@ -97,10 +93,7 @@ text
 
 ```text
 
-##
-
-
-```text
+## ```text
 
 text
 
@@ -174,7 +167,7 @@ text
 text
 
 ```text
-    url: <<<<https://juhahalmu.fi/blog/merenkulkijasukujen-dna-tutkimus-fi>>>>
+    url: <<<<<<https://juhahalmu.fi/blog/merenkulkijasukujen-dna-tutkimus-fi>>>>>>
 
 ```text
 
@@ -201,10 +194,7 @@ text
 
 ```text
 
-##
-
-
-```text
+## ```text
 
 text
 
@@ -251,7 +241,7 @@ text
 text
 
 ```text
-    url: <<<<https://juhahalmu.fi/blog/merenkulkijasukujen-dna-tutkimus-fi>>>>
+    url: <<<<<<https://juhahalmu.fi/blog/merenkulkijasukujen-dna-tutkimus-fi>>>>>>
 
 ```text
 
@@ -656,12 +646,10 @@ text
 ```text
 text
 
-##       website: juhahalmu.fi
+## website: juhahalmu.fi
 
 ## # Merenkulkijasukujen DNA-tutkimus
 
 DNA-tutkimus merenkulkijasukujen jäljittämisessä
 
-## ##
-
-  -$2_Tämän artikkelin on kirjoittanut tekoäly yhteistyössä Juha Halmun kanssa._
+## -$2_Tämän artikkelin on kirjoittanut tekoäly yhteistyössä Juha Halmun kanssa._

@@ -1,6 +1,5 @@
 
-#
-  -$2title: 'Testing Best Practices in JavaScript'
+# -$2title: 'Testing Best Practices in JavaScript'
 
 date: '2023-11-15'
 excerpt: 'Modern approaches to testing JavaScript applications'

@@ -1,6 +1,5 @@
 
-#
-  -$2title: DNA-tutkimus merenkulkijakaupungeissa
+# -$2title: DNA-tutkimus merenkulkijakaupungeissa
 
 description: Miten DNA-tutkimus paljastaa merenkulkijoiden reitit ja sukulaisuussuhteet
 pubDate: '2024-01-02T00:58:59.496Z'
@@ -77,7 +76,7 @@ text
 text
 
 ```text
-      <<<<https://juhahalmu.fi/blog/dna-tutkimus-merenkulkijakaupungeissa-fi>>>>
+      <<<<<<https://juhahalmu.fi/blog/dna-tutkimus-merenkulkijakaupungeissa-fi>>>>>>
 
 ```text
 
@@ -99,7 +98,7 @@ text
 text
 
 ```text
-    url: <<<<https://juhahalmu.fi/blog/dna-tutkimus-merenkulkijakaupungeissa-fi>>>>
+    url: <<<<<<https://juhahalmu.fi/blog/dna-tutkimus-merenkulkijakaupungeissa-fi>>>>>>
 
 ```text
 
@@ -115,10 +114,7 @@ text
 
 ```text
 
-##
-
-
-```text
+## ```text
 
 text
 
@@ -170,7 +166,7 @@ text
 text
 
 ```text
-    url: <<<<https://juhahalmu.fi/blog/dna-tutkimus-merenkulkijakaupungeissa-fi>>>>
+    url: <<<<<<https://juhahalmu.fi/blog/dna-tutkimus-merenkulkijakaupungeissa-fi>>>>>>
 
 ```text
 
@@ -233,9 +229,7 @@ text
   -$2Merimiesrekisterit ja DNA
   -$2Sukututkijoiden kokemukset
 
-## ##
-
-  -$2-Tämän artikkelin on kirjoittanut tekoäly yhteistyössä Juha Halmun
+## -$2-Tämän artikkelin on kirjoittanut tekoäly yhteistyössä Juha Halmun
 
 ```text
 text
@@ -267,7 +261,7 @@ text
 text
 
 ```text
-    url: <<<<https://juhahalmu.fi/blog/dna-tutkimus-merenkulkijakaupungeissa-fi>>>>
+    url: <<<<<<https://juhahalmu.fi/blog/dna-tutkimus-merenkulkijakaupungeissa-fi>>>>>>
 
 ```text
 
@@ -744,9 +738,8 @@ text
 ```text
 text
 
-##       website: juhahalmu.fi
+## website: juhahalmu.fi
 
-##
   -$2## # DNA-tutkimus merenkulkijakaupungeissa
 
 Miten DNA-tutkimus paljastaa merenkulkijoiden reitit ja sukulaisuussuhteet
@@ -758,6 +751,4 @@ Miten DNA-tutkimus paljastaa merenkulkijoiden reitit ja sukulaisuussuhteet
   -$2Merimiesrekisterit ja DNA
   -$2Sukututkijoiden kokemukset
 
-## ##
-
-  -$2_Tämän artikkelin on kirjoittanut tekoäly yhteistyössä Juha Halmun kanssa._
+## -$2_Tämän artikkelin on kirjoittanut tekoäly yhteistyössä Juha Halmun kanssa._

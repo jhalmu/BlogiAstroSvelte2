@@ -1,6 +1,5 @@
 
-#
-  -$2title: Subscribe
+# -$2title: Subscribe
 
 description: Stay updated with the latest content and never miss a post
 image:

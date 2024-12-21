@@ -1,6 +1,5 @@
 
-#
-  -$2title: 'State Management in Modern JavaScript'
+# -$2title: 'State Management in Modern JavaScript'
 
 date: '2023-11-25'
 excerpt: 'Comparing different state management solutions'

@@ -1,6 +1,5 @@
 
-#
-  -$2title: 'Securing Modern Web Applications'
+# -$2title: 'Securing Modern Web Applications'
 
 date: '2023-11-10'
 excerpt: 'Essential security practices for web developers'

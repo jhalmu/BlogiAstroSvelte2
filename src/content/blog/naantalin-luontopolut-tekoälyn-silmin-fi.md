@@ -1,6 +1,5 @@
 
-#
-  -$2title: Naantalin luontopolut tekoälyn silmin
+# -$2title: Naantalin luontopolut tekoälyn silmin
 
 description: Tekoälyn hyödyntäminen luontoreittien suunnittelussa ja analysoinnissa
 pubDate: '2024-04-05T23:58:59.501Z'
@@ -77,7 +76,7 @@ text
 text
 
 ```text
-      <<<<https://juhahalmu.fi/blog/naantalin-luontopolut-tekoälyn-silmin-fi>>>>
+      <<<<<<https://juhahalmu.fi/blog/naantalin-luontopolut-tekoälyn-silmin-fi>>>>>>
 
 ```text
 
@@ -99,7 +98,7 @@ text
 text
 
 ```text
-    url: <<<<https://juhahalmu.fi/blog/naantalin-luontopolut-tekoälyn-silmin-fi>>>>
+    url: <<<<<<https://juhahalmu.fi/blog/naantalin-luontopolut-tekoälyn-silmin-fi>>>>>>
 
 ```text
 
@@ -168,7 +167,7 @@ text
 text
 
 ```text
-      <<<<https://juhahalmu.fi/blog/naantalin-luontopolut-tekoälyn-silmin-fi>>>>
+      <<<<<<https://juhahalmu.fi/blog/naantalin-luontopolut-tekoälyn-silmin-fi>>>>>>
 
 ```text
 
@@ -201,7 +200,7 @@ text
 text
 
 ```text
-    url: <<<<https://juhahalmu.fi/blog/naantalin-luontopolut-tekoälyn-silmin-fi>>>>
+    url: <<<<<<https://juhahalmu.fi/blog/naantalin-luontopolut-tekoälyn-silmin-fi>>>>>>
 
 ```text
 
@@ -278,9 +277,7 @@ text
   -$2Naantalin kirkko
   -$2Luonnonmaansaari
 
-## ##
-
-  -$2-Tämän artikkelin on kirjoittanut tekoäly yhteistyössä Juha Halmun
+## -$2-Tämän artikkelin on kirjoittanut tekoäly yhteistyössä Juha Halmun
 
 ```text
 text
@@ -312,7 +309,7 @@ text
 text
 
 ```text
-    url: <<<<https://juhahalmu.fi/blog/naantalin-luontopolut-tekoälyn-silmin-fi>>>>
+    url: <<<<<<https://juhahalmu.fi/blog/naantalin-luontopolut-tekoälyn-silmin-fi>>>>>>
 
 ```text
 
@@ -717,9 +714,8 @@ text
 ```text
 text
 
-##       website: juhahalmu.fi
+## website: juhahalmu.fi
 
-##
   -$2## # Naantalin luontopolut tekoälyn silmin
 
 Tekoälyn hyödyntäminen luontoreittien suunnittelussa ja analysoinnissa
@@ -745,6 +741,4 @@ Tekoälyn hyödyntäminen luontoreittien suunnittelussa ja analysoinnissa
   -$2Naantalin kirkko
   -$2Luonnonmaansaari
 
-## ##
-
-  -$2_Tämän artikkelin on kirjoittanut tekoäly yhteistyössä Juha Halmun kanssa._
+## -$2_Tämän artikkelin on kirjoittanut tekoäly yhteistyössä Juha Halmun kanssa._

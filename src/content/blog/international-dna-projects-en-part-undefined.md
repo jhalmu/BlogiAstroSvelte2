@@ -1,6 +1,5 @@
 
-#
-  -$2title: International DNA Projects
+# -$2title: International DNA Projects
 
 description: Participating in international DNA projects
 pubDate: '2024-02-20T01:01:50.354Z'
@@ -50,7 +49,7 @@ text
 text
 
 ```text
-    url: <<<<https://juhahalmu.fi/blog/international-dna-projects-en>>>>
+    url: <<<<<<https://juhahalmu.fi/blog/international-dna-projects-en>>>>>>
 
 ```text
 
@@ -108,7 +107,7 @@ text
 text
 
 ```text
-    url: <<<<https://juhahalmu.fi/blog/international-dna-projects-en>>>>
+    url: <<<<<<https://juhahalmu.fi/blog/international-dna-projects-en>>>>>>
 
 ```text
 
@@ -135,10 +134,7 @@ text
 
 ```text
 
-##
-
-
-```text
+## ```text
 
 text
 
@@ -176,7 +172,7 @@ text
 text
 
 ```text
-    url: <<<<https://juhahalmu.fi/blog/international-dna-projects-en>>>>
+    url: <<<<<<https://juhahalmu.fi/blog/international-dna-projects-en>>>>>>
 
 ```text
 
@@ -581,13 +577,10 @@ text
 ```text
 text
 
-##       website: juhahalmu.fi
+## website: juhahalmu.fi
 
-##
   -$2## # International DNA Projects
 
 Participating in international DNA projects
 
-## ##
-
-  -$2_This article was written by AI in collaboration with Juha Halmu._
+## -$2_This article was written by AI in collaboration with Juha Halmu._

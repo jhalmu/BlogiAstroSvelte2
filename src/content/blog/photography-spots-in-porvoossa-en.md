@@ -1,6 +1,5 @@
 
-#
-  -$2title: Photography Spots in Porvoossa
+# -$2title: Photography Spots in Porvoossa
 
 description: Parhaat paikat luonto
   -$2ja kaupunkikuvaukseen historiallisessa Porvoossa
@@ -26,10 +25,7 @@ text
 
 ```text
 
-##
-
-
-```text
+## ```text
 
 text
 
@@ -71,7 +67,7 @@ text
 text
 
 ```text
-      Read more: <<<<https://juhahalmu.fi/blog/photography-spots-in-porvoossa-en>>>>
+      Read more: <<<<<<https://juhahalmu.fi/blog/photography-spots-in-porvoossa-en>>>>>>
 
 ```text
 
@@ -93,7 +89,7 @@ text
 text
 
 ```text
-    url: <<<<https://juhahalmu.fi/blog/photography-spots-in-porvoossa-en>>>>
+    url: <<<<<<https://juhahalmu.fi/blog/photography-spots-in-porvoossa-en>>>>>>
 
 ```text
 
@@ -163,7 +159,7 @@ text
 text
 
 ```text
-      <<<<https://juhahalmu.fi/blog/photography-spots-in-porvoossa-en>>>>
+      <<<<<<https://juhahalmu.fi/blog/photography-spots-in-porvoossa-en>>>>>>
 
 ```text
 
@@ -196,7 +192,7 @@ text
 text
 
 ```text
-    url: <<<<https://juhahalmu.fi/blog/photography-spots-in-porvoossa-en>>>>
+    url: <<<<<<https://juhahalmu.fi/blog/photography-spots-in-porvoossa-en>>>>>>
 
 ```text
 
@@ -223,10 +219,7 @@ text
 
 ```text
 
-##
-
-
-```text
+## ```text
 
 text
 
@@ -277,9 +270,7 @@ text
   -$2Taidetehdas
   -$2Porvoonjoki
 
-## ##
-
-  -$2-This article was written by AI in collaboration with Juha Halmu.*
+## -$2-This article was written by AI in collaboration with Juha Halmu.*
 
 ```text
 text
@@ -300,7 +291,7 @@ text
 text
 
 ```text
-    url: <<<<https://juhahalmu.fi/blog/photography-spots-in-porvoossa-en>>>>
+    url: <<<<<<https://juhahalmu.fi/blog/photography-spots-in-porvoossa-en>>>>>>
 
 ```text
 
@@ -708,9 +699,8 @@ text
 ```text
 text
 
-##       website: juhahalmu.fi
+## website: juhahalmu.fi
 
-##
   -$2## # Photography Spots in Porvoossa
 
 Parhaat paikat luonto
@@ -737,6 +727,4 @@ Parhaat paikat luonto
   -$2Taidetehdas
   -$2Porvoonjoki
 
-## ##
-
-  -$2_This article was written by AI in collaboration with Juha Halmu._
+## -$2_This article was written by AI in collaboration with Juha Halmu._

@@ -1,6 +1,5 @@
 
-#
-  -$2title: 'Building Accessible Web Applications'
+# -$2title: 'Building Accessible Web Applications'
 
 date: '2023-11-28'
 excerpt: 'Best practices for creating inclusive web experiences'

@@ -1,6 +1,5 @@
 
-#
-  -$2title: 'The Rise of Edge Computing'
+# -$2title: 'The Rise of Edge Computing'
 
 date: '2023-11-20'
 excerpt: 'How edge computing is changing web development'

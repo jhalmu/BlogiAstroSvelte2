@@ -1,6 +1,5 @@
 
-#
-  -$2title: 'Essential JavaScript Tips and Tricks'
+# -$2title: 'Essential JavaScript Tips and Tricks'
 
 date: '2023-12-18'
 author: 'Juha Halmu'
@@ -9,7 +8,7 @@ tags: ['JavaScript', 'Programming', 'Web Development']
 image:
   src: '/images/blog/javascript-tips.jpg'
 
-##   alt: 'JavaScript code on a computer screen'
+## alt: 'JavaScript code on a computer screen'
 
 ## JavaScript is constantly evolving, and keeping up with modern practices can greatly improve your code. Here are some essential tips and tricks
 

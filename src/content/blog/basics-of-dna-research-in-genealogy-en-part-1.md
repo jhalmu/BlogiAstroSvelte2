@@ -1,6 +1,5 @@
 
-#
-  -$2title: Basics of DNA Research in Genealogy
+# -$2title: Basics of DNA Research in Genealogy
 
 description: Introduction to using DNA research in genealogy
 pubDate: '2024-04-25T00:00:22.406Z'
@@ -28,10 +27,7 @@ text
 
 ```text
 
-##
-
-
-```text
+## ```text
 
 text
 
@@ -83,7 +79,7 @@ text
 text
 
 ```text
-    url: <<<<https://juhahalmu.fi/blog/basics-of-dna-research-in-genealogy-en>>>>
+    url: <<<<<<https://juhahalmu.fi/blog/basics-of-dna-research-in-genealogy-en>>>>>>
 
 ```text
 
@@ -99,10 +95,7 @@ text
 
 ```text
 
-##
-
-
-```text
+## ```text
 
 text
 
@@ -176,7 +169,7 @@ text
 text
 
 ```text
-    url: <<<<https://juhahalmu.fi/blog/basics-of-dna-research-in-genealogy-en>>>>
+    url: <<<<<<https://juhahalmu.fi/blog/basics-of-dna-research-in-genealogy-en>>>>>>
 
 ```text
 
@@ -203,10 +196,7 @@ text
 
 ```text
 
-##
-
-
-```text
+## ```text
 
 text
 
@@ -255,7 +245,7 @@ text
 text
 
 ```text
-    url: <<<<https://juhahalmu.fi/blog/basics-of-dna-research-in-genealogy-en>>>>
+    url: <<<<<<https://juhahalmu.fi/blog/basics-of-dna-research-in-genealogy-en>>>>>>
 
 ```text
 
@@ -660,12 +650,10 @@ text
 ```text
 text
 
-##       website: juhahalmu.fi
+## website: juhahalmu.fi
 
 ## # Basics of DNA Research in Genealogy
 
 Introduction to using DNA research in genealogy
 
-## ##
-
-  -$2_This article was written by AI in collaboration with Juha Halmu._
+## -$2_This article was written by AI in collaboration with Juha Halmu._

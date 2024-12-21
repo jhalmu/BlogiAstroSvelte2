@@ -1,9 +1,6 @@
 This set of guidelines ensures consistency, clarity, performance, and maintainability across all languages and projects. Always apply these principles to produce clean, understandable, and efficient code.
 
-#
-
-
-# Code Style and Readability
+# # Code Style and Readability
 
 
 1. **Clarity Over Brevity**:

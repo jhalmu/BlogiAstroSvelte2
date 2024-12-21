@@ -1,6 +1,5 @@
 
-#
-  -$2title: AI-Assisted valokuvaus Madeiralla
+# -$2title: AI-Assisted valokuvaus Madeiralla
 
 description: Kuinka tekoäly auttaa löytämään ja kuvaamaan Madeiran parhaat kohteet
 pubDate: '2024-01-12T00:58:59.494Z'
@@ -24,10 +23,7 @@ text
 
 ```text
 
-##
-
-
-```text
+## ```text
 
 text
 
@@ -68,7 +64,7 @@ text
 text
 
 ```text
-      Read more: <<<<https://juhahalmu.fi/blog/ai-assisted-valokuvaus-madeiralla-en>>>>
+      Read more: <<<<<<https://juhahalmu.fi/blog/ai-assisted-valokuvaus-madeiralla-en>>>>>>
 
 ```text
 
@@ -90,7 +86,7 @@ text
 text
 
 ```text
-    url: <<<<https://juhahalmu.fi/blog/ai-assisted-valokuvaus-madeiralla-en>>>>
+    url: <<<<<<https://juhahalmu.fi/blog/ai-assisted-valokuvaus-madeiralla-en>>>>>>
 
 ```text
 
@@ -159,7 +155,7 @@ text
 text
 
 ```text
-      <<<<https://juhahalmu.fi/blog/ai-assisted-valokuvaus-madeiralla-en>>>>
+      <<<<<<https://juhahalmu.fi/blog/ai-assisted-valokuvaus-madeiralla-en>>>>>>
 
 ```text
 
@@ -192,7 +188,7 @@ text
 text
 
 ```text
-    url: <<<<https://juhahalmu.fi/blog/ai-assisted-valokuvaus-madeiralla-en>>>>
+    url: <<<<<<https://juhahalmu.fi/blog/ai-assisted-valokuvaus-madeiralla-en>>>>>>
 
 ```text
 
@@ -219,10 +215,7 @@ text
 
 ```text
 
-##
-
-
-```text
+## ```text
 
 text
 
@@ -271,9 +264,7 @@ text
   -$2Cabo Girão
   -$2Levada-vaellusreitit
 
-## ##
-
-  -$2-This article was written by AI in collaboration with Juha Halmu.*
+## -$2-This article was written by AI in collaboration with Juha Halmu.*
 
 ```text
 text
@@ -294,7 +285,7 @@ text
 text
 
 ```text
-    url: <<<<https://juhahalmu.fi/blog/ai-assisted-valokuvaus-madeiralla-en>>>>
+    url: <<<<<<https://juhahalmu.fi/blog/ai-assisted-valokuvaus-madeiralla-en>>>>>>
 
 ```text
 
@@ -699,9 +690,8 @@ text
 ```text
 text
 
-##       website: juhahalmu.fi
+## website: juhahalmu.fi
 
-##
   -$2## # AI-Assisted valokuvaus Madeiralla
 
 Kuinka tekoäly auttaa löytämään ja kuvaamaan Madeiran parhaat kohteet
@@ -727,6 +717,4 @@ Kuinka tekoäly auttaa löytämään ja kuvaamaan Madeiran parhaat kohteet
   -$2Cabo Girão
   -$2Levada-vaellusreitit
 
-## ##
-
-  -$2_This article was written by AI in collaboration with Juha Halmu._
+## -$2_This article was written by AI in collaboration with Juha Halmu._

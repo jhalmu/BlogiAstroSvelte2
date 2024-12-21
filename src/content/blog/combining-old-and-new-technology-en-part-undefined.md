@@ -1,6 +1,5 @@
 
-#
-  -$2title: Combining Old and New Technology
+# -$2title: Combining Old and New Technology
 
 description: Modernizing historical buildings with technology
 pubDate: '2024-06-25T00:01:50.358Z'
@@ -50,7 +49,7 @@ text
 text
 
 ```text
-    url: <<<<https://juhahalmu.fi/blog/combining-old-and-new-technology-en>>>>
+    url: <<<<<<https://juhahalmu.fi/blog/combining-old-and-new-technology-en>>>>>>
 
 ```text
 
@@ -108,7 +107,7 @@ text
 text
 
 ```text
-    url: <<<<https://juhahalmu.fi/blog/combining-old-and-new-technology-en>>>>
+    url: <<<<<<https://juhahalmu.fi/blog/combining-old-and-new-technology-en>>>>>>
 
 ```text
 
@@ -135,10 +134,7 @@ text
 
 ```text
 
-##
-
-
-```text
+## ```text
 
 text
 
@@ -176,7 +172,7 @@ text
 text
 
 ```text
-    url: <<<<https://juhahalmu.fi/blog/combining-old-and-new-technology-en>>>>
+    url: <<<<<<https://juhahalmu.fi/blog/combining-old-and-new-technology-en>>>>>>
 
 ```text
 
@@ -581,13 +577,10 @@ text
 ```text
 text
 
-##       website: juhahalmu.fi
+## website: juhahalmu.fi
 
-##
   -$2## # Combining Old and New Technology
 
 Modernizing historical buildings with technology
 
-## ##
-
-  -$2_This article was written by AI in collaboration with Juha Halmu._
+## -$2_This article was written by AI in collaboration with Juha Halmu._

@@ -1,6 +1,5 @@
 
-#
-  -$2title: DNA Research of Maritime Families
+# -$2title: DNA Research of Maritime Families
 
 description: Using DNA to trace maritime family connections
 pubDate: '2024-02-25T01:00:22.408Z'
@@ -28,10 +27,7 @@ text
 
 ```text
 
-##
-
-
-```text
+## ```text
 
 text
 
@@ -83,7 +79,7 @@ text
 text
 
 ```text
-    url: <<<<https://juhahalmu.fi/blog/dna-research-of-maritime-families-en>>>>
+    url: <<<<<<https://juhahalmu.fi/blog/dna-research-of-maritime-families-en>>>>>>
 
 ```text
 
@@ -99,10 +95,7 @@ text
 
 ```text
 
-##
-
-
-```text
+## ```text
 
 text
 
@@ -176,7 +169,7 @@ text
 text
 
 ```text
-    url: <<<<https://juhahalmu.fi/blog/dna-research-of-maritime-families-en>>>>
+    url: <<<<<<https://juhahalmu.fi/blog/dna-research-of-maritime-families-en>>>>>>
 
 ```text
 
@@ -203,10 +196,7 @@ text
 
 ```text
 
-##
-
-
-```text
+## ```text
 
 text
 
@@ -255,7 +245,7 @@ text
 text
 
 ```text
-    url: <<<<https://juhahalmu.fi/blog/dna-research-of-maritime-families-en>>>>
+    url: <<<<<<https://juhahalmu.fi/blog/dna-research-of-maritime-families-en>>>>>>
 
 ```text
 
@@ -660,12 +650,10 @@ text
 ```text
 text
 
-##       website: juhahalmu.fi
+## website: juhahalmu.fi
 
 ## # DNA Research of Maritime Families
 
 Using DNA to trace maritime family connections
 
-## ##
-
-  -$2_This article was written by AI in collaboration with Juha Halmu._
+## -$2_This article was written by AI in collaboration with Juha Halmu._

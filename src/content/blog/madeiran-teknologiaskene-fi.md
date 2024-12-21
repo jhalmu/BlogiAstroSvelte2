@@ -1,6 +1,5 @@
 
-#
-  -$2title: Madeiran teknologiaskene
+# -$2title: Madeiran teknologiaskene
 
 description: Etätyöskentely ja teknologiayhteisöt Madeiralla
 pubDate: '2024-10-10T23:58:59.501Z'
@@ -24,10 +23,7 @@ text
 
 ```text
 
-##
-
-
-```text
+## ```text
 
 text
 
@@ -68,7 +64,7 @@ text
 text
 
 ```text
-      Lue lisää: <<<<https://juhahalmu.fi/blog/madeiran-teknologiaskene-fi>>>>
+      Lue lisää: <<<<<<https://juhahalmu.fi/blog/madeiran-teknologiaskene-fi>>>>>>
 
 ```text
 
@@ -90,7 +86,7 @@ text
 text
 
 ```text
-    url: <<<<https://juhahalmu.fi/blog/madeiran-teknologiaskene-fi>>>>
+    url: <<<<<<https://juhahalmu.fi/blog/madeiran-teknologiaskene-fi>>>>>>
 
 ```text
 
@@ -106,10 +102,7 @@ text
 
 ```text
 
-##
-
-
-```text
+## ```text
 
 text
 
@@ -150,7 +143,7 @@ text
 text
 
 ```text
-      Jatka lukemista: <<<<https://juhahalmu.fi/blog/madeiran-teknologiaskene-fi>>>>
+      Jatka lukemista: <<<<<<https://juhahalmu.fi/blog/madeiran-teknologiaskene-fi>>>>>>
 
 ```text
 
@@ -183,7 +176,7 @@ text
 text
 
 ```text
-    url: <<<<https://juhahalmu.fi/blog/madeiran-teknologiaskene-fi>>>>
+    url: <<<<<<https://juhahalmu.fi/blog/madeiran-teknologiaskene-fi>>>>>>
 
 ```text
 
@@ -260,9 +253,7 @@ text
   -$2Cabo Girão
   -$2Levada-vaellusreitit
 
-## ##
-
-  -$2-Tämän artikkelin on kirjoittanut tekoäly yhteistyössä Juha Halmun
+## -$2-Tämän artikkelin on kirjoittanut tekoäly yhteistyössä Juha Halmun
 
 ```text
 text
@@ -294,7 +285,7 @@ text
 text
 
 ```text
-    url: <<<<https://juhahalmu.fi/blog/madeiran-teknologiaskene-fi>>>>
+    url: <<<<<<https://juhahalmu.fi/blog/madeiran-teknologiaskene-fi>>>>>>
 
 ```text
 
@@ -699,9 +690,8 @@ text
 ```text
 text
 
-##       website: juhahalmu.fi
+## website: juhahalmu.fi
 
-##
   -$2## # Madeiran teknologiaskene
 
 Etätyöskentely ja teknologiayhteisöt Madeiralla
@@ -727,6 +717,4 @@ Etätyöskentely ja teknologiayhteisöt Madeiralla
   -$2Cabo Girão
   -$2Levada-vaellusreitit
 
-## ##
-
-  -$2_Tämän artikkelin on kirjoittanut tekoäly yhteistyössä Juha Halmun kanssa._
+## -$2_Tämän artikkelin on kirjoittanut tekoäly yhteistyössä Juha Halmun kanssa._

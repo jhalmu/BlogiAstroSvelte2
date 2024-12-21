@@ -1,6 +1,5 @@
 
-#
-  -$2title: Naantalin Nature Trails in tekoälyn silmin
+# -$2title: Naantalin Nature Trails in tekoälyn silmin
 
 description: Tekoälyn hyödyntäminen luontoreittien suunnittelussa ja analysoinnissa
 pubDate: '2024-12-19T00:58:59.502Z'
@@ -77,7 +76,7 @@ text
 text
 
 ```text
-      <<<<https://juhahalmu.fi/blog/naantalin-nature-trails-in-tekoälyn-silmin-en>>>>
+      <<<<<<https://juhahalmu.fi/blog/naantalin-nature-trails-in-tekoälyn-silmin-en>>>>>>
 
 ```text
 
@@ -99,7 +98,7 @@ text
 text
 
 ```text
-    url: <<<<https://juhahalmu.fi/blog/naantalin-nature-trails-in-tekoälyn-silmin-en>>>>
+    url: <<<<<<https://juhahalmu.fi/blog/naantalin-nature-trails-in-tekoälyn-silmin-en>>>>>>
 
 ```text
 
@@ -168,7 +167,7 @@ text
 text
 
 ```text
-      <<<<https://juhahalmu.fi/blog/naantalin-nature-trails-in-tekoälyn-silmin-en>>>>
+      <<<<<<https://juhahalmu.fi/blog/naantalin-nature-trails-in-tekoälyn-silmin-en>>>>>>
 
 ```text
 
@@ -201,7 +200,7 @@ text
 text
 
 ```text
-    url: <<<<https://juhahalmu.fi/blog/naantalin-nature-trails-in-tekoälyn-silmin-en>>>>
+    url: <<<<<<https://juhahalmu.fi/blog/naantalin-nature-trails-in-tekoälyn-silmin-en>>>>>>
 
 ```text
 
@@ -228,10 +227,7 @@ text
 
 ```text
 
-##
-
-
-```text
+## ```text
 
 text
 
@@ -280,9 +276,7 @@ text
   -$2Naantalin kirkko
   -$2Luonnonmaansaari
 
-## ##
-
-  -$2-This article was written by AI in collaboration with Juha Halmu.*
+## -$2-This article was written by AI in collaboration with Juha Halmu.*
 
 ```text
 text
@@ -303,7 +297,7 @@ text
 text
 
 ```text
-    url: <<<<https://juhahalmu.fi/blog/naantalin-nature-trails-in-tekoälyn-silmin-en>>>>
+    url: <<<<<<https://juhahalmu.fi/blog/naantalin-nature-trails-in-tekoälyn-silmin-en>>>>>>
 
 ```text
 
@@ -708,9 +702,8 @@ text
 ```text
 text
 
-##       website: juhahalmu.fi
+## website: juhahalmu.fi
 
-##
   -$2## # Naantalin Nature Trails in tekoälyn silmin
 
 Tekoälyn hyödyntäminen luontoreittien suunnittelussa ja analysoinnissa
@@ -736,6 +729,4 @@ Tekoälyn hyödyntäminen luontoreittien suunnittelussa ja analysoinnissa
   -$2Naantalin kirkko
   -$2Luonnonmaansaari
 
-## ##
-
-  -$2_This article was written by AI in collaboration with Juha Halmu._
+## -$2_This article was written by AI in collaboration with Juha Halmu._

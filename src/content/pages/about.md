@@ -1,6 +1,5 @@
 
-#
-  -$2title: 'About Me'
+# -$2title: 'About Me'
 
 description: 'Learn more about who I am and what I do'
 image:

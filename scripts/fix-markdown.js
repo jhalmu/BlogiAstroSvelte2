@@ -36,6 +36,13 @@ function fixMarkdownFile(filePath) {
     // Fix code blocks without language specification (MD040)
     content = content.replace(/^```\s*$/gm, '```text');
     
+    // Fix heading style consistency (MD003)
+    content = content.replace(/^(#+)=+\s*$/gm, '$1');  // Convert setext to ATX
+    content = content.replace(/^(#+\s.*?)\s*#+\s*$/gm, '$1');  // Remove closing hashes
+    
+    // Fix multiple spaces after hash in headings (MD019)
+    content = content.replace(/^(#+)\s+/gm, '$1 ');
+    
     // Fix list indentation
     content = content.replace(/^(\s+)[-*+](\s+)/gm, (match, indent) => {
         // Convert indentation to multiples of 2 spaces
@@ -50,36 +57,28 @@ function fixMarkdownFile(filePath) {
     // Fix bare URLs
     content = content.replace(/(?<![\[\(])(https?:\/\/[^\s\)]+)(?![\]\)])/g, '<$1>');
     
-    // Fix YAML frontmatter
-    if (content.startsWith('---\n')) {
-        const frontmatterEnd = content.indexOf('\n---\n', 4);
-        if (frontmatterEnd !== -1) {
-            const beforeFrontmatter = content.slice(0, frontmatterEnd + 5);
-            const afterFrontmatter = content.slice(frontmatterEnd + 5);
-            content = beforeFrontmatter + '\n' + afterFrontmatter.trim() + '\n';
-        }
-    }
+    // Fix trailing punctuation in headings (MD026)
+    content = content.replace(/^(#+\s.*?)[.,;:!]\s*$/gm, '$1');
     
-    // Ensure exactly one blank line at end of file
+    // Ensure single newline at end of file
     content = content.replace(/\n*$/, '\n');
     
     writeFileSync(filePath, content);
+    console.log(`Fixed: ${filePath}`);
 }
 
 function processDirectory(dir) {
     const files = readdirSync(dir, { withFileTypes: true });
     
-    files.forEach(file => {
+    for (const file of files) {
         const fullPath = join(dir, file.name);
+        
         if (file.isDirectory()) {
-            if (!file.name.startsWith('node_modules')) {
-                processDirectory(fullPath);
-            }
+            processDirectory(fullPath);
         } else if (file.name.endsWith('.md')) {
             fixMarkdownFile(fullPath);
-            console.log(`Fixed: ${fullPath}`);
         }
-    });
+    }
 }
 
 // Process all markdown files in the project
@@ -87,10 +86,15 @@ const directories = [
     join(__dirname, '..', 'docs'),
     join(__dirname, '..', 'project_rules'),
     join(__dirname, '..', 'src', 'content'),
-    join(__dirname, '..'),
+    join(__dirname, '..', 'src', 'content', 'blog'),
+    join(__dirname, '..', 'src', 'content', 'pages'),
+    join(__dirname, '..', 'project_rules', 'templates')
 ];
 
-directories.forEach(dir => {
-    console.log(`Processing directory: ${dir}`);
-    processDirectory(dir);
-});
+for (const dir of directories) {
+    try {
+        processDirectory(dir);
+    } catch (error) {
+        console.error(`Error processing directory ${dir}:`, error.message);
+    }
+}

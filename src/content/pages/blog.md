@@ -1,5 +1,5 @@
-#
-  -$2title: 'Blog'
+
+# -$2title: 'Blog'
 
 description: 'Explore my latest thoughts and insights about web development'
 image:
@@ -17,8 +17,6 @@ rounded: 'rounded-xl'
 
 ## lastUpdated: '2024-12-19T00:00:00Z'
 
-## #
-
-## <!-- markdownlint-disable-next-line MD033 -->
+## ## <!-- markdownlint-disable-next-line MD033 -->
 
 <slot />

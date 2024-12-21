@@ -1,6 +1,5 @@
 
-#
-  -$2title: DNA-tutkimuksen perusteet sukututkimuksessa
+# -$2title: DNA-tutkimuksen perusteet sukututkimuksessa
 
 description: Johdanto DNA-tutkimuksen käyttöön sukututkimuksessa
 pubDate: '2024-09-17T00:00:22.402Z'
@@ -26,10 +25,7 @@ text
 
 ```text
 
-##
-
-
-```text
+## ```text
 
 text
 
@@ -81,7 +77,7 @@ text
 text
 
 ```text
-    url: <<<<https://juhahalmu.fi/blog/dna-tutkimuksen-perusteet-sukututkimuksessa-fi>>>>
+    url: <<<<<<https://juhahalmu.fi/blog/dna-tutkimuksen-perusteet-sukututkimuksessa-fi>>>>>>
 
 ```text
 
@@ -97,10 +93,7 @@ text
 
 ```text
 
-##
-
-
-```text
+## ```text
 
 text
 
@@ -174,7 +167,7 @@ text
 text
 
 ```text
-    url: <<<<https://juhahalmu.fi/blog/dna-tutkimuksen-perusteet-sukututkimuksessa-fi>>>>
+    url: <<<<<<https://juhahalmu.fi/blog/dna-tutkimuksen-perusteet-sukututkimuksessa-fi>>>>>>
 
 ```text
 
@@ -201,10 +194,7 @@ text
 
 ```text
 
-##
-
-
-```text
+## ```text
 
 text
 
@@ -251,7 +241,7 @@ text
 text
 
 ```text
-    url: <<<<https://juhahalmu.fi/blog/dna-tutkimuksen-perusteet-sukututkimuksessa-fi>>>>
+    url: <<<<<<https://juhahalmu.fi/blog/dna-tutkimuksen-perusteet-sukututkimuksessa-fi>>>>>>
 
 ```text
 
@@ -656,12 +646,10 @@ text
 ```text
 text
 
-##       website: juhahalmu.fi
+## website: juhahalmu.fi
 
 ## # DNA-tutkimuksen perusteet sukututkimuksessa
 
 Johdanto DNA-tutkimuksen käyttöön sukututkimuksessa
 
-## ##
-
-  -$2_Tämän artikkelin on kirjoittanut tekoäly yhteistyössä Juha Halmun kanssa._
+## -$2_Tämän artikkelin on kirjoittanut tekoäly yhteistyössä Juha Halmun kanssa._

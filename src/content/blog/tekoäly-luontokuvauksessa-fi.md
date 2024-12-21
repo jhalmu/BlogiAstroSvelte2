@@ -1,6 +1,5 @@
 
-#
-  -$2title: Tekoäly luontokuvauksessa
+# -$2title: Tekoäly luontokuvauksessa
 
 description: AI:n hyödyntäminen luontokuvauksen apuna
 pubDate: '2024-10-23T23:58:59.497Z'
@@ -24,10 +23,7 @@ text
 
 ```text
 
-##
-
-
-```text
+## ```text
 
 text
 
@@ -68,7 +64,7 @@ text
 text
 
 ```text
-    url: <<<<https://juhahalmu.fi/blog/tekoäly-luontokuvauksessa-fi>>>>
+    url: <<<<<<https://juhahalmu.fi/blog/tekoäly-luontokuvauksessa-fi>>>>>>
 
 ```text
 
@@ -84,10 +80,7 @@ text
 
 ```text
 
-##
-
-
-```text
+## ```text
 
 text
 
@@ -139,7 +132,7 @@ text
 text
 
 ```text
-    url: <<<<https://juhahalmu.fi/blog/tekoäly-luontokuvauksessa-fi>>>>
+    url: <<<<<<https://juhahalmu.fi/blog/tekoäly-luontokuvauksessa-fi>>>>>>
 
 ```text
 
@@ -188,7 +181,7 @@ text
 text
 
 ```text
-    url: <<<<https://juhahalmu.fi/blog/tekoäly-luontokuvauksessa-fi>>>>
+    url: <<<<<<https://juhahalmu.fi/blog/tekoäly-luontokuvauksessa-fi>>>>>>
 
 ```text
 
@@ -593,7 +586,7 @@ text
 ```text
 text
 
-##       website: juhahalmu.fi
+## website: juhahalmu.fi
 
 ## # Tekoäly luontokuvauksessa
 
@@ -606,6 +599,4 @@ AI:n hyödyntäminen luontokuvauksen apuna
   -$2Kuvien automaattinen analyysi
   -$2AI-pohjaiset suodattimet
 
-## ##
-
-  -$2_Lyhyt muistiinpano teknologiasta ja historiasta. Kirjoitettu tekoälyn avustuksella._
+## -$2_Lyhyt muistiinpano teknologiasta ja historiasta. Kirjoitettu tekoälyn avustuksella._

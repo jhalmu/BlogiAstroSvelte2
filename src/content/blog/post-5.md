@@ -1,6 +1,5 @@
 
-#
-  -$2title: 'Performance Optimization in Modern Web Apps'
+# -$2title: 'Performance Optimization in Modern Web Apps'
 
 date: '2023-12-01'
 excerpt: 'Techniques and strategies for building faster web applications'
@@ -9,7 +8,7 @@ tags: ['Performance', 'Web Development', 'Optimization']
 image:
   src: '/images/blog/performance-optimization.jpg'
 
-##   alt: 'Performance optimization concept illustration'
+## alt: 'Performance optimization concept illustration'
 
 ## Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut gravida lorem. Ut turpis felis, pulvinar a semper sed, adipiscing id dolor
 

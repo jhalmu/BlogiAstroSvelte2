@@ -1,6 +1,5 @@
 
-#
-  -$2title: Remote Work Spots in historiallisissa kaupungeissa
+# -$2title: Remote Work Spots in historiallisissa kaupungeissa
 
 description: Parhaat työskentelypaikat Suomen vanhoissa kaupungeissa
 pubDate: '2024-03-31T23:58:59.495Z'
@@ -77,7 +76,7 @@ text
 text
 
 ```text
-      <<<<https://juhahalmu.fi/blog/remote-work-spots-in-historiallisissa-kaupungeissa-en>>>>
+      <<<<<<https://juhahalmu.fi/blog/remote-work-spots-in-historiallisissa-kaupungeissa-en>>>>>>
 
 ```text
 
@@ -112,7 +111,7 @@ text
 text
 
 ```text
-      <<<<https://juhahalmu.fi/blog/remote-work-spots-in-historiallisissa-kaupungeissa-en>>>>
+      <<<<<<https://juhahalmu.fi/blog/remote-work-spots-in-historiallisissa-kaupungeissa-en>>>>>>
 
 ```text
 
@@ -128,10 +127,7 @@ text
 
 ```text
 
-##
-
-
-```text
+## ```text
 
 text
 
@@ -196,7 +192,7 @@ text
 text
 
 ```text
-      <<<<https://juhahalmu.fi/blog/remote-work-spots-in-historiallisissa-kaupungeissa-en>>>>
+      <<<<<<https://juhahalmu.fi/blog/remote-work-spots-in-historiallisissa-kaupungeissa-en>>>>>>
 
 ```text
 
@@ -223,10 +219,7 @@ text
 
 ```text
 
-##
-
-
-```text
+## ```text
 
 text
 
@@ -261,9 +254,7 @@ text
   -$2Nettiyhteydet ja fasiliteetit
   -$2Yhteisölliset työtilat
 
-## ##
-
-  -$2-This article was written by AI in collaboration with Juha Halmu.*
+## -$2-This article was written by AI in collaboration with Juha Halmu.*
 
 ```text
 text
@@ -297,7 +288,7 @@ text
 text
 
 ```text
-      <<<<https://juhahalmu.fi/blog/remote-work-spots-in-historiallisissa-kaupungeissa-en>>>>
+      <<<<<<https://juhahalmu.fi/blog/remote-work-spots-in-historiallisissa-kaupungeissa-en>>>>>>
 
 ```text
 
@@ -702,9 +693,8 @@ text
 ```text
 text
 
-##       website: juhahalmu.fi
+## website: juhahalmu.fi
 
-##
   -$2## # Remote Work Spots in historiallisissa kaupungeissa
 
 Parhaat työskentelypaikat Suomen vanhoissa kaupungeissa
@@ -716,6 +706,4 @@ Parhaat työskentelypaikat Suomen vanhoissa kaupungeissa
   -$2Nettiyhteydet ja fasiliteetit
   -$2Yhteisölliset työtilat
 
-## ##
-
-  -$2_This article was written by AI in collaboration with Juha Halmu._
+## -$2_This article was written by AI in collaboration with Juha Halmu._

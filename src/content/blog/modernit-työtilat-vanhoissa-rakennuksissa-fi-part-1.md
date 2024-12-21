@@ -1,6 +1,5 @@
 
-#
-  -$2title: Modernit työtilat vanhoissa rakennuksissa
+# -$2title: Modernit työtilat vanhoissa rakennuksissa
 
 description: Kuinka historialliset rakennukset muuntuvat moderneiksi työtiloiksi
 pubDate: '2024-07-22T00:00:22.411Z'
@@ -27,10 +26,7 @@ text
 
 ```text
 
-##
-
-
-```text
+## ```text
 
 text
 
@@ -82,7 +78,7 @@ text
 text
 
 ```text
-    url: <<<<https://juhahalmu.fi/blog/modernit-työtilat-vanhoissa-rakennuksissa-fi>>>>
+    url: <<<<<<https://juhahalmu.fi/blog/modernit-työtilat-vanhoissa-rakennuksissa-fi>>>>>>
 
 ```text
 
@@ -98,10 +94,7 @@ text
 
 ```text
 
-##
-
-
-```text
+## ```text
 
 text
 
@@ -175,7 +168,7 @@ text
 text
 
 ```text
-    url: <<<<https://juhahalmu.fi/blog/modernit-työtilat-vanhoissa-rakennuksissa-fi>>>>
+    url: <<<<<<https://juhahalmu.fi/blog/modernit-työtilat-vanhoissa-rakennuksissa-fi>>>>>>
 
 ```text
 
@@ -202,10 +195,7 @@ text
 
 ```text
 
-##
-
-
-```text
+## ```text
 
 text
 
@@ -253,7 +243,7 @@ text
 text
 
 ```text
-    url: <<<<https://juhahalmu.fi/blog/modernit-työtilat-vanhoissa-rakennuksissa-fi>>>>
+    url: <<<<<<https://juhahalmu.fi/blog/modernit-työtilat-vanhoissa-rakennuksissa-fi>>>>>>
 
 ```text
 
@@ -658,12 +648,10 @@ text
 ```text
 text
 
-##       website: juhahalmu.fi
+## website: juhahalmu.fi
 
 ## # Modernit työtilat vanhoissa rakennuksissa
 
 Kuinka historialliset rakennukset muuntuvat moderneiksi työtiloiksi
 
-## ##
-
-  -$2_Tämän artikkelin on kirjoittanut tekoäly yhteistyössä Juha Halmun kanssa._
+## -$2_Tämän artikkelin on kirjoittanut tekoäly yhteistyössä Juha Halmun kanssa._

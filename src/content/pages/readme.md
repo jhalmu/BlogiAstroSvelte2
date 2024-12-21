@@ -1,6 +1,5 @@
 
-#
-  -$2title: 'README'
+# -$2title: 'README'
 
 date: '2023-12-19'
 author: 'Juha Halmu'
@@ -9,7 +8,7 @@ tags: ['Documentation', 'Project']
 image:
   src: '/images/blog/default-hero.jpg'
 
-##   alt: 'Project Documentation'
+## alt: 'Project Documentation'
 
 ## # BlogiAstroSvelte
 
@@ -49,7 +48,7 @@ text
 text
 text
 bash
-git clone <<<<https://github.com/jhalmu/BlogiAstroSvelte.git>>>>
+git clone <<<<<<https://github.com/jhalmu/BlogiAstroSvelte.git>>>>>>
 cd BlogiAstroSvelte
 
 ```text
@@ -88,7 +87,7 @@ text
 text
 
 
-1. Open your browser and visit `<<<<http://localhost:4321`>>>>
+1. Open your browser and visit `<<<<<<http://localhost:4321`>>>>>>
 
 ## # # # # Available Scripts
 

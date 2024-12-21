@@ -1,6 +1,5 @@
 
-#
-  -$2title: Kansainväliset DNA-projektit
+# -$2title: Kansainväliset DNA-projektit
 
 description: Osallistuminen kansainvälisiin DNA-projekteihin
 pubDate: '2024-08-08T00:00:22.409Z'
@@ -26,10 +25,7 @@ text
 
 ```text
 
-##
-
-
-```text
+## ```text
 
 text
 
@@ -81,7 +77,7 @@ text
 text
 
 ```text
-    url: <<<<https://juhahalmu.fi/blog/kansainväliset-dna-projektit-fi>>>>
+    url: <<<<<<https://juhahalmu.fi/blog/kansainväliset-dna-projektit-fi>>>>>>
 
 ```text
 
@@ -97,10 +93,7 @@ text
 
 ```text
 
-##
-
-
-```text
+## ```text
 
 text
 
@@ -174,7 +167,7 @@ text
 text
 
 ```text
-    url: <<<<https://juhahalmu.fi/blog/kansainväliset-dna-projektit-fi>>>>
+    url: <<<<<<https://juhahalmu.fi/blog/kansainväliset-dna-projektit-fi>>>>>>
 
 ```text
 
@@ -201,10 +194,7 @@ text
 
 ```text
 
-##
-
-
-```text
+## ```text
 
 text
 
@@ -251,7 +241,7 @@ text
 text
 
 ```text
-    url: <<<<https://juhahalmu.fi/blog/kansainväliset-dna-projektit-fi>>>>
+    url: <<<<<<https://juhahalmu.fi/blog/kansainväliset-dna-projektit-fi>>>>>>
 
 ```text
 
@@ -656,12 +646,10 @@ text
 ```text
 text
 
-##       website: juhahalmu.fi
+## website: juhahalmu.fi
 
 ## # Kansainväliset DNA-projektit
 
 Osallistuminen kansainvälisiin DNA-projekteihin
 
-## ##
-
-  -$2_Tämän artikkelin on kirjoittanut tekoäly yhteistyössä Juha Halmun kanssa._
+## -$2_Tämän artikkelin on kirjoittanut tekoäly yhteistyössä Juha Halmun kanssa._

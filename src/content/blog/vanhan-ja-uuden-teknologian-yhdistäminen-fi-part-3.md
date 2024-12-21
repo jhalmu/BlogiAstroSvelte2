@@ -1,6 +1,5 @@
 
-#
-  -$2title: Vanhan ja uuden teknologian yhdistäminen
+# -$2title: Vanhan ja uuden teknologian yhdistäminen
 
 description: Historiallisten rakennusten modernisointi teknologian avulla
 pubDate: '2023-12-27T01:00:22.413Z'
@@ -27,10 +26,7 @@ text
 
 ```text
 
-##
-
-
-```text
+## ```text
 
 text
 
@@ -82,7 +78,7 @@ text
 text
 
 ```text
-    url: <<<<https://juhahalmu.fi/blog/vanhan-ja-uuden-teknologian-yhdistäminen-fi>>>>
+    url: <<<<<<https://juhahalmu.fi/blog/vanhan-ja-uuden-teknologian-yhdistäminen-fi>>>>>>
 
 ```text
 
@@ -98,10 +94,7 @@ text
 
 ```text
 
-##
-
-
-```text
+## ```text
 
 text
 
@@ -175,7 +168,7 @@ text
 text
 
 ```text
-    url: <<<<https://juhahalmu.fi/blog/vanhan-ja-uuden-teknologian-yhdistäminen-fi>>>>
+    url: <<<<<<https://juhahalmu.fi/blog/vanhan-ja-uuden-teknologian-yhdistäminen-fi>>>>>>
 
 ```text
 
@@ -202,10 +195,7 @@ text
 
 ```text
 
-##
-
-
-```text
+## ```text
 
 text
 
@@ -253,7 +243,7 @@ text
 text
 
 ```text
-    url: <<<<https://juhahalmu.fi/blog/vanhan-ja-uuden-teknologian-yhdistäminen-fi>>>>
+    url: <<<<<<https://juhahalmu.fi/blog/vanhan-ja-uuden-teknologian-yhdistäminen-fi>>>>>>
 
 ```text
 
@@ -658,12 +648,10 @@ text
 ```text
 text
 
-##       website: juhahalmu.fi
+## website: juhahalmu.fi
 
 ## # Vanhan ja uuden teknologian yhdistäminen
 
 Historiallisten rakennusten modernisointi teknologian avulla
 
-## ##
-
-  -$2_Tämän artikkelin on kirjoittanut tekoäly yhteistyössä Juha Halmun kanssa._
+## -$2_Tämän artikkelin on kirjoittanut tekoäly yhteistyössä Juha Halmun kanssa._

@@ -1,6 +1,5 @@
 
-#
-  -$2title: DNA-sukututkimus Rauman seudulla
+# -$2title: DNA-sukututkimus Rauman seudulla
 
 description: Miten DNA-tutkimus on paljastanut Rauman seudun sukujen historiaa
 pubDate: '2024-10-06T23:58:59.500Z'
@@ -24,10 +23,7 @@ text
 
 ```text
 
-##
-
-
-```text
+## ```text
 
 text
 
@@ -68,7 +64,7 @@ text
 text
 
 ```text
-      Lue lisää: <<<<https://juhahalmu.fi/blog/dna-sukututkimus-rauman-seudulla-fi>>>>
+      Lue lisää: <<<<<<https://juhahalmu.fi/blog/dna-sukututkimus-rauman-seudulla-fi>>>>>>
 
 ```text
 
@@ -90,7 +86,7 @@ text
 text
 
 ```text
-    url: <<<<https://juhahalmu.fi/blog/dna-sukututkimus-rauman-seudulla-fi>>>>
+    url: <<<<<<https://juhahalmu.fi/blog/dna-sukututkimus-rauman-seudulla-fi>>>>>>
 
 ```text
 
@@ -159,7 +155,7 @@ text
 text
 
 ```text
-      <<<<https://juhahalmu.fi/blog/dna-sukututkimus-rauman-seudulla-fi>>>>
+      <<<<<<https://juhahalmu.fi/blog/dna-sukututkimus-rauman-seudulla-fi>>>>>>
 
 ```text
 
@@ -192,7 +188,7 @@ text
 text
 
 ```text
-    url: <<<<https://juhahalmu.fi/blog/dna-sukututkimus-rauman-seudulla-fi>>>>
+    url: <<<<<<https://juhahalmu.fi/blog/dna-sukututkimus-rauman-seudulla-fi>>>>>>
 
 ```text
 
@@ -269,9 +265,7 @@ text
   -$2Pyhän Ristin kirkko
   -$2Sammallahdenmäki (UNESCO)
 
-## ##
-
-  -$2-Tämän artikkelin on kirjoittanut tekoäly yhteistyössä Juha Halmun
+## -$2-Tämän artikkelin on kirjoittanut tekoäly yhteistyössä Juha Halmun
 
 ```text
 text
@@ -303,7 +297,7 @@ text
 text
 
 ```text
-    url: <<<<https://juhahalmu.fi/blog/dna-sukututkimus-rauman-seudulla-fi>>>>
+    url: <<<<<<https://juhahalmu.fi/blog/dna-sukututkimus-rauman-seudulla-fi>>>>>>
 
 ```text
 
@@ -708,9 +702,8 @@ text
 ```text
 text
 
-##       website: juhahalmu.fi
+## website: juhahalmu.fi
 
-##
   -$2## # DNA-sukututkimus Rauman seudulla
 
 Miten DNA-tutkimus on paljastanut Rauman seudun sukujen historiaa
@@ -736,6 +729,4 @@ Miten DNA-tutkimus on paljastanut Rauman seudun sukujen historiaa
   -$2Pyhän Ristin kirkko
   -$2Sammallahdenmäki (UNESCO)
 
-## ##
-
-  -$2_Tämän artikkelin on kirjoittanut tekoäly yhteistyössä Juha Halmun kanssa._
+## -$2_Tämän artikkelin on kirjoittanut tekoäly yhteistyössä Juha Halmun kanssa._

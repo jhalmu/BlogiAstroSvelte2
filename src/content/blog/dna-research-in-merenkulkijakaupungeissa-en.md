@@ -1,6 +1,5 @@
 
-#
-  -$2title: DNA Research in merenkulkijakaupungeissa
+# -$2title: DNA Research in merenkulkijakaupungeissa
 
 description: Miten DNA-tutkimus paljastaa merenkulkijoiden reitit ja sukulaisuussuhteet
 pubDate: '2024-07-10T23:58:59.496Z'
@@ -77,7 +76,7 @@ text
 text
 
 ```text
-      <<<<https://juhahalmu.fi/blog/dna-research-in-merenkulkijakaupungeissa-en>>>>
+      <<<<<<https://juhahalmu.fi/blog/dna-research-in-merenkulkijakaupungeissa-en>>>>>>
 
 ```text
 
@@ -99,7 +98,7 @@ text
 text
 
 ```text
-    url: <<<<https://juhahalmu.fi/blog/dna-research-in-merenkulkijakaupungeissa-en>>>>
+    url: <<<<<<https://juhahalmu.fi/blog/dna-research-in-merenkulkijakaupungeissa-en>>>>>>
 
 ```text
 
@@ -115,10 +114,7 @@ text
 
 ```text
 
-##
-
-
-```text
+## ```text
 
 text
 
@@ -170,7 +166,7 @@ text
 text
 
 ```text
-    url: <<<<https://juhahalmu.fi/blog/dna-research-in-merenkulkijakaupungeissa-en>>>>
+    url: <<<<<<https://juhahalmu.fi/blog/dna-research-in-merenkulkijakaupungeissa-en>>>>>>
 
 ```text
 
@@ -197,10 +193,7 @@ text
 
 ```text
 
-##
-
-
-```text
+## ```text
 
 text
 
@@ -235,9 +228,7 @@ text
   -$2Merimiesrekisterit ja DNA
   -$2Sukututkijoiden kokemukset
 
-## ##
-
-  -$2-This article was written by AI in collaboration with Juha Halmu.*
+## -$2-This article was written by AI in collaboration with Juha Halmu.*
 
 ```text
 text
@@ -258,7 +249,7 @@ text
 text
 
 ```text
-    url: <<<<https://juhahalmu.fi/blog/dna-research-in-merenkulkijakaupungeissa-en>>>>
+    url: <<<<<<https://juhahalmu.fi/blog/dna-research-in-merenkulkijakaupungeissa-en>>>>>>
 
 ```text
 
@@ -735,9 +726,8 @@ text
 ```text
 text
 
-##       website: juhahalmu.fi
+## website: juhahalmu.fi
 
-##
   -$2## # DNA Research in merenkulkijakaupungeissa
 
 Miten DNA-tutkimus paljastaa merenkulkijoiden reitit ja sukulaisuussuhteet
@@ -749,6 +739,4 @@ Miten DNA-tutkimus paljastaa merenkulkijoiden reitit ja sukulaisuussuhteet
   -$2Merimiesrekisterit ja DNA
   -$2Sukututkijoiden kokemukset
 
-## ##
-
-  -$2_This article was written by AI in collaboration with Juha Halmu._
+## -$2_This article was written by AI in collaboration with Juha Halmu._

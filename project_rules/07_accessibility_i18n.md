@@ -99,9 +99,7 @@
 >
   -$2For testing strategies: See [02_testing_setup.md](02_testing_setup.md)
 
-## # #
-
-
+## #
  1. Jest + Testing Library
 
 ```text
@@ -217,9 +215,7 @@ text
 text
 text
 
-## # #
-
-
+## #
  1. Cypress Accessibility Tests
 
 ```text
@@ -392,9 +388,7 @@ text
 text
 text
 
-## # #
-
-
+## #
  1. Storybook Accessibility
 
 ```text
@@ -605,9 +599,7 @@ text
 text
 text
 
-## # #
-
-
+## #
  1. Lighthouse CI
 
 ```text
@@ -684,7 +676,7 @@ text
 text
 
 ```text
-            <<<<https://example.com/>>>>
+            <<<<<https://example.com/>>>>>
 
 ```text
 
@@ -695,7 +687,7 @@ text
 text
 
 ```text
-            <<<<https://example.com/about>>>>
+            <<<<<https://example.com/about>>>>>
 
 ```text
 
@@ -741,9 +733,7 @@ text
 text
 text
 
-## # #
-
-
+## #
  1. Pa11y Integration
 
 ```text
@@ -863,7 +853,7 @@ text
 text
 
 ```text
-    "<<<<http://localhost:3000",>>>>
+    "<<<<<http://localhost:3000",>>>>>
 
 ```text
 
@@ -874,7 +864,7 @@ text
 text
 
 ```text
-    "<<<<http://localhost:3000/about",>>>>
+    "<<<<<http://localhost:3000/about",>>>>>
 
 ```text
 
@@ -885,7 +875,7 @@ text
 text
 
 ```text
-    "<<<<http://localhost:3000/contact">>>>
+    "<<<<<http://localhost:3000/contact">>>>>
 
 ```text
 

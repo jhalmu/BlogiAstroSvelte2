@@ -1,6 +1,5 @@
 
-#
-  -$2title: DNA-Genealogy Research in Rauman seudulla
+# -$2title: DNA-Genealogy Research in Rauman seudulla
 
 description: Miten DNA-tutkimus on paljastanut Rauman seudun sukujen historiaa
 pubDate: '2024-12-20T00:58:59.500Z'
@@ -77,7 +76,7 @@ text
 text
 
 ```text
-      <<<<https://juhahalmu.fi/blog/dna-genealogy-research-in-rauman-seudulla-en>>>>
+      <<<<<<https://juhahalmu.fi/blog/dna-genealogy-research-in-rauman-seudulla-en>>>>>>
 
 ```text
 
@@ -99,7 +98,7 @@ text
 text
 
 ```text
-    url: <<<<https://juhahalmu.fi/blog/dna-genealogy-research-in-rauman-seudulla-en>>>>
+    url: <<<<<<https://juhahalmu.fi/blog/dna-genealogy-research-in-rauman-seudulla-en>>>>>>
 
 ```text
 
@@ -168,7 +167,7 @@ text
 text
 
 ```text
-      <<<<https://juhahalmu.fi/blog/dna-genealogy-research-in-rauman-seudulla-en>>>>
+      <<<<<<https://juhahalmu.fi/blog/dna-genealogy-research-in-rauman-seudulla-en>>>>>>
 
 ```text
 
@@ -201,7 +200,7 @@ text
 text
 
 ```text
-    url: <<<<https://juhahalmu.fi/blog/dna-genealogy-research-in-rauman-seudulla-en>>>>
+    url: <<<<<<https://juhahalmu.fi/blog/dna-genealogy-research-in-rauman-seudulla-en>>>>>>
 
 ```text
 
@@ -228,10 +227,7 @@ text
 
 ```text
 
-##
-
-
-```text
+## ```text
 
 text
 
@@ -280,9 +276,7 @@ text
   -$2Pyhän Ristin kirkko
   -$2Sammallahdenmäki (UNESCO)
 
-## ##
-
-  -$2-This article was written by AI in collaboration with Juha Halmu.*
+## -$2-This article was written by AI in collaboration with Juha Halmu.*
 
 ```text
 text
@@ -303,7 +297,7 @@ text
 text
 
 ```text
-    url: <<<<https://juhahalmu.fi/blog/dna-genealogy-research-in-rauman-seudulla-en>>>>
+    url: <<<<<<https://juhahalmu.fi/blog/dna-genealogy-research-in-rauman-seudulla-en>>>>>>
 
 ```text
 
@@ -708,9 +702,8 @@ text
 ```text
 text
 
-##       website: juhahalmu.fi
+## website: juhahalmu.fi
 
-##
   -$2## # DNA-Genealogy Research in Rauman seudulla
 
 Miten DNA-tutkimus on paljastanut Rauman seudun sukujen historiaa
@@ -736,6 +729,4 @@ Miten DNA-tutkimus on paljastanut Rauman seudun sukujen historiaa
   -$2Pyhän Ristin kirkko
   -$2Sammallahdenmäki (UNESCO)
 
-## ##
-
-  -$2_This article was written by AI in collaboration with Juha Halmu._
+## -$2_This article was written by AI in collaboration with Juha Halmu._

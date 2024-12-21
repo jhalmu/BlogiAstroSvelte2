@@ -1,6 +1,5 @@
 
-#
-  -$2title: Vierailu Raumassa
+# -$2title: Vierailu Raumassa
 
 description: UNESCO-kohteena tunnettu puutalokaupunki
 pubDate: '2024-06-06T23:58:59.503Z'
@@ -23,10 +22,7 @@ text
 
 ```text
 
-##
-
-
-```text
+## ```text
 
 text
 
@@ -67,7 +63,7 @@ text
 text
 
 ```text
-      Lue lisää: <<<<https://juhahalmu.fi/blog/vierailu-raumassa-fi>>>>
+      Lue lisää: <<<<<<https://juhahalmu.fi/blog/vierailu-raumassa-fi>>>>>>
 
 ```text
 
@@ -89,7 +85,7 @@ text
 text
 
 ```text
-    url: <<<<https://juhahalmu.fi/blog/vierailu-raumassa-fi>>>>
+    url: <<<<<<https://juhahalmu.fi/blog/vierailu-raumassa-fi>>>>>>
 
 ```text
 
@@ -105,10 +101,7 @@ text
 
 ```text
 
-##
-
-
-```text
+## ```text
 
 text
 
@@ -160,7 +153,7 @@ text
 text
 
 ```text
-    url: <<<<https://juhahalmu.fi/blog/vierailu-raumassa-fi>>>>
+    url: <<<<<<https://juhahalmu.fi/blog/vierailu-raumassa-fi>>>>>>
 
 ```text
 
@@ -236,9 +229,7 @@ text
   -$2Pyhän Ristin kirkko
   -$2Sammallahdenmäki (UNESCO)
 
-## ##
-
-  -$2-Tämän artikkelin on kirjoittanut tekoäly yhteistyössä Juha Halmun
+## -$2-Tämän artikkelin on kirjoittanut tekoäly yhteistyössä Juha Halmun
 
 ```text
 text
@@ -269,7 +260,7 @@ text
 text
 
 ```text
-    url: <<<<https://juhahalmu.fi/blog/vierailu-raumassa-fi>>>>
+    url: <<<<<<https://juhahalmu.fi/blog/vierailu-raumassa-fi>>>>>>
 
 ```text
 
@@ -674,9 +665,8 @@ text
 ```text
 text
 
-##       website: juhahalmu.fi
+## website: juhahalmu.fi
 
-##
   -$2## # Vierailu Raumassa
 
 UNESCO-kohteena tunnettu puutalokaupunki
@@ -701,6 +691,4 @@ UNESCO-kohteena tunnettu puutalokaupunki
   -$2Pyhän Ristin kirkko
   -$2Sammallahdenmäki (UNESCO)
 
-## ##
-
-  -$2_Tämän artikkelin on kirjoittanut tekoäly yhteistyössä Juha Halmun kanssa._
+## -$2_Tämän artikkelin on kirjoittanut tekoäly yhteistyössä Juha Halmun kanssa._

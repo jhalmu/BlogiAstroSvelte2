@@ -1,6 +1,5 @@
 
-#
-  -$2title: 'The Future of AI in Web Development'
+# -$2title: 'The Future of AI in Web Development'
 
 date: '2023-12-10'
 updated: '2023-12-18'
@@ -10,7 +9,7 @@ tags: ['AI', 'Web Development', 'Technology']
 image:
   src: '/images/blog/ai-in-web-development.jpg'
 
-##   alt: 'AI-powered web development dashboard'
+## alt: 'AI-powered web development dashboard'
 
 ## Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi
 

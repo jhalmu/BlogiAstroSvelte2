@@ -1,6 +1,5 @@
 
-#
-  -$2title: Elixir-pohjainen sukupuu-sovellus
+# -$2title: Elixir-pohjainen sukupuu-sovellus
 
 description: Kuinka rakensin sukututkimustyökalun Elixirillä
 pubDate: '2024-09-02T23:58:59.502Z'
@@ -24,10 +23,7 @@ text
 
 ```text
 
-##
-
-
-```text
+## ```text
 
 text
 
@@ -68,7 +64,7 @@ text
 text
 
 ```text
-    url: <<<<https://juhahalmu.fi/blog/elixir-pohjainen-sukupuu-sovellus-fi>>>>
+    url: <<<<<<https://juhahalmu.fi/blog/elixir-pohjainen-sukupuu-sovellus-fi>>>>>>
 
 ```text
 
@@ -84,10 +80,7 @@ text
 
 ```text
 
-##
-
-
-```text
+## ```text
 
 text
 
@@ -139,7 +132,7 @@ text
 text
 
 ```text
-    url: <<<<https://juhahalmu.fi/blog/elixir-pohjainen-sukupuu-sovellus-fi>>>>
+    url: <<<<<<https://juhahalmu.fi/blog/elixir-pohjainen-sukupuu-sovellus-fi>>>>>>
 
 ```text
 
@@ -202,9 +195,7 @@ text
   -$2DNA-matchien integrointi
   -$2Hajautettu tietokanta
 
-## ##
-
-  -$2-Tämän artikkelin on kirjoittanut tekoäly yhteistyössä Juha Halmun
+## -$2-Tämän artikkelin on kirjoittanut tekoäly yhteistyössä Juha Halmun
 
 ```text
 text
@@ -236,7 +227,7 @@ text
 text
 
 ```text
-    url: <<<<https://juhahalmu.fi/blog/elixir-pohjainen-sukupuu-sovellus-fi>>>>
+    url: <<<<<<https://juhahalmu.fi/blog/elixir-pohjainen-sukupuu-sovellus-fi>>>>>>
 
 ```text
 
@@ -641,9 +632,8 @@ text
 ```text
 text
 
-##       website: juhahalmu.fi
+## website: juhahalmu.fi
 
-##
   -$2## # Elixir-pohjainen sukupuu-sovellus
 
 Kuinka rakensin sukututkimustyökalun Elixirillä
@@ -655,6 +645,4 @@ Kuinka rakensin sukututkimustyökalun Elixirillä
   -$2DNA-matchien integrointi
   -$2Hajautettu tietokanta
 
-## ##
-
-  -$2_Tämän artikkelin on kirjoittanut tekoäly yhteistyössä Juha Halmun kanssa._
+## -$2_Tämän artikkelin on kirjoittanut tekoäly yhteistyössä Juha Halmun kanssa._

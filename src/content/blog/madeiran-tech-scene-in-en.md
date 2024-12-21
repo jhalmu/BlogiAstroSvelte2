@@ -1,6 +1,5 @@
 
-#
-  -$2title: Madeiran Tech Scene in
+# -$2title: Madeiran Tech Scene in
 
 description: Etätyöskentely ja teknologiayhteisöt Madeiralla
 pubDate: '2024-06-03T23:58:59.501Z'
@@ -24,10 +23,7 @@ text
 
 ```text
 
-##
-
-
-```text
+## ```text
 
 text
 
@@ -68,7 +64,7 @@ text
 text
 
 ```text
-      Read more: <<<<https://juhahalmu.fi/blog/madeiran-tech-scene-in-en>>>>
+      Read more: <<<<<<https://juhahalmu.fi/blog/madeiran-tech-scene-in-en>>>>>>
 
 ```text
 
@@ -90,7 +86,7 @@ text
 text
 
 ```text
-    url: <<<<https://juhahalmu.fi/blog/madeiran-tech-scene-in-en>>>>
+    url: <<<<<<https://juhahalmu.fi/blog/madeiran-tech-scene-in-en>>>>>>
 
 ```text
 
@@ -106,10 +102,7 @@ text
 
 ```text
 
-##
-
-
-```text
+## ```text
 
 text
 
@@ -161,7 +154,7 @@ text
 text
 
 ```text
-    url: <<<<https://juhahalmu.fi/blog/madeiran-tech-scene-in-en>>>>
+    url: <<<<<<https://juhahalmu.fi/blog/madeiran-tech-scene-in-en>>>>>>
 
 ```text
 
@@ -188,10 +181,7 @@ text
 
 ```text
 
-##
-
-
-```text
+## ```text
 
 text
 
@@ -240,9 +230,7 @@ text
   -$2Cabo Girão
   -$2Levada-vaellusreitit
 
-## ##
-
-  -$2-This article was written by AI in collaboration with Juha Halmu.*
+## -$2-This article was written by AI in collaboration with Juha Halmu.*
 
 ```text
 text
@@ -263,7 +251,7 @@ text
 text
 
 ```text
-    url: <<<<https://juhahalmu.fi/blog/madeiran-tech-scene-in-en>>>>
+    url: <<<<<<https://juhahalmu.fi/blog/madeiran-tech-scene-in-en>>>>>>
 
 ```text
 
@@ -668,9 +656,8 @@ text
 ```text
 text
 
-##       website: juhahalmu.fi
+## website: juhahalmu.fi
 
-##
   -$2## # Madeiran Tech Scene in
 
 Etätyöskentely ja teknologiayhteisöt Madeiralla
@@ -696,6 +683,4 @@ Etätyöskentely ja teknologiayhteisöt Madeiralla
   -$2Cabo Girão
   -$2Levada-vaellusreitit
 
-## ##
-
-  -$2_This article was written by AI in collaboration with Juha Halmu._
+## -$2_This article was written by AI in collaboration with Juha Halmu._

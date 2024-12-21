@@ -1,6 +1,5 @@
 
-#
-  -$2title: Modern Workspaces in Historic Buildings
+# -$2title: Modern Workspaces in Historic Buildings
 
 description: How historical buildings transform into modern workspaces
 pubDate: '2024-07-16T00:01:50.355Z'
@@ -50,7 +49,7 @@ text
 text
 
 ```text
-    url: <<<<https://juhahalmu.fi/blog/modern-workspaces-in-historic-buildings-en>>>>
+    url: <<<<<<https://juhahalmu.fi/blog/modern-workspaces-in-historic-buildings-en>>>>>>
 
 ```text
 
@@ -108,7 +107,7 @@ text
 text
 
 ```text
-    url: <<<<https://juhahalmu.fi/blog/modern-workspaces-in-historic-buildings-en>>>>
+    url: <<<<<<https://juhahalmu.fi/blog/modern-workspaces-in-historic-buildings-en>>>>>>
 
 ```text
 
@@ -135,10 +134,7 @@ text
 
 ```text
 
-##
-
-
-```text
+## ```text
 
 text
 
@@ -176,7 +172,7 @@ text
 text
 
 ```text
-    url: <<<<https://juhahalmu.fi/blog/modern-workspaces-in-historic-buildings-en>>>>
+    url: <<<<<<https://juhahalmu.fi/blog/modern-workspaces-in-historic-buildings-en>>>>>>
 
 ```text
 
@@ -581,13 +577,10 @@ text
 ```text
 text
 
-##       website: juhahalmu.fi
+## website: juhahalmu.fi
 
-##
   -$2## # Modern Workspaces in Historic Buildings
 
 How historical buildings transform into modern workspaces
 
-## ##
-
-  -$2_This article was written by AI in collaboration with Juha Halmu._
+## -$2_This article was written by AI in collaboration with Juha Halmu._

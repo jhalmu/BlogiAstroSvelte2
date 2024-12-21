@@ -1,6 +1,5 @@
 
-#
-  -$2title: Contact
+# -$2title: Contact
 
 description: Get in touch with me for collaborations, questions, or just to say hello
 image:
@@ -45,6 +44,4 @@ I'm open to:
 
 If you're interested in any of these opportunities, please include relevant details in your message.
 
-## ##
-
-  -$2Looking forward to connecting with you!
+## -$2Looking forward to connecting with you

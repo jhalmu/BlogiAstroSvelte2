@@ -1,6 +1,5 @@
 
-#
-  -$2title: 'Modern CSS Techniques'
+# -$2title: 'Modern CSS Techniques'
 
 date: '2023-12-18'
 author: 'Juha Halmu'
@@ -9,7 +8,7 @@ tags: ['CSS', 'Web Design', 'Frontend']
 image:
   src: '/images/blog/modern-css.jpg'
 
-##   alt: 'Modern CSS styling demonstration'
+## alt: 'Modern CSS styling demonstration'
 
 ## CSS has evolved significantly over the years. Let's explore some modern techniques that make styling websites easier and more powerful
 

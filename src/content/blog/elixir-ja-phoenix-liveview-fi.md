@@ -1,6 +1,5 @@
 
-#
-  -$2title: 'Elixir ja Phoenix LiveView'
+# -$2title: 'Elixir ja Phoenix LiveView'
 
 date: '2024-03-11'
 author: 'Juha Halmu'
@@ -95,7 +94,7 @@ text
 text
 
 ```text
-        '@context': '<<<<https://schema.org',>>>>
+        '@context': '<<<<<<https://schema.org',>>>>>>
 
 ```text
 
@@ -230,7 +229,7 @@ text
 text
 
 ```text
-        'url': '<<<<https://juhahalmu.fi/blog/elixir-ja-phoenix-liveview-fi',>>>>
+        'url': '<<<<<<https://juhahalmu.fi/blog/elixir-ja-phoenix-liveview-fi',>>>>>>
 
 ```text
 
@@ -318,7 +317,7 @@ text
 text
 
 ```text
-        'url': '<<<<https://juhahalmu.fi/blog/elixir-ja-phoenix-liveview-fi',>>>>
+        'url': '<<<<<<https://juhahalmu.fi/blog/elixir-ja-phoenix-liveview-fi',>>>>>>
 
 ```text
 
@@ -406,7 +405,7 @@ text
 text
 
 ```text
-        'url': '<<<<https://juhahalmu.fi/blog/elixir-ja-phoenix-liveview-fi',>>>>
+        'url': '<<<<<<https://juhahalmu.fi/blog/elixir-ja-phoenix-liveview-fi',>>>>>>
 
 ```text
 
@@ -461,7 +460,7 @@ text
 ```text
 text
 
-##   }
+## }
 
 ## # Elixir ja Phoenix LiveView
 

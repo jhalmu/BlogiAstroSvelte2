@@ -1,6 +1,5 @@
 
-#
-  -$2title: 'Getting Started with Web Development'
+# -$2title: 'Getting Started with Web Development'
 
 date: '2023-12-18'
 author: 'Juha Halmu'
@@ -9,7 +8,7 @@ tags: ['Web Development', 'Beginner', 'Tutorial']
 image:
   src: '/images/blog/getting-started.jpg'
 
-##   alt: 'Getting started with web development illustration'
+## alt: 'Getting started with web development illustration'
 
 ## Welcome to the world of web development! In this guide, we'll explore the fundamental concepts and tools you need to get started with building modern websites
 
