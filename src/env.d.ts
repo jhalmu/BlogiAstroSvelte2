@@ -1,1 +1,4 @@
-/// <reference path="../.astro/types.d.ts" />
+import type {} from '../.astro/types.d';
+
+/// <reference types="astro/client" />
+/// <reference types="svelte" />

@@ -1,0 +1,24 @@
+{
+  "default": true,
+  "MD013": false,
+  "MD033": false,
+  "MD041": false,
+  "MD024": false,
+  "MD026": {
+    "punctuation": ".,;:!"
+  },
+  "MD029": false,
+  "MD031": {
+    "list_items": false
+  },
+  "MD032": true,
+  "MD036": false,
+  "MD040": true,
+  "MD046": {
+    "style": "fenced"
+  },
+  "MD012": false,
+  "MD019": false,
+  "MD022": false,
+  "MD003": false
+}

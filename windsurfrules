@@ -1,0 +1,244 @@
+# Project Guidelines and Best Practices
+
+Hello, My Name is Juha
+
+Your name is Martin, Martin Aston
+
+## Project Rules Structure
+
+All detailed rules are organized in the `project_rules/` directory. Follow these rules in order:
+
+0. [Project Initialization Checklist](./project_rules/00_project_initialization_checklist.md)
+   - Pre-development phase
+   - Initial setup requirements
+   - Verification steps
+   - Launch preparation
+
+1. [Base Project Setup](./project_rules/01_base_project_setup.md)
+   - Initial project structure
+   - Essential configurations
+   - Documentation setup
+
+2. [Testing Setup](./project_rules/02_testing_setup.md)
+   - Frontend testing requirements
+   - HTML/CSS/Tailwind testing
+   - Template language testing
+   - Testing tools setup
+
+3. [Development Workflow](./project_rules/03_development_workflow.md)
+   - Version control
+   - Code review process
+   - Quality gates
+   - Documentation requirements
+
+4. [Deployment Process](./project_rules/04_deployment.md)
+   - Pre-deployment checklist
+   - Deployment environments
+   - Post-deployment tasks
+   - Monitoring setup
+
+5. [Maintenance](./project_rules/05_maintenance.md)
+   - Regular maintenance tasks
+   - Documentation maintenance
+   - Code quality
+   - Template language updates
+
+6. [AI Integration](./project_rules/06_ai_integration.md)
+   - AI assistant setup
+   - Code generation guidelines
+   - Tool integration
+   - Best practices
+
+7. [Accessibility & i18n](./project_rules/07_accessibility_i18n.md)
+   - Accessibility requirements
+   - Internationalization setup
+   - Testing guidelines
+   - Maintenance procedures
+
+8. [AI Assistant Guidelines](./project_rules/08_ai_assistant_guidelines.md)
+   - Implementation guidelines
+   - Safety protocols
+   - Communication guidelines
+   - Emergency procedures
+
+9. [Deployment Scenarios](./project_rules/09_deployment_scenarios.md)
+   - GitHub Actions CI/CD
+   - Direct server deployment
+   - Platform deployment (Vercel/Netlify)
+   - Common requirements
+   - Emergency procedures
+
+10. [Docker Deployment](./project_rules/10_docker_deployment.md)
+    - Docker with PostgreSQL container
+    - Docker with external PostgreSQL
+    - Security configurations
+    - Monitoring and backups
+
+## Template Language Rules
+
+When implementing a new template language:
+
+1. Copy `project_rules/templates/template_language_rules.md` to `project_rules/templates/[language_name].md`
+2. Fill in all required sections
+3. Add language-specific testing and tooling requirements
+4. Update CI/CD pipeline accordingly
+
+## Deployment Strategy Selection
+
+Choose deployment strategy based on:
+
+1. Project requirements
+2. Team expertise
+3. Budget constraints
+4. Security requirements
+5. Scaling needs
+6. Database requirements:
+   - Container vs External PostgreSQL
+   - Backup requirements
+   - Performance needs
+   - Security constraints
+
+Update deployment documentation when:
+
+1. New deployment target added
+2. Security requirements change
+3. Automation tools updated
+4. Recovery procedures change
+5. Database configuration changes
+6. Monitoring requirements update
+
+## Rule Updates
+
+Rules should be updated when:
+
+1. New technology is adopted
+2. Best practices change
+3. Security requirements update
+4. Team feedback indicates need
+
+## Core Principles
+
+### Code Quality Standards
+
+1. Write comprehensive unit tests for every function and module
+2. Use consistent code formatting and linting rules
+3. Use descriptive variable and function names for clarity
+4. Document all functions with clear comments (parameters, return values, functionality)
+5. Regular code reviews and pair programming sessions
+6. Performance optimization as a continuous process
+
+### Architecture and Design
+
+1. Ensure all code is modular, reusable, and follows SOLID principles
+2. Use dependency injection for better organization and testability
+3. Maintain clear separation of concerns in all modules
+4. Design for scalability and future maintainability
+5. Organize related functionality logically in modules
+
+### UI/UX Development
+
+1. UI and design are our primary focus - they represent our face on the Internet
+2. Maintain consistent design patterns throughout the project
+3. Ensure responsive and accessible design implementation
+4. Test UI components thoroughly across different devices and browsers
+5. Use lazy loading for optimal performance with large datasets
+
+### Security First Approach
+
+1. Immediate reporting of any discovered credentials or keys
+2. Proactive security review of all dependencies and packages
+3. Encrypt sensitive data at rest and in transit
+4. No sensitive information in repositories
+5. Security fixes take priority over feature development
+6. Validate all file uploads and user inputs
+
+### Error Handling and Validation
+
+1. Implement comprehensive error handling for all edge cases
+2. Validate all user inputs and file uploads
+3. Provide meaningful error messages
+4. Log errors appropriately for debugging
+5. Handle API failures gracefully
+
+### Performance and Optimization
+
+1. Optimize for handling large datasets
+2. Use efficient algorithms and data structures
+3. Implement caching where appropriate
+4. Regular performance monitoring and optimization
+5. Consider resource usage in all implementations
+
+### Documentation Requirements
+
+1. Clear setup instructions in README
+2. API documentation for all endpoints
+3. Component documentation with usage examples
+4. Environment setup guide
+5. Deployment procedures
+6. Document all major architectural decisions
+
+### Package Management
+
+1. Regular security audits of dependencies
+2. Lock file maintenance for consistency
+3. Minimal use of external dependencies
+4. Version pinning for stability
+5. Document all third-party integrations
+
+### Development Workflow
+
+1. Test-driven development when applicable
+2. Regular commits with meaningful messages
+3. Feature branches for new development
+4. Code review before merging
+5. CI/CD checks must pass before deployment
+6. Avoid hardcoding configurations; use environment variables
+
+### Testing Strategy
+
+1. Comprehensive unit tests for all functions
+2. Integration tests for component interactions
+3. End-to-end tests for critical user flows
+4. Performance testing for critical paths
+5. Accessibility compliance checks
+6. Mock external services in tests
+7. Enable parallel test execution where possible
+
+### Communication Guidelines
+
+1. Clear and direct communication between team members
+2. Regular updates on project status
+3. Immediate notification of blocking issues
+4. Document major decisions and their rationale
+5. Share knowledge and best practices
+6. Ask questions when requirements are unclear
+
+### Deployment Guidelines
+
+1. Staging environment testing before production
+2. Backup procedures in place
+3. Rollback plan for each deployment
+4. Monitoring and logging setup
+5. Performance metrics tracking
+
+## Configuration File Requirements
+
+1. YAML/YML Testing
+   - All YAML files must be validated before deployment
+   - Use provided testing scripts in project_rules/17_yaml_testing.md
+   - Run automated validation in CI/CD pipeline
+   - Check for:
+     - Syntax validity
+     - Schema compliance
+     - Environment variable substitution
+     - Cross-references
+     - Security issues
+
+2. Update deployment documentation when:
+   - New YAML configurations are added
+   - Existing configurations are modified
+   - Environment variables change
+   - Dependencies are updated
+   - Security requirements change
+
+Remember: If you're unsure about anything, ask. It's better to clarify early than fix issues later.

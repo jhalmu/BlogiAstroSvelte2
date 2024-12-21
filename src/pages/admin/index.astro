@@ -1,0 +1,46 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PostEditor from '../../components/PostEditor.svelte';
+import TagManager from '../../components/TagManager.svelte';
+import UserManagement from '../../components/UserManagement.svelte';
+import { isDevMode } from '../../config/database';
+
+// Redirect if not authenticated (implement your auth check here)
+---
+
+<Layout title="Admin Dashboard">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="space-y-8">
+      <div>
+        <h1 class="text-3xl font-bold text-gray-900">Admin Dashboard</h1>
+        {isDevMode() && (
+          <p class="mt-2 text-sm text-gray-500">Running in development mode</p>
+        )}
+      </div>
+
+      <div class="bg-white shadow rounded-lg p-6">
+        <h2 class="text-xl font-semibold text-gray-900 mb-6">Users</h2>
+        <UserManagement client:load />
+      </div>
+
+      <div class="bg-white shadow rounded-lg p-6">
+        <h2 class="text-xl font-semibold text-gray-900 mb-6">New Post</h2>
+        <PostEditor client:load />
+      </div>
+
+      <div class="bg-white shadow rounded-lg p-6">
+        <TagManager client:load />
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<script>
+  // Client-side auth check
+  if (typeof window !== 'undefined') {
+    const token = localStorage.getItem('auth_token');
+    if (!token) {
+      window.location.href = '/login';
+    }
+  }
+</script>

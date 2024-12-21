@@ -2,54 +2,46 @@
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
 import BlogCard from '../components/BlogCard.astro';
-import DevBanner from '../components/DevBanner.astro';
 import { getCollection } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
-import { validateBlogPost } from '../utils/content';
 
-// Get and validate blog posts
-const allPosts = await getCollection('blog');
-const validPosts = allPosts
-  .filter(validateBlogPost)
+const posts = (await getCollection('blog'))
   .sort((a: CollectionEntry<'blog'>, b: CollectionEntry<'blog'>) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf())
   .slice(0, 3);
 ---
 
 <Layout title="Welcome to My Blog">
-  <DevBanner />
-  <div class="container mx-auto px-4">
-    <Hero />
-    
-    <section class="py-16">
-      <div class="container mx-auto px-4">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {validPosts.map((post: CollectionEntry<'blog'>) => (
-            <BlogCard
-              title={post.data.title}
-              excerpt={post.data.excerpt}
-              date={new Date(post.data.date).toLocaleDateString('en-US', {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric'
-              })}
-              slug={post.slug}
-              tags={post.data.tags}
-            />
-          ))}
-        </div>
-        <div class="text-center mt-12">
-          <a 
-            href="/blog" 
-            class="inline-block bg-purple-700 text-white font-semibold px-8 py-4 rounded-lg 
-                   hover:bg-purple-800 transition-colors duration-300 
-                   shadow-lg hover:shadow-xl transform hover:-translate-y-1"
-          >
-            View All Posts
-          </a>
-        </div>
+  <Hero />
+  
+  <section class="py-16 bg-purple-50">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {posts.map((post: CollectionEntry<'blog'>) => (
+          <BlogCard
+            title={post.data.title}
+            excerpt={post.data.excerpt}
+            date={new Date(post.data.date).toLocaleDateString('en-US', {
+              year: 'numeric',
+              month: 'long',
+              day: 'numeric'
+            })}
+            slug={post.slug}
+            tags={post.data.tags}
+          />
+        ))}
       </div>
-    </section>
-  </div>
+      <div class="text-center mt-12">
+        <a 
+          href="/blog" 
+          class="inline-block bg-purple-700 text-white font-semibold px-8 py-4 rounded-lg 
+                 hover:bg-purple-800 transition-colors duration-300 
+                 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+        >
+          View All Posts
+        </a>
+      </div>
+    </div>
+  </section>
 </Layout>
 
 <style>

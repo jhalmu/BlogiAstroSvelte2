@@ -4,10 +4,14 @@ import node from '@astrojs/node';
 
 export default defineConfig({
   site: 'https://juhahalmu.net',
-  output: 'hybrid',
+  output: 'server',
   adapter: node({
-    mode: 'standalone',
+    mode: 'standalone'
   }),
+  server: {
+    host: true,
+    port: 4321
+  },
   prefetch: {
     prefetchAll: true,
     defaultStrategy: 'hover'
@@ -19,17 +23,20 @@ export default defineConfig({
   markdown: {
     shikiConfig: {
       theme: 'github-dark',
-      wrap: true
+      wrap: false
     },
     remarkPlugins: [],
     rehypePlugins: []
   },
   vite: {
+    envPrefix: 'GITHUB_',
     logLevel: 'info',
     build: {
       rollupOptions: {
         output: {
-          manualChunks: undefined
+          assetFileNames: 'assets/[name][extname]',
+          chunkFileNames: 'assets/[name].js',
+          entryFileNames: 'assets/[name].js'
         }
       }
     }

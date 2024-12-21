@@ -3,13 +3,21 @@ import type { CollectionEntry } from 'astro:content'
 import { getCollection } from 'astro:content'
 import HeroImage from '../../components/HeroImage.astro'
 import Layout from '../../layouts/Layout.astro'
+import '../../styles/blog.css'
+
+// Tell Astro to prerender this page as static HTML
+export const prerender = true;
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog')
-  return posts.map((post: CollectionEntry<'blog'>) => ({
-    params: { slug: post.slug },
-    props: { post },
-  }))
+  
+  return posts.map((post: CollectionEntry<'blog'>) => {
+    const slug = post.slug
+    return {
+      params: { slug },
+      props: { post },
+    }
+  })
 }
 
 interface Props {
@@ -17,120 +25,157 @@ interface Props {
 }
 
 const { post } = Astro.props
+console.log('Full post data:', JSON.stringify(post.data, null, 2))
+console.log('Author check:', {
+  author: post.data.author,
+  path: Astro.url.pathname,
+  slug: post.slug
+})
+
 const { Content } = await post.render()
 
-// Helper functions
-function getFirstImage(content: string): string {
-  const imgMatch = content.match(/<img[^>]+src="([^">]+)"/)
-  return imgMatch ? imgMatch[1] : '/og-default.jpg'
+// Function to get preview text from content
+function getContentPreview(content: string): string {
+  // Remove HTML tags and markdown syntax
+  const cleanText = content
+    .replace(/<[^>]*>/g, '') // Remove HTML tags
+    .replace(/[#*`_~\[\]]/g, '') // Remove markdown syntax
+    .replace(/\n+/g, ' ') // Replace newlines with spaces
+    .trim()
+
+  // Get first 160 characters, try to end at a complete sentence or word
+  const maxLength = 160
+  if (cleanText.length <= maxLength) return cleanText
+
+  const truncated = cleanText.slice(0, maxLength)
+  const lastPeriod = truncated.lastIndexOf('.')
+  const lastSpace = truncated.lastIndexOf(' ')
+
+  // Try to end at a sentence, otherwise end at a word
+  const endIndex = lastPeriod > maxLength * 0.5 ? lastPeriod + 1 : lastSpace
+  return truncated.slice(0, endIndex) + '...'
 }
 
-function getTextPreview(content: string): string {
-  return (
-    content
-      .replace(/<[^>]*>/g, '')
-      .replace(/\n+/g, ' ')
-      .trim()
-      .slice(0, 200) + '...'
-  )
+// Get the description text
+const description = post.data.excerpt || (post.body ? getContentPreview(post.body) : '')
+
+// Get the tags
+const tags = post.data.tags || []
+
+// Get the hero image
+const heroImage = {
+  src: post.data.image?.src || '/images/blog/default-hero.jpg',
+  alt: post.data.image?.alt || post.data.title || 'Blog post hero image',
+  width: 1200,
+  height: 630
 }
 
-const description = post.data.excerpt || getTextPreview(post.body)
-const defaultImage = {
-  src: '/images/blog/default-hero.jpg',
-  alt: 'Default blog post hero image',
-}
-const image = post.data.image || defaultImage
-
-const tags = post.data.tags
 ---
 
-<Layout
+<Layout 
   title={post.data.title}
   description={description}
-  image={image.src}
+  image={heroImage.src}
   type='article'
-  publishDate={post.data.date}
+  publishDate={post.data.date?.toISOString()}
   author={post.data.author}
   tags={post.data.tags}
+  showBackToHome={true}
+  showBackToBlog={true}
 >
   <main>
     <HeroImage
       title={post.data.title}
-      description={post.data.description}
-      image={image}
+      image={heroImage}
       overlayOpacity={50}
-      lastUpdated={post.data.date}
+      lastUpdated={post.data.date?.toISOString()}
       tags={tags}
       priority={true}
+      author={post.data.author}
     />
 
     <div class='container mx-auto px-4 py-8 pb-24 mt-16 max-w-3xl'>
-      <article class='prose prose-lg mx-auto'>
+      <article class="blog-content py-12">
         <Content />
       </article>
     </div>
   </main>
 </Layout>
 
-<style is:global>
-  .prose {
-    color: #111827;
+<style>
+  .blog-content {
+    line-height: 1.8;
   }
 
-  .prose h1 {
-    @apply text-4xl font-bold text-gray-900 mt-8 mb-4;
+  .blog-content :global(h1),
+  .blog-content :global(h2),
+  .blog-content :global(h3),
+  .blog-content :global(h4),
+  .blog-content :global(h5),
+  .blog-content :global(h6) {
+    font-weight: 600;
+    margin-top: 2em;
+    margin-bottom: 1em;
   }
 
-  .prose h2 {
-    @apply text-3xl font-bold text-gray-900 mt-6 mb-4;
+  .blog-content :global(h1) {
+    font-size: 2.25em;
   }
 
-  .prose h3 {
-    @apply text-2xl font-bold text-gray-900 mt-4 mb-3;
+  .blog-content :global(h2) {
+    font-size: 1.875em;
   }
 
-  .prose p {
-    @apply text-gray-900 mb-8 leading-relaxed;
+  .blog-content :global(h3) {
+    font-size: 1.5em;
   }
 
-  .prose p:last-child {
-    @apply mb-16;
+  .blog-content :global(p) {
+    margin-bottom: 1.5em;
   }
 
-  .prose ul {
-    @apply list-disc list-inside text-gray-900 mb-8;
+  .blog-content :global(ul),
+  .blog-content :global(ol) {
+    margin-left: 2em;
+    margin-bottom: 1.5em;
   }
 
-  .prose ol {
-    @apply list-decimal list-inside text-gray-900 mb-8;
+  .blog-content :global(li) {
+    margin-bottom: 0.5em;
   }
 
-  .prose li {
-    @apply mb-2;
+  .blog-content :global(pre) {
+    padding: 1em;
+    border-radius: 0.5em;
+    margin: 1.5em 0;
+    overflow-x: auto;
   }
 
-  .prose a {
-    @apply text-purple-800 hover:underline;
+  .blog-content :global(code) {
+    font-family: 'Fira Code', monospace;
+    font-size: 0.9em;
   }
 
-  .prose blockquote {
-    @apply pl-4 border-l-4 border-purple-800 text-gray-800 my-4;
+  .blog-content :global(blockquote) {
+    border-left: 4px solid #e2e8f0;
+    padding-left: 1em;
+    margin: 1.5em 0;
+    color: #4a5568;
   }
 
-  .prose pre {
-    @apply bg-white text-gray-800 p-4 rounded-lg overflow-x-auto my-4 border border-gray-200 shadow-sm;
+  .blog-content :global(img) {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.5em;
+    margin: 1.5em 0;
   }
 
-  .prose code {
-    @apply bg-gray-50 text-gray-800 px-1.5 py-0.5 rounded text-sm font-mono;
+  .blog-content :global(a) {
+    color: #4a5568;
+    text-decoration: underline;
   }
 
-  .prose pre code {
-    @apply bg-transparent p-0 text-base;
-  }
-
-  .prose img {
-    @apply rounded-lg shadow-md my-4;
+  .blog-content :global(a:hover) {
+    color: #2d3748;
   }
 </style>

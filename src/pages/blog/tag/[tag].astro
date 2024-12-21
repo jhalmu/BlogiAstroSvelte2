@@ -3,18 +3,45 @@ import { getCollection } from 'astro:content';
 import Layout from '../../../layouts/Layout.astro';
 import BlogCard from '../../../components/BlogCard.astro';
 import HeroImage from '../../../components/HeroImage.astro';
+import type { CollectionEntry } from 'astro:content';
+
+// Tell Astro to prerender this page as static HTML
+export const prerender = true;
+
+interface Props {
+  tag: string;
+  posts: CollectionEntry<'blog'>[];
+}
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
-  const tags = [...new Set(posts.flatMap(post => post.data.tags || []))];
   
-  return tags.map(tag => ({
-    params: { tag: tag.toLowerCase() },
-    props: { tag, posts: posts.filter(post => post.data.tags?.includes(tag)) }
-  }));
+  // Get all unique tags with their original casing
+  const tagsMap = new Map();
+  posts.forEach(post => {
+    post.data.tags?.forEach(tag => {
+      // Store the original tag as the value and lowercase as the key
+      tagsMap.set(tag.toLowerCase(), tag);
+    });
+  });
+  
+  return Array.from(tagsMap.entries()).map(([normalizedTag, originalTag]) => {
+    const tagPosts = posts.filter(post => 
+      post.data.tags?.some(t => t.toLowerCase() === normalizedTag)
+    );
+    
+    return {
+      params: { tag: normalizedTag },
+      props: { 
+        tag: originalTag,
+        posts: tagPosts
+      }
+    };
+  }).filter(({ props }) => props.posts.length > 0);
 }
 
-const { tag, posts } = Astro.props;
+// Get the tag and posts from props with default values
+const { tag = '', posts = [] }: Props = Astro.props;
 
 // Default hero image for tag pages
 const heroImage = {
@@ -30,7 +57,7 @@ const heroImage = {
   <main class="min-h-screen">
     <HeroImage
       title={`Posts tagged with "${tag}"`}
-      description={`Browse all ${posts.length} post${posts.length === 1 ? '' : 's'} tagged with ${tag}`}
+      description={`Browse ${posts.length} post${posts.length === 1 ? '' : 's'} tagged with ${tag}`}
       image={heroImage}
       tags={[tag]}
     />
@@ -41,9 +68,14 @@ const heroImage = {
           <BlogCard
             title={post.data.title}
             excerpt={post.data.excerpt}
-            date={post.data.date}
+            date={post.data.date ? new Date(post.data.date).toLocaleDateString('en-US', {
+              year: 'numeric',
+              month: 'long',
+              day: 'numeric'
+            }) : ''}
             slug={post.slug}
             tags={post.data.tags || []}
+            image={post.data.image?.src}
           />
         ))}
       </div>

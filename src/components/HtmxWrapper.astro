@@ -1,0 +1,93 @@
+---
+---
+<script>
+  // Add HTMX via CDN
+  const script = document.createElement('script');
+  script.src = 'https://unpkg.com/htmx.org@1.9.9';
+  script.defer = true;
+  document.head.appendChild(script);
+
+  // Add HTMX boost extension
+  const boostScript = document.createElement('script');
+  boostScript.src = 'https://unpkg.com/htmx.org/dist/ext/head-support.js';
+  boostScript.defer = true;
+  document.head.appendChild(boostScript);
+
+  // Configure HTMX settings after load
+  script.onload = () => {
+    // Enable debug logging in development
+    if (import.meta.env.DEV) {
+      htmx.logAll();
+    }
+
+    // Add smooth transitions
+    document.body.addEventListener('htmx:beforeSwap', function(evt) {
+      const target = evt.detail.target;
+      if (target) {
+        target.style.opacity = '0';
+        target.style.transition = 'opacity 0.3s ease-out';
+      }
+    });
+
+    document.body.addEventListener('htmx:afterSwap', function(evt) {
+      const target = evt.detail.target;
+      if (target) {
+        requestAnimationFrame(() => {
+          target.style.opacity = '1';
+        });
+      }
+    });
+
+    // Update page title
+    document.body.addEventListener('htmx:afterSettle', function(evt) {
+      const newTitle = evt.detail.xhr?.getResponseHeader('HX-Title');
+      if (newTitle) {
+        document.title = newTitle;
+      }
+    });
+
+    // Add loading states
+    htmx.defineExtension('loading-states', {
+      onEvent: function(name, evt) {
+        const target = evt.detail.elt;
+        
+        if (name === 'htmx:beforeRequest') {
+          target.classList.add('loading');
+        }
+        
+        if (name === 'htmx:afterRequest') {
+          target.classList.remove('loading');
+        }
+      }
+    });
+  };
+</script>
+
+<style is:global>
+  /* Loading animation */
+  .loading {
+    position: relative;
+    pointer-events: none;
+  }
+
+  .loading::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(2px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Smooth page transitions */
+  main {
+    opacity: 1;
+    transition: opacity 0.3s ease-out;
+  }
+
+  main.htmx-swapping {
+    opacity: 0;
+  }
+</style>

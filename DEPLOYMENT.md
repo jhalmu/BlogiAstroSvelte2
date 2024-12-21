@@ -1,254 +1,494 @@
+
 # Deployment Guide
 
 This guide explains how to deploy the BlogiAstroSvelte site using GitHub Actions.
 
-## Prerequisites
+## # # Prerequisites
+  -$2A GitHub account with your repository
+  -$2A server with SSH access
+  -$2Node.js 18 or later installed on your local machine
+  -$2Basic knowledge of GitHub and command line
 
-- A GitHub account with your repository
-- A server with SSH access
-- Node.js 18 or later installed on your local machine
-- Basic knowledge of GitHub and command line
+## # # Local Testing Before Deployment
 
-## Local Testing Before Deployment
 
 1. Test the build locally:
-```bash
-# Clean install dependencies
+
+```text
+text
+bash
+
+## # Clean install dependencies
+
 npm ci
 
-# Build the site
+## # Build the site
+
 npm run build
 
-# Preview the build
+## # Preview the build
+
 npm run preview
-```
 
-2. Check for common issues:
-- All images load correctly
-- Links work as expected
-- Styles are applied properly
-- No console errors
-- RSS feed generates correctly
+```text
+text
 
-## Setting Up GitHub Actions
+
+1. Check for common issues:
+  -$2All images load correctly
+  -$2Links work as expected
+  -$2Styles are applied properly
+  -$2No console errors
+  -$2RSS feed generates correctly
+
+## # # Setting Up GitHub Actions
+
 
 1. Create the GitHub Actions directory structure:
-```bash
-mkdir -p .github/workflows
-```
 
-2. Create the workflow file `.github/workflows/deploy.yml`:
-```yaml
+```text
+text
+bash
+mkdir -p .github/workflows
+
+```text
+text
+
+
+1. Create the workflow file `.github/workflows/deploy.yml`:
+
+```text
+text
+yaml
 name: Deploy to Server
 
 on:
   push:
+
+```text
     branches:
-      - main  # or your default branch name
-  # Enable manual trigger
+
+```text
+  -$2main
+
+## or your default branch name
+
+## Enable manual trigger
+
   workflow_dispatch:
 
 jobs:
   build-and-deploy:
+
+```text
     runs-on: ubuntu-latest
-    
+
+```text
+
+```text
     steps:
-      - name: Checkout repository
+
+```text
+  -$2name: Checkout repository
+
+```text
         uses: actions/checkout@v3
 
-      - name: Setup Node.js
+```text
+  -$2name: Setup Node.js
+
+```text
         uses: actions/setup-node@v3
+
+```text
+
+```text
         with:
+
+```text
+
+```text
           node-version: '18'
+
+```text
+
+```text
           cache: 'npm'
 
-      - name: Install dependencies
+```text
+  -$2name: Install dependencies
+
+```text
         run: npm ci
 
-      - name: Build site
+```text
+  -$2name: Build site
+
+```text
         run: npm run build
 
-      - name: Deploy to server
-        uses: easingthemes/ssh-deploy@main
-        with:
-          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-          REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
-          REMOTE_USER: ${{ secrets.REMOTE_USER }}
-          SOURCE: "dist/"
-          TARGET: ${{ secrets.REMOTE_PATH }}
-          ARGS: "-rlgoDzvc -i"
-          EXCLUDE: "/.git/, /.github/, /node_modules/"
-```
+```text
+  -$2name: Deploy to server
 
-## Setting Up SSH Keys
+```text
+        uses: easingthemes/ssh-deploy@main
+
+```text
+
+```text
+        with:
+
+```text
+
+```text
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+
+```text
+
+```text
+          REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
+
+```text
+
+```text
+          REMOTE_USER: ${{ secrets.REMOTE_USER }}
+
+```text
+
+```text
+          SOURCE: "dist/"
+
+```text
+
+```text
+          TARGET: ${{ secrets.REMOTE_PATH }}
+
+```text
+
+```text
+          ARGS: "-rlgoDzvc -i"
+
+```text
+
+```text
+          EXCLUDE: "/.git/, /.github/, /node_modules/"
+
+```text
+
+```text
+text
+
+## # Setting Up SSH Keys
+
 
 1. Generate SSH key pair:
-```bash
-ssh-keygen -t rsa -b 4096 -C "your-email@example.com"
-# Save it to a different file, e.g., ~/.ssh/deploy_key
-```
 
-2. On your server:
-```bash
-# Add public key to authorized_keys
+```text
+text
+bash
+ssh-keygen -t rsa -b 4096 -C "your-email@example.com"
+
+## # Save it to a different file, e.g., ~/.ssh/deploy_key
+
+```text
+text
+
+
+1. On your server:
+
+```text
+text
+bash
+
+## # Add public key to authorized_keys
+
 cat deploy_key.pub >> ~/.ssh/authorized_keys
 
-# Set proper permissions
+## # Set proper permissions
+
 chmod 700 ~/.ssh
 chmod 600 ~/.ssh/authorized_keys
-```
 
-## GitHub Repository Setup
+```text
+text
+
+## # GitHub Repository Setup
+
 
 1. Go to your repository → Settings → Secrets and variables → Actions
 
-2. Add these secrets:
-- `SSH_PRIVATE_KEY`: Your SSH private key (entire content of `deploy_key`)
-- `REMOTE_HOST`: Your server's hostname or IP
-- `REMOTE_USER`: Your server's SSH username
-- `REMOTE_PATH`: Server path (e.g., `/var/www/html/blogiastrosvelte`)
 
-## Server Configuration
+1. Add these secrets:
+  -$2`SSH_PRIVATE_KEY`: Your SSH private key (entire content of `deploy_key`)
+  -$2`REMOTE_HOST`: Your server's hostname or IP
+  -$2`REMOTE_USER`: Your server's SSH username
+  -$2`REMOTE_PATH`: Server path (e.g., `/var/www/html/blogiastrosvelte`)
+
+## # # Server Configuration
+
 
 1. Prepare the deployment directory:
-```bash
-# Create deployment directory
+
+```text
+text
+bash
+
+## # Create deployment directory
+
 sudo mkdir -p /var/www/html/blogiastrosvelte
 
-# Set ownership
+## # Set ownership
+
 sudo chown -R your-user:your-user /var/www/html/blogiastrosvelte
 
-# Set permissions
-sudo chmod -R 755 /var/www/html/blogiastrosvelte
-```
+## # Set permissions
 
-2. Configure your web server (example for Nginx):
-```nginx
+sudo chmod -R 755 /var/www/html/blogiastrosvelte
+
+```text
+text
+
+
+1. Configure your web server (example for Nginx):
+
+```text
+text
+nginx
 server {
+
+```text
     listen 80;
+
+```text
+
+```text
     server_name your-domain.com;
+
+```text
+
+```text
     root /var/www/html/blogiastrosvelte;
+
+```text
+
+```text
     index index.html;
 
+```text
+
+```text
     location / {
+
+```text
+
+```text
         try_files $uri $uri/ /index.html;
+
+```text
+
+```text
     }
 
-    # Cache static assets
+```text
+
+## # Cache static assets
+
+```text
     location ~* \.(js|css|png|jpg|jpeg|gif|ico|svg)$ {
+
+```text
+
+```text
         expires max;
+
+```text
+
+```text
         add_header Cache-Control "public, no-transform";
+
+```text
+
+```text
     }
 
-    # Security headers
-    add_header X-Frame-Options "SAMEORIGIN";
-    add_header X-XSS-Protection "1; mode=block";
-    add_header X-Content-Type-Options "nosniff";
-    add_header Referrer-Policy "strict-origin-when-cross-origin";
-}
-```
+```text
 
-## Testing the Deployment
+## # Security headers
+
+```text
+    add_header X-Frame-Options "SAMEORIGIN";
+
+```text
+
+```text
+    add_header X-XSS-Protection "1; mode=block";
+
+```text
+
+```text
+    add_header X-Content-Type-Options "nosniff";
+
+```text
+
+```text
+    add_header Referrer-Policy "strict-origin-when-cross-origin";
+
+```text
+}
+
+```text
+text
+
+## # Testing the Deployment
+
 
 1. Make a small change to your site
 
-2. Push to GitHub:
-```bash
+
+1. Push to GitHub:
+
+```text
+text
+bash
 git add .
 git commit -m "Test deployment"
 git push origin main
-```
 
-3. Monitor the deployment:
-- Go to your repository → Actions tab
-- Watch the workflow progress
-- Check for any errors in the logs
+```text
+text
 
-4. Verify the deployment:
-- Visit your website
-- Check that changes are visible
-- Test functionality
-- Check console for errors
-- Verify SSL certificate (if using HTTPS)
 
-## Troubleshooting
+1. Monitor the deployment:
+  -$2Go to your repository → Actions tab
+  -$2Watch the workflow progress
+  -$2Check for any errors in the logs
+
+
+1. Verify the deployment:
+  -$2Visit your website
+  -$2Check that changes are visible
+  -$2Test functionality
+  -$2Check console for errors
+  -$2Verify SSL certificate (if using HTTPS)
+
+## # # Troubleshooting
 
 Common issues and solutions:
 
+
 1. **Build Fails**
-- Check Node.js version
-- Verify all dependencies are installed
-- Look for syntax errors in code
-- Check for missing environment variables
+  -$2Check Node.js version
+  -$2Verify all dependencies are installed
+  -$2Look for syntax errors in code
+  -$2Check for missing environment variables
 
-2. **Deployment Fails**
-- Verify SSH key permissions
-- Check server connectivity
-- Verify target directory permissions
-- Check disk space on server
 
-3. **Site Not Updating**
-- Clear browser cache
-- Check if files were actually deployed
-- Verify web server configuration
-- Check file permissions on server
+1. **Deployment Fails**
+  -$2Verify SSH key permissions
+  -$2Check server connectivity
+  -$2Verify target directory permissions
+  -$2Check disk space on server
 
-4. **404 Errors**
-- Verify web server configuration
-- Check if all files were deployed
-- Confirm correct base URL in Astro config
 
-## Rollback Process
+1. **Site Not Updating**
+  -$2Clear browser cache
+  -$2Check if files were actually deployed
+  -$2Verify web server configuration
+  -$2Check file permissions on server
+
+
+1. **404 Errors**
+  -$2Verify web server configuration
+  -$2Check if all files were deployed
+  -$2Confirm correct base URL in Astro config
+
+## # # Rollback Process
 
 If something goes wrong:
 
+
 1. Find the last working commit
-2. Reset to that commit:
-```bash
+
+
+1. Reset to that commit:
+
+```text
+text
+bash
 git reset --hard <commit-hash>
 git push --force origin main
-```
 
-3. Or restore from backup:
-```bash
-# On your server
+```text
+text
+
+
+1. Or restore from backup:
+
+```text
+text
+bash
+
+## # On your server
+
 cp -r /path/to/backup /var/www/html/blogiastrosvelte
-```
 
-## Monitoring
+```text
+text
+
+## # Monitoring
 
 Consider setting up:
-- Uptime monitoring
-- Error tracking
-- Performance monitoring
-- Analytics
+  -$2Uptime monitoring
+  -$2Error tracking
+  -$2Performance monitoring
+  -$2Analytics
 
-## Security Considerations
+## # # Security Considerations
+
 
 1. Keep secrets secure:
-- Never commit SSH keys
-- Use GitHub secrets
-- Rotate keys periodically
+  -$2Never commit SSH keys
+  -$2Use GitHub secrets
+  -$2Rotate keys periodically
 
-2. Server security:
-- Keep server updated
-- Use firewall
-- Enable HTTPS
-- Set up fail2ban
 
-## Maintenance
+1. Server security:
+  -$2Keep server updated
+  -$2Use firewall
+  -$2Enable HTTPS
+  -$2Set up fail2ban
+
+## # # Maintenance
 
 Regular tasks:
-1. Update dependencies
-2. Check for security vulnerabilities
-3. Monitor disk space
-4. Review logs
-5. Backup data
 
-## Support
+
+1. Update dependencies
+
+
+1. Check for security vulnerabilities
+
+
+1. Monitor disk space
+
+
+1. Review logs
+
+
+1. Backup data
+
+## # # Support
 
 If you encounter issues:
+
+
 1. Check GitHub Actions logs
-2. Review server logs
-3. Open an issue in the repository
-4. Contact the maintainer
+
+
+1. Review server logs
+
+
+1. Open an issue in the repository
+
+
+1. Contact the maintainer

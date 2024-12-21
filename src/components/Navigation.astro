@@ -5,6 +5,7 @@ import SocialLinks from './SocialLinks.astro'
 const navItems = [
   { href: '/', text: 'Home' },
   { href: '/blog', text: 'Blog' },
+  { href: '/projects', text: 'Projects' },
   { href: '/readme', text: 'Readme.md' },
 ]
 
@@ -23,13 +24,17 @@ const currentPath = Astro.url.pathname
   <!-- Navigation content -->
   <div class='relative z-10 flex flex-col h-full px-12'>
     <!-- Top navigation links -->
-    <div class='flex justify-end pt-7'>
+    <div class='flex justify-end pt-7' role="complementary" aria-label="Social links">
       <SocialLinks />
     </div>
 
     <!-- Brand section with navigation -->
     <div class='flex items-center space-x-8 mt-8'>
-      <a href='/' class='block' aria-label='Home page'>
+      <a 
+        href='/' 
+        class='block focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-offset-2 rounded-full' 
+        aria-label='Home page'
+      >
         <NavAvatar />
       </a>
       <div class="flex items-baseline space-x-16">
@@ -37,11 +42,15 @@ const currentPath = Astro.url.pathname
           class="text-3xl md:text-5xl lg:text-6xl font-['Abril_Fatface'] text-purple-50 opacity-80 tracking-normal hover:opacity-90 transition-opacity duration-300 text-shadow"
           id='site-title'
         >
-          <span class='tracking-normal'>Juha</span>
+          <span class='tracking-normal'>Juha</span>{' '}
           <span class='tracking-normal'>Halmu</span>
         </h1>
         
-        <div class="flex space-x-10" role="menubar">
+        <div 
+          class="flex space-x-10" 
+          role="menubar" 
+          aria-label="Main menu"
+        >
           {
             navItems.map((item) => {
               const isActive =
@@ -50,26 +59,12 @@ const currentPath = Astro.url.pathname
               return (
                 <a
                   href={item.href}
-                  role='menuitem'
-                  class:list={[
-                    'relative py-1 transition-all duration-300 text-lg font-["Montserrat"] tracking-wide',
-                    isActive
-                      ? 'font-semibold text-white border-b-2 border-purple-100'
-                      : 'font-medium text-purple-100 hover:text-white',
-                    'visited:text-purple-100 visited:font-medium',
-                    !isActive && [
-                      'after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5',
-                      'after:bg-purple-100 after:transform after:scale-x-0',
-                      'after:transition-transform after:duration-500 after:origin-bottom-right',
-                      'hover:after:scale-x-100 hover:after:origin-bottom-left',
-                      'hover:translate-y-[-2px]',
-                    ],
-                  ]}
+                  class={`text-lg text-purple-50 opacity-80 hover:opacity-100 transition-opacity duration-300 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-offset-2 rounded-md px-2 py-1 ${
+                    isActive ? 'font-bold underline' : ''
+                  }`}
+                  role="menuitem"
                   aria-current={isActive ? 'page' : undefined}
-                  aria-label={`${item.text} ${isActive ? '(current page)' : ''}`}
-                  tabindex={isActive ? '-1' : '0'}
                 >
-                  <span class='sr-only'>{isActive ? 'Current page: ' : ''}</span>
                   {item.text}
                 </a>
               )
@@ -81,78 +76,37 @@ const currentPath = Astro.url.pathname
   </div>
 </nav>
 
-<style>
-  /* Ensure focus indicators are visible */
-  a:focus-visible {
-    outline: 2px solid #4f46e5;
-    outline-offset: 2px;
-    border-radius: 2px;
-  }
-
-  /* Hide focus ring when using mouse */
-  a:focus:not(:focus-visible) {
-    outline: none;
-  }
-
-  .text-shadow {
-    text-shadow:
-      8px 12px 4px rgba(147, 51, 234, 0.25),
-      6px 16px 8px rgba(168, 85, 247, 0.2),
-      12px 24px 32px rgba(147, 51, 234, 0.15),
-      16px 36px 64px rgba(168, 85, 247, 0.1),
-      20px 48px 96px rgba(147, 51, 234, 0.05);
-  }
-
-  .text-shadow:hover {
-    text-shadow:
-      8px 12px 4px rgba(147, 51, 234, 0.25),
-      6px 16px 8px rgba(168, 85, 247, 0.2),
-      12px 24px 32px rgba(147, 51, 234, 0.15),
-      16px 36px 64px rgba(168, 85, 247, 0.1),
-      20px 48px 96px rgba(147, 51, 234, 0.05);
-  }
-</style>
-
 <script>
   // Add keyboard navigation
-  const menuItems =
-    document.querySelectorAll<HTMLAnchorElement>('[role="menuitem"]')
+  const menuItems = document.querySelectorAll<HTMLAnchorElement>('[role="menuitem"]')
+  const menuItemsArray = Array.from(menuItems)
 
-  menuItems.forEach((item: HTMLAnchorElement) => {
-    item.addEventListener('keydown', (e: KeyboardEvent) => {
-      if (!(e.target instanceof HTMLElement)) return
-
-      const items = Array.from(menuItems)
-      const index = items.indexOf(item)
-      let nextItem: HTMLAnchorElement
+  menuItemsArray.forEach((item, index) => {
+    item.addEventListener('keydown', (e) => {
+      let targetItem: HTMLAnchorElement | undefined
 
       switch (e.key) {
         case 'ArrowRight':
         case 'ArrowDown':
           e.preventDefault()
-          nextItem = items[(index + 1) % items.length]
-          nextItem.focus()
+          targetItem = menuItemsArray[index + 1] || menuItemsArray[0]
           break
         case 'ArrowLeft':
         case 'ArrowUp':
           e.preventDefault()
-          nextItem = items[(index - 1 + items.length) % items.length]
-          nextItem.focus()
+          targetItem = menuItemsArray[index - 1] || menuItemsArray[menuItemsArray.length - 1]
           break
         case 'Home':
           e.preventDefault()
-          items[0].focus()
+          targetItem = menuItemsArray[0]
           break
         case 'End':
           e.preventDefault()
-          items[items.length - 1].focus()
-          break
-        case 'Enter':
-        case ' ':
-          e.preventDefault()
-          item.click()
+          targetItem = menuItemsArray[menuItemsArray.length - 1]
           break
       }
+
+      targetItem?.focus()
     })
   })
 </script>

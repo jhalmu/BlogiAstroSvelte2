@@ -1,0 +1,12 @@
+{
+  "BlogCard": {
+    "count": 18,
+    "averageDuration": 0,
+    "maxDuration": 0,
+    "minDuration": null,
+    "totalMemoryUsed": 1950728920,
+    "averageMemoryUsed": 108373828.8888889,
+    "errorCount": 18,
+    "customMetrics": {}
+  }
+}

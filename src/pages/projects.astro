@@ -1,0 +1,138 @@
+---
+import HeroImage from '../components/HeroImage.astro'
+import ProjectCard from '../components/ProjectCard.astro'
+import Layout from '../layouts/Layout.astro'
+
+// GitHub GraphQL API endpoint
+const GITHUB_API = 'https://api.github.com/graphql'
+
+// Get GitHub token from environment variable
+const GITHUB_TOKEN = import.meta.env.GITHUB_TOKEN
+
+// GraphQL query for repositories
+const query = `
+  query {
+    user(login: "jhalmu") {
+      repositories(
+        first: 12,
+        privacy: PUBLIC,
+        orderBy: { field: UPDATED_AT, direction: DESC }
+      ) {
+        nodes {
+          name
+          description
+          url
+          homepageUrl
+          primaryLanguage {
+            name
+          }
+          stargazerCount
+          forkCount
+          updatedAt
+          repositoryTopics(first: 10) {
+            nodes {
+              topic {
+                name
+              }
+            }
+          }
+          openGraphImageUrl
+        }
+      }
+    }
+  }
+`
+
+// Fetch projects from GitHub
+const response = await fetch(GITHUB_API, {
+  method: 'POST',
+  headers: {
+    Authorization: `Bearer ${GITHUB_TOKEN}`,
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify({ query }),
+})
+
+const { data } = await response.json()
+const projects = data?.user?.repositories?.nodes || []
+
+// Process projects to include topics and image
+const processedProjects = projects.map(project => ({
+  ...project,
+  topics: project.repositoryTopics.nodes.map(node => node.topic.name),
+  image: project.openGraphImageUrl || null
+}))
+
+// Hero section content
+const heroImage = {
+  src: '/images/projects-hero.jpg',
+  alt: 'Code on a computer screen',
+}
+
+const description =
+  'Explore my open-source projects and contributions. These projects showcase my skills, interests, and ongoing work in software development.'
+---
+
+<Layout title='Projects | Juha Halmu'>
+  <main>
+    <HeroImage
+      title='Projects'
+      description={description}
+      image={heroImage}
+      tags={['GitHub', 'Open Source', 'Code']}
+      priority={true}
+    />
+
+    <div class='container mx-auto px-4 py-12'>
+      <h2 class="sr-only">List of Projects</h2>
+      <div 
+        class='grid gap-6 md:grid-cols-2 lg:grid-cols-3'
+        role="list"
+        aria-label="Projects"
+      >
+        {
+          processedProjects.map((project) => (
+            <div role="listitem">
+              <ProjectCard
+                name={project.name}
+                description={project.description || 'No description available'}
+                url={project.url}
+                homepage={project.homepageUrl}
+                language={project.primaryLanguage?.name}
+                stars={project.stargazerCount}
+                forks={project.forkCount}
+                updatedAt={project.updatedAt}
+                image={project.image}
+                tags={project.topics}
+              />
+            </div>
+          ))
+        }
+      </div>
+
+      {
+        processedProjects.length === 0 && (
+          <div 
+            class='text-center py-12'
+            role="alert"
+            aria-live="polite"
+          >
+            <h2 class='text-2xl font-bold text-gray-900 mb-4'>
+              No Projects Found
+            </h2>
+            <p class='text-gray-600'>
+              Please make sure your GitHub token is configured correctly and try
+              again.
+            </p>
+          </div>
+        )
+      }
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+</style>

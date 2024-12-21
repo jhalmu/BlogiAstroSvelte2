@@ -8,7 +8,7 @@ const publicRoutes = [
   '/about',
   '/contact',
   '/subscribe',
-  '/blog',  // Make the blog list public
+  '/blog', // Make the blog list public
   '/readme', // README.md page
   '/about-cascade', // AI Development Story page
 ];
@@ -17,8 +17,8 @@ export const onRequest = defineMiddleware(async ({ url, cookies, redirect }, nex
   const pathname = url.pathname;
 
   // Check if the route is public
-  const isPublicRoute = publicRoutes.some(route => 
-    pathname === route || pathname.startsWith(`${route}/`)
+  const isPublicRoute = publicRoutes.some(
+    (route) => pathname === route || pathname.startsWith(`${route}/`)
   );
 
   // If it's a public route, proceed without checking auth

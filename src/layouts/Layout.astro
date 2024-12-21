@@ -1,6 +1,7 @@
 ---
 import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
+import HtmxWrapper from '../components/HtmxWrapper.astro';
 import '../styles/global.css';
 
 export interface Props {
@@ -12,6 +13,8 @@ export interface Props {
   publishDate?: string;
   author?: string;
   tags?: string[];
+  showBackToHome?: boolean;
+  showBackToBlog?: boolean;
 }
 
 const {
@@ -22,11 +25,13 @@ const {
   type = 'website',
   publishDate,
   author = 'Juha Halmu',
-  tags = []
+  tags = [],
+  showBackToHome = false,
+  showBackToBlog = false
 } = Astro.props;
 
 // Format tags for meta keywords
-const keywords = [...tags, 'blogi', 'teknologia', 'ohjelmointi', 'web-kehitys'].join(', ');
+const formattedTags = tags.join(', ');
 
 // Generate structured data
 const structuredData = {
@@ -55,7 +60,7 @@ const structuredData = {
     <title>{title}</title>
     <meta name="title" content={title} />
     <meta name="description" content={description} />
-    <meta name="keywords" content={keywords} />
+    <meta name="keywords" content={formattedTags} />
     <meta name="author" content={author} />
     
     <!-- Canonical URL -->
@@ -94,8 +99,17 @@ const structuredData = {
     <link rel="alternate" type="application/rss+xml" title={`${title} RSS Feed`} href="/rss.xml" />
     
     <meta name="generator" content={Astro.generator} />
+    
+    <!-- HTMX Wrapper -->
+    <HtmxWrapper />
   </head>
-  <body class="grid min-h-screen grid-rows-[auto_1fr_auto] bg-gradient-to-b from-purple-950 via-purple-900 to-purple-800">
+  <body 
+    hx-boost="true"
+    hx-ext="head-support,loading-states"
+    hx-swap="innerHTML transition:true"
+    hx-push-url="true"
+    class="grid min-h-screen grid-rows-[auto_1fr_auto] bg-gradient-to-b from-purple-950 via-purple-900 to-purple-800"
+  >
     <!-- Background mountain -->
     <div class="fixed bottom-0 left-0 right-0 h-[50vh] bg-no-repeat bg-bottom bg-cover pointer-events-none" style="background-image: url('/mountains.svg')"></div>
     
@@ -111,7 +125,11 @@ const structuredData = {
       <Navigation />
     </header>
     
-    <main id="main-content" class="relative z-10 pt-[100px] p-2 sm:p-4 md:p-6">
+    <main 
+      id="main-content" 
+      class="relative z-10 pt-[100px] p-2 sm:p-4 md:p-6"
+      hx-target="body"
+    >
       <div class="w-full max-w-6xl mx-auto bg-gradient-to-br from-lavender-50 to-lavender-100 rounded-2xl shadow-2xl overflow-hidden border border-lavender-200">
         <slot />
       </div>

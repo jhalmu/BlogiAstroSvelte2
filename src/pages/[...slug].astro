@@ -3,6 +3,8 @@ import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 import HeroImage from '../components/HeroImage.astro';
 
+export const prerender = true;
+
 export async function getStaticPaths() {
   const pages = await getCollection('pages');
   return pages.map(page => ({

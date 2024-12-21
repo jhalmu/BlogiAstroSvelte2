@@ -1,0 +1,42 @@
+/* Blog content styles */
+.blog-content {
+  @apply max-w-4xl mx-auto px-4;
+}
+
+/* Center images and add proper spacing */
+.blog-content img {
+  @apply mx-auto my-8;
+  max-height: 600px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* Image figure and caption styles */
+.blog-content figure {
+  @apply my-8 text-center;
+}
+
+.blog-content figure img {
+  @apply mx-auto mb-2;
+}
+
+.blog-content figcaption {
+  @apply text-sm text-gray-600 italic;
+}
+
+/* Ensure proper spacing around content */
+.blog-content > * {
+  @apply mb-6;
+}
+
+.blog-content > *:last-child {
+  @apply mb-0;
+}
+
+/* Make sure images don't overflow on mobile */
+@media (max-width: 640px) {
+  .blog-content img {
+    max-width: 100%;
+    height: auto;
+  }
+}

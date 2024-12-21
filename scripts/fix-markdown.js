@@ -10,60 +10,45 @@ const __dirname = dirname(__filename);
 function fixMarkdownFile(filePath) {
     let content = readFileSync(filePath, 'utf8');
     
-    // Fix headings not surrounded by blank lines (both above and below)
-    content = content.replace(/(?<!^\n)(#+\s.*$)/gm, '\n$1');
-    content = content.replace(/(^#+\s.*$)(?!\n)/gm, '$1\n');
+    // Fix multiple consecutive blank lines (MD012)
+    content = content.replace(/\n{3,}/g, '\n\n');
     
-    // Fix heading styles (convert all to ATX style)
-    content = content.replace(/^(.+)\n[=]+$/gm, '# $1');
-    content = content.replace(/^(.+)\n[-]+$/gm, '## $1');
-    content = content.replace(/^#+\s*(.*?)\s*#+\s*$/gm, '# $1');
+    // Fix blank lines inside blockquotes (MD028)
+    content = content.replace(/(^>.*$\n)\n+(^>.*$)/gm, '$1$2');
     
-    // Fix lists not surrounded by blank lines
-    content = content.replace(/(?<!^\n|\n\n)((?:-|\d+\.|\>?\s*-|\>?\s*\d+\.)\s.*$)/gm, '\n$1');
-    content = content.replace(/(^(?:-|\d+\.|\>?\s*-|\>?\s*\d+\.)\s.*$)(?!\n)/gm, '$1\n');
+    // Fix headings not surrounded by blank lines (MD022)
+    content = content.replace(/(?<!^\n|\n\n)(^#+\s.*$)/gm, '\n$1');
+    content = content.replace(/(^#+\s.*$)(?!\n$|\n\n)/gm, '$1\n');
+    
+    // Fix lists not surrounded by blank lines (MD032)
+    content = content.replace(/(?<!^\n|\n\n)(^[\s]*[-*+][\s].*$)/gm, '\n$1');
+    content = content.replace(/(^[\s]*[-*+][\s].*$)(?!\n$|\n\n)/gm, '$1\n');
+    content = content.replace(/(?<!^\n|\n\n)(^[\s]*\d+\.[\s].*$)/gm, '\n$1');
+    content = content.replace(/(^[\s]*\d+\.[\s].*$)(?!\n$|\n\n)/gm, '$1\n');
+    
+    // Fix fenced code blocks not surrounded by blank lines (MD031)
+    content = content.replace(/(?<!^\n|\n\n)(^```.*$)/gm, '\n$1');
+    content = content.replace(/(^```\s*$)(?!\n$|\n\n)/gm, '$1\n');
+    
+    // Fix trailing spaces (MD009)
+    content = content.replace(/[ \t]+$/gm, '');
+    
+    // Fix code blocks without language specification (MD040)
+    content = content.replace(/^```\s*$/gm, '```text');
     
     // Fix list indentation
-    content = content.replace(/^(\s+)[-*+](\s+)/gm, '- $2');  // Convert all list markers to -
-    content = content.replace(/^(\s{2,})[-*+]/gm, '  -');     // Fix excessive indentation
+    content = content.replace(/^(\s+)[-*+](\s+)/gm, (match, indent) => {
+        // Convert indentation to multiples of 2 spaces
+        const spaces = indent.length;
+        const normalizedSpaces = Math.ceil(spaces / 2) * 2;
+        return ' '.repeat(normalizedSpaces) + '-$2';
+    });
     
     // Fix ordered list item prefixes
     content = content.replace(/^(\s*)\d+\./gm, '$11.');
     
-    // Fix code blocks
-    content = content.replace(/^([ ]{4,}[^\n]+)$/gm, '```\n$1\n```'); // Convert indented code blocks to fenced
-    content = content.replace(/(?<!^\n|\n\n)```/g, '\n```');
-    content = content.replace(/```(?!\n)/g, '```\n');
-    content = content.replace(/^```\s*$/gm, '```text');
-    
-    // Fix trailing spaces and punctuation in headings
-    content = content.replace(/[ \t]+$/gm, '');
-    content = content.replace(/^(#+\s.*?)[:.]\s*$/gm, '$1');
-    
-    // Fix multiple consecutive blank lines
-    content = content.replace(/\n{3,}/g, '\n\n');
-    
-    // Fix blank lines inside blockquotes
-    content = content.replace(/>\s*\n\s*>\s*\n\s*>/g, '> \n>');
-    
     // Fix bare URLs
     content = content.replace(/(?<![\[\(])(https?:\/\/[^\s\)]+)(?![\]\)])/g, '<$1>');
-    
-    // Fix multiple top-level headings
-    let foundFirstH1 = false;
-    content = content.replace(/^#\s+(.*)$/gm, (match, title) => {
-        if (!foundFirstH1) {
-            foundFirstH1 = true;
-            return match;
-        }
-        return `## ${title}`;
-    });
-    
-    // Fix list item consistency
-    content = content.replace(/^(\s*)[*+-](\s+)/gm, '$1-$2');
-    
-    // Fix link fragments
-    content = content.replace(/\[([^\]]+)\]\(#[^\)]+\)/g, '$1');
     
     // Fix YAML frontmatter
     if (content.startsWith('---\n')) {
@@ -75,8 +60,8 @@ function fixMarkdownFile(filePath) {
         }
     }
     
-    // Ensure file starts and ends with a single newline
-    content = content.trim() + '\n';
+    // Ensure exactly one blank line at end of file
+    content = content.replace(/\n*$/, '\n');
     
     writeFileSync(filePath, content);
 }

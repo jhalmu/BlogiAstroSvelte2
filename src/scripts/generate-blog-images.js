@@ -5,126 +5,142 @@ import path from 'path';
 const blogImages = [
   {
     name: 'modern-web-dev',
-    text: 'Modern Web Development',
-    color: '#2c3e50'
+    text: '',
+    color: '#2c3e50',
   },
   {
     name: 'getting-started',
-    text: 'Getting Started',
-    color: '#27ae60'
+    text: '',
+    color: '#27ae60',
   },
   {
     name: 'javascript-tips',
-    text: 'JavaScript Tips',
-    color: '#f1c40f'
+    text: '',
+    color: '#f1c40f',
   },
   {
     name: 'modern-css',
-    text: 'Modern CSS',
-    color: '#3498db'
+    text: '',
+    color: '#3498db',
   },
   {
     name: 'typescript',
-    text: 'TypeScript',
-    color: '#2980b9'
+    text: '',
+    color: '#2980b9',
   },
   {
     name: 'web-performance',
-    text: 'Web Performance',
-    color: '#8e44ad'
+    text: '',
+    color: '#8e44ad',
   },
   {
     name: 'frontend-testing',
-    text: 'Frontend Testing',
-    color: '#c0392b'
+    text: '',
+    color: '#c0392b',
   },
   {
     name: 'web-security',
-    text: 'Web Security',
-    color: '#d35400'
-  }
+    text: '',
+    color: '#d35400',
+  },
 ];
 
 async function generateImage(image) {
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
-  
+
+  // Set viewport
   await page.setViewport({
     width: 1200,
     height: 630,
-    deviceScaleFactor: 2,
+    deviceScaleFactor: 1,
   });
-  
+
+  // Generate a lighter version of the color for gradient
+  const lighterColor = lightenColor(image.color, 20);
+
+  // Create HTML content
   const html = `
-    <!DOCTYPE html>
     <html>
     <head>
       <style>
         body {
           margin: 0;
           padding: 0;
+          width: 100vw;
+          height: 100vh;
           display: flex;
           justify-content: center;
           align-items: center;
-          min-height: 100vh;
-          background: linear-gradient(135deg, ${image.color}, ${lightenColor(image.color, 20)});
-          font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-        }
-        .container {
-          text-align: center;
+          background: linear-gradient(135deg, ${image.color}, ${lighterColor});
+          font-family: system-ui, -apple-system, sans-serif;
           color: white;
-          padding: 2rem;
-        }
-        h1 {
-          font-size: 64px;
-          margin: 0;
-          text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+          overflow: hidden;
         }
         .overlay {
           position: absolute;
           top: 0;
           left: 0;
-          width: 100%;
-          height: 100%;
-          background: radial-gradient(circle at 30% 70%, rgba(255,255,255,0.1) 0%, transparent 50%);
+          right: 0;
+          bottom: 0;
+          background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.1) 0%, rgba(0,0,0,0.4) 100%);
+        }
+        .container {
+          position: relative;
+          z-index: 1;
+          text-align: center;
+          padding: 2rem;
         }
       </style>
     </head>
     <body>
       <div class="overlay"></div>
       <div class="container">
-        <h1>${image.text}</h1>
       </div>
     </body>
     </html>
   `;
-  
+
+  // Set content and take screenshot
   await page.setContent(html);
-  
-  const outputDir = path.join(process.cwd(), 'public', 'images', 'blog');
-  await fs.mkdir(outputDir, { recursive: true });
-  
+
+  // Ensure the directory exists
+  const dir = path.join(process.cwd(), 'public/images/blog');
+  await fs.mkdir(dir, { recursive: true });
+
+  // Take screenshot
   await page.screenshot({
-    path: path.join(outputDir, `${image.name}.jpg`),
+    path: path.join(dir, `${image.name}.jpg`),
     type: 'jpeg',
-    quality: 90
+    quality: 90,
   });
-  
+
+  console.log(`Generating ${image.name}...`);
   await browser.close();
 }
 
+// Helper function to lighten a hex color
 function lightenColor(hex, percent) {
   const num = parseInt(hex.replace('#', ''), 16);
   const amt = Math.round(2.55 * percent);
   const R = (num >> 16) + amt;
-  const G = (num >> 8 & 0x00FF) + amt;
-  const B = (num & 0x0000FF) + amt;
-  return `#${(1 << 24 | (R < 255 ? R < 1 ? 0 : R : 255) << 16 | (G < 255 ? G < 1 ? 0 : G : 255) << 8 | (B < 255 ? B < 1 ? 0 : B : 255)).toString(16).slice(1)}`;
+  const G = ((num >> 8) & 0x00ff) + amt;
+  const B = (num & 0x0000ff) + amt;
+  return (
+    '#' +
+    (
+      0x1000000 +
+      (R < 255 ? (R < 1 ? 0 : R) : 255) * 0x10000 +
+      (G < 255 ? (G < 1 ? 0 : G) : 255) * 0x100 +
+      (B < 255 ? (B < 1 ? 0 : B) : 255)
+    )
+      .toString(16)
+      .slice(1)
+  );
 }
 
 async function generateAllImages() {
   for (const image of blogImages) {
-    console.log(`Generating ${image.name}...`);
     await generateImage(image);
   }
   console.log('All blog images generated successfully!');

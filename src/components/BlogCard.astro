@@ -1,88 +1,220 @@
 ---
 interface Props {
-  title: string;
-  excerpt?: string;
-  content?: string;
-  date: string;
-  slug: string;
-  tags: string[];
-  image?: string;
+  title: string
+  excerpt?: string
+  content?: string
+  date: string
+  updated?: string
+  slug: string
+  tags: string[]
 }
 
-const { title, excerpt, content, date, slug, tags, image } = Astro.props;
+const { title, excerpt, content, date, updated, slug, tags } = Astro.props
+
+// Import logger
+import Logger from '../utils/logger';
+const logger = Logger.getInstance();
+
+// Function to safely parse and format dates
+function formatDate(dateStr: string, field: string): { formatted: string; iso: string } {
+  try {
+    // Check if date string is empty or invalid
+    if (!dateStr || typeof dateStr !== 'string') {
+      throw new Error(`Invalid date string: ${dateStr}`);
+    }
+
+    // Try parsing the date
+    const date = new Date(dateStr);
+    
+    // Validate the parsed date
+    if (isNaN(date.getTime())) {
+      throw new Error(`Invalid date value: ${dateStr}`);
+    }
+
+    // Check if date is too far in the past or future
+    const now = new Date();
+    const oneHundredYearsAgo = new Date();
+    oneHundredYearsAgo.setFullYear(now.getFullYear() - 100);
+    const oneHundredYearsFromNow = new Date();
+    oneHundredYearsFromNow.setFullYear(now.getFullYear() + 100);
+
+    if (date < oneHundredYearsAgo || date > oneHundredYearsFromNow) {
+      logger.warn(
+        `Date out of reasonable range`,
+        {
+          field,
+          dateStr,
+          parsedDate: date.toISOString()
+        },
+        'BlogCard'
+      );
+    }
+
+    return {
+      formatted: date.toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+      }),
+      iso: date.toISOString()
+    };
+  } catch (error) {
+    // Log the error with detailed context
+    logger.error(
+      `Error parsing date for ${field}`,
+      error as Error,
+      {
+        field,
+        dateStr,
+        component: 'BlogCard',
+        postTitle: title,
+        postSlug: slug
+      },
+      'BlogCard'
+    );
+
+    // Return fallback values
+    const fallbackDate = new Date();
+    return {
+      formatted: 'Date unavailable',
+      iso: fallbackDate.toISOString()
+    };
+  }
+}
 
 // Function to get preview text from content
 function getContentPreview(content: string): string {
-  // Remove HTML tags and markdown syntax
-  const cleanText = content
-    .replace(/<[^>]*>/g, '') // Remove HTML tags
-    .replace(/[#*`_~\[\]]/g, '') // Remove markdown syntax
-    .replace(/\n+/g, ' ') // Replace newlines with spaces
-    .trim();
-  
-  // Get first 160 characters, try to end at a complete sentence or word
-  const maxLength = 160;
-  if (cleanText.length <= maxLength) return cleanText;
-  
-  const truncated = cleanText.slice(0, maxLength);
-  const lastPeriod = truncated.lastIndexOf('.');
-  const lastSpace = truncated.lastIndexOf(' ');
-  
-  // Try to end at a sentence, otherwise end at a word
-  const endIndex = lastPeriod > maxLength * 0.5 ? lastPeriod + 1 : lastSpace;
-  return truncated.slice(0, endIndex) + '...';
+  try {
+    // Remove HTML tags and markdown syntax
+    const cleanText = content
+      .replace(/<[^>]*>/g, '') // Remove HTML tags
+      .replace(/[#*`_~\[\]]/g, '') // Remove markdown syntax
+      .replace(/\n+/g, ' ') // Replace newlines with spaces
+      .trim()
+
+    // Get first 160 characters, try to end at a complete sentence or word
+    const maxLength = 160
+    if (cleanText.length <= maxLength) return cleanText
+
+    const truncated = cleanText.slice(0, maxLength)
+    const lastPeriod = truncated.lastIndexOf('.')
+    const lastSpace = truncated.lastIndexOf(' ')
+
+    // Try to end at a sentence, otherwise end at a word
+    const endIndex = lastPeriod > maxLength * 0.5 ? lastPeriod + 1 : lastSpace
+    return truncated.slice(0, endIndex) + '...'
+  } catch (error) {
+    logger.error(
+      'Error generating content preview',
+      error as Error,
+      {
+        postTitle: title,
+        postSlug: slug,
+        contentLength: content?.length
+      },
+      'BlogCard'
+    );
+    return 'Preview not available';
+  }
 }
 
 // Get the text to display in the card
-const displayText = excerpt || (content ? getContentPreview(content) : '');
+const displayText = excerpt || (content ? getContentPreview(content) : '')
+
+// Parse dates with field names for better error context
+const parsedDate = formatDate(date, 'date');
+const parsedUpdated = updated ? formatDate(updated, 'updated') : null;
+
+// Log successful rendering
+logger.debug(
+  'Rendering blog card',
+  {
+    postTitle: title,
+    postSlug: slug,
+    hasExcerpt: !!excerpt,
+    hasContent: !!content,
+    date: parsedDate.formatted,
+    updated: parsedUpdated?.formatted
+  },
+  'BlogCard'
+);
 ---
 
-<article 
-  class="bg-white rounded-3xl shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col h-full" 
-  data-tags={JSON.stringify(tags)}
+<article
+  class='bg-white rounded-4xl shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col h-full overflow-hidden'
   aria-labelledby={`article-title-${slug}`}
 >
-  <div class="p-6 pb-10 flex-grow">
-    <time datetime={new Date(date).toISOString()} class="text-sm text-gray-500 mb-3">{date}</time>
-    <h2 id={`article-title-${slug}`} class="text-xl font-bold text-purple-900 mb-4">
-      <a 
-        href={`/blog/${slug}`}
-        class="hover:text-purple-700 transition-colors duration-200"
+  <div class='px-6 pt-4 pb-10 flex-grow'>
+    <time
+      datetime={parsedDate.iso}
+      class='text-sm text-gray-500 mb-3 block'
+    >
+      {parsedDate.formatted}
+    </time>
+    {
+      parsedUpdated && (
+        <time
+          datetime={parsedUpdated.iso}
+          class='text-sm text-gray-500 mb-3 block'
+        >
+          Updated: {parsedUpdated.formatted}
+        </time>
+      )
+    }
+    <h2
+      id={`article-title-${slug}`}
+      class='text-xl font-bold text-purple-900 mb-4'
+    >
+      <a
+        href={`/blog/${encodeURIComponent(slug)}`}
+        class='hover:text-purple-700 transition-colors duration-200'
         aria-label={`Read ${title}`}
+        hx-boost="true"
+        hx-swap="innerHTML transition:true"
+        hx-push-url="true"
+        hx-target="body"
       >
         {title}
       </a>
     </h2>
-    <p class="text-gray-600 mb-8 line-clamp-3">
+
+    <p class='text-gray-600 mb-8 line-clamp-3'>
       {displayText}
     </p>
   </div>
 
-  <div class="px-6 pb-4">
-    {tags.length > 0 && (
-      <div 
-        class="flex flex-wrap gap-2 mb-4"
-        role="list"
-        aria-label="Post tags"
-      >
-        {tags.map(tag => (
-          <a
-            href={`/blog/tag/${tag.toLowerCase()}`}
-            class="text-sm px-3 py-1 bg-purple-100 text-purple-800 rounded-2xl hover:bg-purple-200 transition-colors duration-200"
-            role="listitem"
-          >
-            {tag}
-          </a>
-        ))}
-      </div>
-    )}
-    
+  <div class='px-6 pb-4 mt-auto'>
+    {
+      tags.length > 0 && (
+        <div
+          class='flex flex-wrap gap-2 mb-4'
+          role='list'
+          aria-label='Post tags'
+        >
+          {tags.map((tag) => (
+            <a
+              href={`/blog/tag/${encodeURIComponent(tag.toLowerCase())}`}
+              class='text-sm px-3 py-1 bg-purple-100 text-purple-800 rounded-2xl hover:bg-purple-200 transition-colors duration-200'
+              role='listitem'
+              aria-label={`View all posts tagged with ${tag}`}
+            >
+              {tag}
+            </a>
+          ))}
+        </div>
+      )
+    }
+
     <a
-      href={`/blog/${slug}`}
-      class="block w-full text-center py-3 bg-purple-50 hover:bg-purple-100 text-purple-800 rounded-2xl transition-colors duration-200"
+      href={`/blog/${encodeURIComponent(slug)}`}
+      class='block w-full text-center py-3 bg-purple-50 hover:bg-purple-100 text-purple-800 rounded-2xl transition-colors duration-200'
       aria-label={`Read full article: ${title}`}
+      hx-boost="true"
+      hx-swap="innerHTML transition:true"
+      hx-push-url="true"
+      hx-target="body"
     >
-      Read More
+      Read more
     </a>
   </div>
 </article>

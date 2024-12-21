@@ -2,25 +2,32 @@
 import Layout from '../../layouts/Layout.astro';
 import BlogCard from '../../components/BlogCard.astro';
 import { getCollection } from 'astro:content';
+import { validateBlogPost, sortBlogPosts } from '../../utils/content';
+
+export const prerender = true;
 
 export async function getStaticPaths() {
   const POSTS_PER_PAGE = 6;
-  const posts = (await getCollection('blog'))
-    .sort((a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf());
+  
+  // Get and validate blog posts
+  const allPosts = await getCollection('blog');
+  const validPosts = allPosts.filter(validateBlogPost);
+  const sortedPosts = sortBlogPosts(validPosts);
+  
+  const totalPages = Math.ceil(sortedPosts.length / POSTS_PER_PAGE);
 
-  const totalPages = Math.ceil(posts.length / POSTS_PER_PAGE);
-
+  // Generate paths for pages 2 onwards
   return Array.from({ length: totalPages - 1 }, (_, i) => {
     const page = i + 2; // Start from page 2
     const start = (page - 1) * POSTS_PER_PAGE;
     const end = start + POSTS_PER_PAGE;
-    const pagePosts = posts.slice(start, end);
+    const pagePosts = sortedPosts.slice(start, end);
 
     // Get previous and next post titles for navigation
     const prevPageStart = (page - 2) * POSTS_PER_PAGE;
     const nextPageStart = page * POSTS_PER_PAGE;
-    const prevPageTitle = posts[prevPageStart]?.data.title;
-    const nextPageTitle = posts[nextPageStart]?.data.title;
+    const prevPageTitle = sortedPosts[prevPageStart]?.data.title;
+    const nextPageTitle = page < totalPages ? sortedPosts[nextPageStart]?.data.title : null;
 
     return {
       params: { page: String(page) },
@@ -29,16 +36,23 @@ export async function getStaticPaths() {
         page,
         totalPages,
         prevPageTitle,
-        nextPageTitle
+        nextPageTitle,
+        hasNextPage: page < totalPages,
+        hasPrevPage: true
       }
     };
   });
 }
 
-const { page, posts, totalPages, prevPageTitle, nextPageTitle } = Astro.props;
+const { page, posts = [], totalPages = 0, prevPageTitle, nextPageTitle, hasNextPage = false, hasPrevPage = false } = Astro.props;
+
+// Redirect to the main blog page if no posts are available
+if (!posts.length) {
+  return Astro.redirect('/blog');
+}
 ---
 
-<Layout title={`Blog - Page ${page} | Juha Halmu`}>
+<Layout title={`Blog${page ? ` - Page ${page}` : ''} | Juha Halmu`}>
   <div class="container mx-auto px-4 mt-14">
     <!-- Blog Posts Grid -->
     <div class="sr-only" role="status">Page {page} of {totalPages}</div>
@@ -61,64 +75,68 @@ const { page, posts, totalPages, prevPageTitle, nextPageTitle } = Astro.props;
     </div>
 
     <!-- Pagination -->
-    <nav 
-      class="mt-12 mb-24" 
-      aria-label="Blog pagination"
-      role="navigation"
-    >
-      <div class="flex justify-center gap-4">
-        <div class="sr-only" id="pagination-heading">Blog pages navigation</div>
-        <ul class="flex gap-4" role="list" aria-labelledby="pagination-heading">
-          <li>
-            <a
-              href={page === 2 ? "/blog" : `/blog/${page - 1}`}
-              class="inline-flex items-center px-6 py-3 rounded-lg bg-purple-600 text-white hover:bg-purple-700 transition-colors duration-200"
-              aria-label={`Go to previous page${prevPageTitle ? ` (${prevPageTitle})` : ''}`}
-              rel="prev"
-            >
-              <span aria-hidden="true" class="mr-2">←</span>
-              <span>Previous</span>
-              {prevPageTitle && (
-                <span class="ml-2 text-sm opacity-75" aria-hidden="true">
-                  ({prevPageTitle})
-                </span>
-              )}
-            </a>
-          </li>
+    {totalPages > 1 && (
+      <nav 
+        class="mt-12 mb-24" 
+        aria-label="Blog pagination"
+        role="navigation"
+      >
+        <div class="flex justify-center gap-4">
+          <div class="sr-only" id="pagination-heading">Blog pages navigation</div>
+          <ul class="flex gap-4" role="list" aria-labelledby="pagination-heading">
+            {hasPrevPage && (
+              <li>
+                <a
+                  href={page === 2 ? "/blog" : `/blog/${page - 1}`}
+                  class="inline-flex items-center px-6 py-3 rounded-lg bg-purple-600 text-white hover:bg-purple-700 transition-colors duration-200"
+                  aria-label={`Go to previous page${prevPageTitle ? ` (${prevPageTitle})` : ''}`}
+                  rel="prev"
+                >
+                  <span aria-hidden="true" class="mr-2">←</span>
+                  <span>Previous</span>
+                  {prevPageTitle && (
+                    <span class="ml-2 text-sm opacity-75" aria-hidden="true">
+                      ({prevPageTitle})
+                    </span>
+                  )}
+                </a>
+              </li>
+            )}
 
-          <li>
-            <a
-              href="/blog"
-              class="inline-flex items-center px-6 py-3 rounded-lg bg-gradient-to-r from-purple-500 to-indigo-600 text-white hover:from-purple-600 hover:to-indigo-700 transition-all duration-200 shadow-md hover:shadow-lg"
-              aria-label="Return to first page of blog posts"
-              role="link"
-            >
-              <span aria-hidden="true" class="mr-2">•</span>
-              Blog Index
-              <span aria-hidden="true" class="ml-2">•</span>
-            </a>
-          </li>
-          
-          {page < totalPages && (
             <li>
               <a
-                href={`/blog/${page + 1}`}
-                class="inline-flex items-center px-6 py-3 rounded-lg bg-purple-600 text-white hover:bg-purple-700 transition-colors duration-200"
-                aria-label={`Go to next page${nextPageTitle ? ` (${nextPageTitle})` : ''}`}
-                rel="next"
+                href="/blog"
+                class="inline-flex items-center px-6 py-3 rounded-lg bg-gradient-to-r from-purple-500 to-indigo-600 text-white hover:from-purple-600 hover:to-indigo-700 transition-all duration-200 shadow-md hover:shadow-lg"
+                aria-label="Return to first page of blog posts"
+                role="link"
               >
-                <span>Next</span>
-                {nextPageTitle && (
-                  <span class="ml-2 text-sm opacity-75" aria-hidden="true">
-                    ({nextPageTitle})
-                  </span>
-                )}
-                <span aria-hidden="true" class="ml-2">→</span>
+                <span aria-hidden="true" class="mr-2">•</span>
+                Blog Index
+                <span aria-hidden="true" class="ml-2">•</span>
               </a>
             </li>
-          )}
-        </ul>
-      </div>
-    </nav>
+            
+            {hasNextPage && (
+              <li>
+                <a
+                  href={`/blog/${page + 1}`}
+                  class="inline-flex items-center px-6 py-3 rounded-lg bg-purple-600 text-white hover:bg-purple-700 transition-colors duration-200"
+                  aria-label={`Go to next page${nextPageTitle ? ` (${nextPageTitle})` : ''}`}
+                  rel="next"
+                >
+                  <span>Next</span>
+                  {nextPageTitle && (
+                    <span class="ml-2 text-sm opacity-75" aria-hidden="true">
+                      ({nextPageTitle})
+                    </span>
+                  )}
+                  <span aria-hidden="true" class="ml-2">→</span>
+                </a>
+              </li>
+            )}
+          </ul>
+        </div>
+      </nav>
+    )}
   </div>
 </Layout>

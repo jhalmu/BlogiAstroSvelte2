@@ -7,14 +7,14 @@ export const prerender = true;
 
 export async function GET(context) {
   const blog = await getCollection('blog');
-  
+
   // Sanitize and prepare feed items
   const items = await Promise.all(
     blog.map(async (post) => {
-      const description = post.data.description 
+      const description = post.data.description
         ? sanitizeHtml(post.data.description, {
             allowedTags: [], // Strip all HTML for security
-            allowedAttributes: {}
+            allowedAttributes: {},
           })
         : '';
 
@@ -25,7 +25,7 @@ export async function GET(context) {
         link: `/blog/${post.slug}/`,
         // Add additional RSS-specific fields
         categories: post.data.tags || [],
-        author: post.data.author || 'Juha Halmu'
+        author: post.data.author || 'Juha Halmu',
       };
     })
   );
@@ -44,7 +44,7 @@ export async function GET(context) {
       // Add standard RSS namespaces
       atom: 'http://www.w3.org/2005/Atom',
       dc: 'http://purl.org/dc/elements/1.1/',
-      content: 'http://purl.org/rss/1.0/modules/content/'
-    }
+      content: 'http://purl.org/rss/1.0/modules/content/',
+    },
   });
 }
