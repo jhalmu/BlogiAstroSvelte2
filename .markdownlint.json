@@ -8,17 +8,11 @@
     "punctuation": ".,;:!"
   },
   "MD029": false,
-  "MD031": {
-    "list_items": false
-  },
-  "MD032": true,
-  "MD036": false,
-  "MD040": true,
-  "MD046": {
-    "style": "fenced"
-  },
   "MD012": false,
-  "MD019": false,
+  "MD009": false,
   "MD022": false,
-  "MD003": false
+  "MD032": false,
+  "MD028": false,
+  "MD031": false,
+  "MD040": false
 }
