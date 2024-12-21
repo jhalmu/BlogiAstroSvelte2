@@ -221,8 +221,8 @@ const shortNotes = [
   },
   {
     title: {
-      fi: 'Tekoäly luontokuvauksessa',
-      en: 'AI in Nature Photography'
+      fi: 'Tekoälyavusteinen valokuvaus',
+      en: 'AI-Assisted Photography'
     },
     description: {
       fi: 'AI:n hyödyntäminen luontokuvauksen apuna',
@@ -814,50 +814,43 @@ function generateContent(topic, language) {
     '';
 
   if (topic.type === 'short') {
-    return `
-# ${title}
+    return `# ${title}
 
 ${description}
 
-${highlightsList ? '## Pääkohdat\n\n' + highlightsList : ''}
-
-${location ? `
-## Sijainti
+${highlightsList ? `## Pääkohdat\n\n${highlightsList}\n` : ''}
+${location ? `## Sijainti
 
 - Alue: ${location.region}
 - Maa: ${location.country}
 - Koordinaatit: ${location.lat}, ${location.lon}
-` : ''}
 
----
+` : ''}---
+
 *${language === 'fi' ? 'Lyhyt muistiinpano teknologiasta ja historiasta. Kirjoitettu tekoälyn avustuksella.' : 
-  'A short note about technology and history. Written with AI assistance.'}*
-    `.trim();
+  'A short note about technology and history. Written with AI assistance.'}*`.trim();
   }
 
-  return `
-# ${title}
+  return `# ${title}
 
 ${description}
 
-${highlightsList ? (language === 'fi' ? '## Keskeiset kohdat\n\n' : '## Key Points\n\n') + highlightsList : ''}
-
-${location ? `
-## ${language === 'fi' ? 'Sijainti' : 'Location'}
+${highlightsList ? `${language === 'fi' ? '## Keskeiset kohdat' : '## Key Points'}\n\n${highlightsList}\n` : ''}
+${location ? `${language === 'fi' ? '## Sijainti' : '## Location'}
 
 - ${language === 'fi' ? 'Alue' : 'Region'}: ${location.region}
 - ${language === 'fi' ? 'Maa' : 'Country'}: ${location.country}
 - ${language === 'fi' ? 'Koordinaatit' : 'Coordinates'}: ${location.lat}, ${location.lon}
 
-### ${language === 'fi' ? 'Kohokohdat' : 'Highlights'}
-${location.highlights.map(h => `- ${h}`).join('\n')}
-` : ''}
+${language === 'fi' ? '### Kohokohdat' : '### Highlights'}
 
----
+${location.highlights.map(h => `- ${h}`).join('\n')}
+
+` : ''}---
+
 *${language === 'fi' ? 
   'Tämän artikkelin on kirjoittanut tekoäly yhteistyössä Juha Halmun kanssa.' : 
-  'This article was written by AI in collaboration with Juha Halmu.'}*
-  `.trim();
+  'This article was written by AI in collaboration with Juha Halmu.'}*`.trim();
 }
 
 // Update generatePost function to handle template functions
