@@ -64,7 +64,7 @@ text
 text
 
 ```text
-    url: <<<<<<https://juhahalmu.fi/blog/tech-meetupit-historiallisissa-miljöissä-fi>>>>>>
+    url: <<<<<<<<https://juhahalmu.fi/blog/tech-meetupit-historiallisissa-miljöissä-fi>>>>>>>>
 
 ```text
 
@@ -132,7 +132,7 @@ text
 text
 
 ```text
-    url: <<<<<<https://juhahalmu.fi/blog/tech-meetupit-historiallisissa-miljöissä-fi>>>>>>
+    url: <<<<<<<<https://juhahalmu.fi/blog/tech-meetupit-historiallisissa-miljöissä-fi>>>>>>>>
 
 ```text
 
@@ -181,7 +181,7 @@ text
 text
 
 ```text
-    url: <<<<<<https://juhahalmu.fi/blog/tech-meetupit-historiallisissa-miljöissä-fi>>>>>>
+    url: <<<<<<<<https://juhahalmu.fi/blog/tech-meetupit-historiallisissa-miljöissä-fi>>>>>>>>
 
 ```text
 

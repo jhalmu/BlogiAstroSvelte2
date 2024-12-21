@@ -64,7 +64,7 @@ text
 text
 
 ```text
-      Lue lisää: <<<<<<https://juhahalmu.fi/blog/dna-sukututkimus-rauman-seudulla-fi>>>>>>
+      Lue lisää: <<<<<<<<https://juhahalmu.fi/blog/dna-sukututkimus-rauman-seudulla-fi>>>>>>>>
 
 ```text
 
@@ -86,7 +86,7 @@ text
 text
 
 ```text
-    url: <<<<<<https://juhahalmu.fi/blog/dna-sukututkimus-rauman-seudulla-fi>>>>>>
+    url: <<<<<<<<https://juhahalmu.fi/blog/dna-sukututkimus-rauman-seudulla-fi>>>>>>>>
 
 ```text
 
@@ -155,7 +155,7 @@ text
 text
 
 ```text
-      <<<<<<https://juhahalmu.fi/blog/dna-sukututkimus-rauman-seudulla-fi>>>>>>
+      <<<<<<<<https://juhahalmu.fi/blog/dna-sukututkimus-rauman-seudulla-fi>>>>>>>>
 
 ```text
 
@@ -188,7 +188,7 @@ text
 text
 
 ```text
-    url: <<<<<<https://juhahalmu.fi/blog/dna-sukututkimus-rauman-seudulla-fi>>>>>>
+    url: <<<<<<<<https://juhahalmu.fi/blog/dna-sukututkimus-rauman-seudulla-fi>>>>>>>>
 
 ```text
 
@@ -297,7 +297,7 @@ text
 text
 
 ```text
-    url: <<<<<<https://juhahalmu.fi/blog/dna-sukututkimus-rauman-seudulla-fi>>>>>>
+    url: <<<<<<<<https://juhahalmu.fi/blog/dna-sukututkimus-rauman-seudulla-fi>>>>>>>>
 
 ```text
 

@@ -77,7 +77,7 @@ text
 text
 
 ```text
-    url: <<<<<<https://juhahalmu.fi/blog/merenkulkijasukujen-dna-tutkimus-fi>>>>>>
+    url: <<<<<<<<https://juhahalmu.fi/blog/merenkulkijasukujen-dna-tutkimus-fi>>>>>>>>
 
 ```text
 
@@ -167,7 +167,7 @@ text
 text
 
 ```text
-    url: <<<<<<https://juhahalmu.fi/blog/merenkulkijasukujen-dna-tutkimus-fi>>>>>>
+    url: <<<<<<<<https://juhahalmu.fi/blog/merenkulkijasukujen-dna-tutkimus-fi>>>>>>>>
 
 ```text
 
@@ -241,7 +241,7 @@ text
 text
 
 ```text
-    url: <<<<<<https://juhahalmu.fi/blog/merenkulkijasukujen-dna-tutkimus-fi>>>>>>
+    url: <<<<<<<<https://juhahalmu.fi/blog/merenkulkijasukujen-dna-tutkimus-fi>>>>>>>>
 
 ```text
 

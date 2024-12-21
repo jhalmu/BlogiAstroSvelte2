@@ -67,7 +67,7 @@ text
 text
 
 ```text
-      Read more: <<<<<<https://juhahalmu.fi/blog/photography-spots-in-porvoossa-en>>>>>>
+      Read more: <<<<<<<<https://juhahalmu.fi/blog/photography-spots-in-porvoossa-en>>>>>>>>
 
 ```text
 
@@ -89,7 +89,7 @@ text
 text
 
 ```text
-    url: <<<<<<https://juhahalmu.fi/blog/photography-spots-in-porvoossa-en>>>>>>
+    url: <<<<<<<<https://juhahalmu.fi/blog/photography-spots-in-porvoossa-en>>>>>>>>
 
 ```text
 
@@ -159,7 +159,7 @@ text
 text
 
 ```text
-      <<<<<<https://juhahalmu.fi/blog/photography-spots-in-porvoossa-en>>>>>>
+      <<<<<<<<https://juhahalmu.fi/blog/photography-spots-in-porvoossa-en>>>>>>>>
 
 ```text
 
@@ -192,7 +192,7 @@ text
 text
 
 ```text
-    url: <<<<<<https://juhahalmu.fi/blog/photography-spots-in-porvoossa-en>>>>>>
+    url: <<<<<<<<https://juhahalmu.fi/blog/photography-spots-in-porvoossa-en>>>>>>>>
 
 ```text
 
@@ -291,7 +291,7 @@ text
 text
 
 ```text
-    url: <<<<<<https://juhahalmu.fi/blog/photography-spots-in-porvoossa-en>>>>>>
+    url: <<<<<<<<https://juhahalmu.fi/blog/photography-spots-in-porvoossa-en>>>>>>>>
 
 ```text
 

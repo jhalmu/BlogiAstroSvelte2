@@ -63,7 +63,7 @@ text
 text
 
 ```text
-      Lue lisää: <<<<<<https://juhahalmu.fi/blog/vierailu-raumassa-fi>>>>>>
+      Lue lisää: <<<<<<<<https://juhahalmu.fi/blog/vierailu-raumassa-fi>>>>>>>>
 
 ```text
 
@@ -85,7 +85,7 @@ text
 text
 
 ```text
-    url: <<<<<<https://juhahalmu.fi/blog/vierailu-raumassa-fi>>>>>>
+    url: <<<<<<<<https://juhahalmu.fi/blog/vierailu-raumassa-fi>>>>>>>>
 
 ```text
 
@@ -153,7 +153,7 @@ text
 text
 
 ```text
-    url: <<<<<<https://juhahalmu.fi/blog/vierailu-raumassa-fi>>>>>>
+    url: <<<<<<<<https://juhahalmu.fi/blog/vierailu-raumassa-fi>>>>>>>>
 
 ```text
 
@@ -260,7 +260,7 @@ text
 text
 
 ```text
-    url: <<<<<<https://juhahalmu.fi/blog/vierailu-raumassa-fi>>>>>>
+    url: <<<<<<<<https://juhahalmu.fi/blog/vierailu-raumassa-fi>>>>>>>>
 
 ```text
 

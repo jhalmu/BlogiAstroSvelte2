@@ -79,7 +79,7 @@ text
 text
 
 ```text
-    url: <<<<<<https://juhahalmu.fi/blog/basics-of-dna-research-in-genealogy-en>>>>>>
+    url: <<<<<<<<https://juhahalmu.fi/blog/basics-of-dna-research-in-genealogy-en>>>>>>>>
 
 ```text
 
@@ -169,7 +169,7 @@ text
 text
 
 ```text
-    url: <<<<<<https://juhahalmu.fi/blog/basics-of-dna-research-in-genealogy-en>>>>>>
+    url: <<<<<<<<https://juhahalmu.fi/blog/basics-of-dna-research-in-genealogy-en>>>>>>>>
 
 ```text
 
@@ -245,7 +245,7 @@ text
 text
 
 ```text
-    url: <<<<<<https://juhahalmu.fi/blog/basics-of-dna-research-in-genealogy-en>>>>>>
+    url: <<<<<<<<https://juhahalmu.fi/blog/basics-of-dna-research-in-genealogy-en>>>>>>>>
 
 ```text
 

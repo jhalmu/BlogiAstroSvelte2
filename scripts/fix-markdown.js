@@ -60,6 +60,10 @@ function fixMarkdownFile(filePath) {
     // Fix trailing punctuation in headings (MD026)
     content = content.replace(/^(#+\s.*?)[.,;:!]\s*$/gm, '$1');
     
+    // Fix shell script headers in code blocks
+    content = content.replace(/(^|\n)(#!\/bin\/bash)/g, '$1```bash\n$2');
+    content = content.replace(/(#!\/bin\/bash\n)(?!```)/g, '$1```\n');
+    
     // Ensure single newline at end of file
     content = content.replace(/\n*$/, '\n');
     
@@ -68,16 +72,20 @@ function fixMarkdownFile(filePath) {
 }
 
 function processDirectory(dir) {
-    const files = readdirSync(dir, { withFileTypes: true });
-    
-    for (const file of files) {
-        const fullPath = join(dir, file.name);
+    try {
+        const files = readdirSync(dir, { withFileTypes: true });
         
-        if (file.isDirectory()) {
-            processDirectory(fullPath);
-        } else if (file.name.endsWith('.md')) {
-            fixMarkdownFile(fullPath);
+        for (const file of files) {
+            const fullPath = join(dir, file.name);
+            
+            if (file.isDirectory()) {
+                processDirectory(fullPath);
+            } else if (file.name.endsWith('.md')) {
+                fixMarkdownFile(fullPath);
+            }
         }
+    } catch (error) {
+        console.error(`Error processing directory ${dir}:`, error.message);
     }
 }
 
@@ -92,9 +100,5 @@ const directories = [
 ];
 
 for (const dir of directories) {
-    try {
-        processDirectory(dir);
-    } catch (error) {
-        console.error(`Error processing directory ${dir}:`, error.message);
-    }
+    processDirectory(dir);
 }

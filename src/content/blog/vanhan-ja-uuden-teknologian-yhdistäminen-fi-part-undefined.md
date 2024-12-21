@@ -49,7 +49,7 @@ text
 text
 
 ```text
-    url: <<<<<<https://juhahalmu.fi/blog/vanhan-ja-uuden-teknologian-yhdistäminen-fi>>>>>>
+    url: <<<<<<<<https://juhahalmu.fi/blog/vanhan-ja-uuden-teknologian-yhdistäminen-fi>>>>>>>>
 
 ```text
 
@@ -107,7 +107,7 @@ text
 text
 
 ```text
-    url: <<<<<<https://juhahalmu.fi/blog/vanhan-ja-uuden-teknologian-yhdistäminen-fi>>>>>>
+    url: <<<<<<<<https://juhahalmu.fi/blog/vanhan-ja-uuden-teknologian-yhdistäminen-fi>>>>>>>>
 
 ```text
 
@@ -184,7 +184,7 @@ text
 text
 
 ```text
-    url: <<<<<<https://juhahalmu.fi/blog/vanhan-ja-uuden-teknologian-yhdistäminen-fi>>>>>>
+    url: <<<<<<<<https://juhahalmu.fi/blog/vanhan-ja-uuden-teknologian-yhdistäminen-fi>>>>>>>>
 
 ```text
 

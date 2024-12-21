@@ -79,7 +79,7 @@ text
 text
 
 ```text
-    url: <<<<<<https://juhahalmu.fi/blog/tech-events-in-historical-settings-en>>>>>>
+    url: <<<<<<<<https://juhahalmu.fi/blog/tech-events-in-historical-settings-en>>>>>>>>
 
 ```text
 
@@ -169,7 +169,7 @@ text
 text
 
 ```text
-    url: <<<<<<https://juhahalmu.fi/blog/tech-events-in-historical-settings-en>>>>>>
+    url: <<<<<<<<https://juhahalmu.fi/blog/tech-events-in-historical-settings-en>>>>>>>>
 
 ```text
 
@@ -245,7 +245,7 @@ text
 text
 
 ```text
-    url: <<<<<<https://juhahalmu.fi/blog/tech-events-in-historical-settings-en>>>>>>
+    url: <<<<<<<<https://juhahalmu.fi/blog/tech-events-in-historical-settings-en>>>>>>>>
 
 ```text
 

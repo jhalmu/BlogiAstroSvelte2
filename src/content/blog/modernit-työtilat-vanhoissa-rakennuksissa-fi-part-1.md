@@ -78,7 +78,7 @@ text
 text
 
 ```text
-    url: <<<<<<https://juhahalmu.fi/blog/modernit-työtilat-vanhoissa-rakennuksissa-fi>>>>>>
+    url: <<<<<<<<https://juhahalmu.fi/blog/modernit-työtilat-vanhoissa-rakennuksissa-fi>>>>>>>>
 
 ```text
 
@@ -168,7 +168,7 @@ text
 text
 
 ```text
-    url: <<<<<<https://juhahalmu.fi/blog/modernit-työtilat-vanhoissa-rakennuksissa-fi>>>>>>
+    url: <<<<<<<<https://juhahalmu.fi/blog/modernit-työtilat-vanhoissa-rakennuksissa-fi>>>>>>>>
 
 ```text
 
@@ -243,7 +243,7 @@ text
 text
 
 ```text
-    url: <<<<<<https://juhahalmu.fi/blog/modernit-työtilat-vanhoissa-rakennuksissa-fi>>>>>>
+    url: <<<<<<<<https://juhahalmu.fi/blog/modernit-työtilat-vanhoissa-rakennuksissa-fi>>>>>>>>
 
 ```text
 

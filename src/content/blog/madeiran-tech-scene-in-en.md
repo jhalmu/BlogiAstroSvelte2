@@ -64,7 +64,7 @@ text
 text
 
 ```text
-      Read more: <<<<<<https://juhahalmu.fi/blog/madeiran-tech-scene-in-en>>>>>>
+      Read more: <<<<<<<<https://juhahalmu.fi/blog/madeiran-tech-scene-in-en>>>>>>>>
 
 ```text
 
@@ -86,7 +86,7 @@ text
 text
 
 ```text
-    url: <<<<<<https://juhahalmu.fi/blog/madeiran-tech-scene-in-en>>>>>>
+    url: <<<<<<<<https://juhahalmu.fi/blog/madeiran-tech-scene-in-en>>>>>>>>
 
 ```text
 
@@ -154,7 +154,7 @@ text
 text
 
 ```text
-    url: <<<<<<https://juhahalmu.fi/blog/madeiran-tech-scene-in-en>>>>>>
+    url: <<<<<<<<https://juhahalmu.fi/blog/madeiran-tech-scene-in-en>>>>>>>>
 
 ```text
 
@@ -251,7 +251,7 @@ text
 text
 
 ```text
-    url: <<<<<<https://juhahalmu.fi/blog/madeiran-tech-scene-in-en>>>>>>
+    url: <<<<<<<<https://juhahalmu.fi/blog/madeiran-tech-scene-in-en>>>>>>>>
 
 ```text
 

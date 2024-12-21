@@ -49,7 +49,7 @@ text
 text
 
 ```text
-    url: <<<<<<https://juhahalmu.fi/blog/dna-research-of-maritime-families-en>>>>>>
+    url: <<<<<<<<https://juhahalmu.fi/blog/dna-research-of-maritime-families-en>>>>>>>>
 
 ```text
 
@@ -107,7 +107,7 @@ text
 text
 
 ```text
-    url: <<<<<<https://juhahalmu.fi/blog/dna-research-of-maritime-families-en>>>>>>
+    url: <<<<<<<<https://juhahalmu.fi/blog/dna-research-of-maritime-families-en>>>>>>>>
 
 ```text
 
@@ -172,7 +172,7 @@ text
 text
 
 ```text
-    url: <<<<<<https://juhahalmu.fi/blog/dna-research-of-maritime-families-en>>>>>>
+    url: <<<<<<<<https://juhahalmu.fi/blog/dna-research-of-maritime-families-en>>>>>>>>
 
 ```text
 

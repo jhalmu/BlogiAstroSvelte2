@@ -64,7 +64,7 @@ text
 text
 
 ```text
-    url: <<<<<<https://juhahalmu.fi/blog/elixir-pohjainen-sukupuu-sovellus-fi>>>>>>
+    url: <<<<<<<<https://juhahalmu.fi/blog/elixir-pohjainen-sukupuu-sovellus-fi>>>>>>>>
 
 ```text
 
@@ -132,7 +132,7 @@ text
 text
 
 ```text
-    url: <<<<<<https://juhahalmu.fi/blog/elixir-pohjainen-sukupuu-sovellus-fi>>>>>>
+    url: <<<<<<<<https://juhahalmu.fi/blog/elixir-pohjainen-sukupuu-sovellus-fi>>>>>>>>
 
 ```text
 
@@ -227,7 +227,7 @@ text
 text
 
 ```text
-    url: <<<<<<https://juhahalmu.fi/blog/elixir-pohjainen-sukupuu-sovellus-fi>>>>>>
+    url: <<<<<<<<https://juhahalmu.fi/blog/elixir-pohjainen-sukupuu-sovellus-fi>>>>>>>>
 
 ```text
 

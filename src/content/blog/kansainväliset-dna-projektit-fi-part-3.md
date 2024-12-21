@@ -77,7 +77,7 @@ text
 text
 
 ```text
-    url: <<<<<<https://juhahalmu.fi/blog/kansainväliset-dna-projektit-fi>>>>>>
+    url: <<<<<<<<https://juhahalmu.fi/blog/kansainväliset-dna-projektit-fi>>>>>>>>
 
 ```text
 
@@ -167,7 +167,7 @@ text
 text
 
 ```text
-    url: <<<<<<https://juhahalmu.fi/blog/kansainväliset-dna-projektit-fi>>>>>>
+    url: <<<<<<<<https://juhahalmu.fi/blog/kansainväliset-dna-projektit-fi>>>>>>>>
 
 ```text
 
@@ -241,7 +241,7 @@ text
 text
 
 ```text
-    url: <<<<<<https://juhahalmu.fi/blog/kansainväliset-dna-projektit-fi>>>>>>
+    url: <<<<<<<<https://juhahalmu.fi/blog/kansainväliset-dna-projektit-fi>>>>>>>>
 
 ```text
 

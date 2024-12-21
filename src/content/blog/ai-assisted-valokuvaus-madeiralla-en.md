@@ -64,7 +64,7 @@ text
 text
 
 ```text
-      Read more: <<<<<<https://juhahalmu.fi/blog/ai-assisted-valokuvaus-madeiralla-en>>>>>>
+      Read more: <<<<<<<<https://juhahalmu.fi/blog/ai-assisted-valokuvaus-madeiralla-en>>>>>>>>
 
 ```text
 
@@ -86,7 +86,7 @@ text
 text
 
 ```text
-    url: <<<<<<https://juhahalmu.fi/blog/ai-assisted-valokuvaus-madeiralla-en>>>>>>
+    url: <<<<<<<<https://juhahalmu.fi/blog/ai-assisted-valokuvaus-madeiralla-en>>>>>>>>
 
 ```text
 
@@ -155,7 +155,7 @@ text
 text
 
 ```text
-      <<<<<<https://juhahalmu.fi/blog/ai-assisted-valokuvaus-madeiralla-en>>>>>>
+      <<<<<<<<https://juhahalmu.fi/blog/ai-assisted-valokuvaus-madeiralla-en>>>>>>>>
 
 ```text
 
@@ -188,7 +188,7 @@ text
 text
 
 ```text
-    url: <<<<<<https://juhahalmu.fi/blog/ai-assisted-valokuvaus-madeiralla-en>>>>>>
+    url: <<<<<<<<https://juhahalmu.fi/blog/ai-assisted-valokuvaus-madeiralla-en>>>>>>>>
 
 ```text
 
@@ -285,7 +285,7 @@ text
 text
 
 ```text
-    url: <<<<<<https://juhahalmu.fi/blog/ai-assisted-valokuvaus-madeiralla-en>>>>>>
+    url: <<<<<<<<https://juhahalmu.fi/blog/ai-assisted-valokuvaus-madeiralla-en>>>>>>>>
 
 ```text
 

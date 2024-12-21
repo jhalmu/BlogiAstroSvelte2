@@ -64,7 +64,7 @@ text
 text
 
 ```text
-      Lue lisää: <<<<<<https://juhahalmu.fi/blog/madeiran-teknologiaskene-fi>>>>>>
+      Lue lisää: <<<<<<<<https://juhahalmu.fi/blog/madeiran-teknologiaskene-fi>>>>>>>>
 
 ```text
 
@@ -86,7 +86,7 @@ text
 text
 
 ```text
-    url: <<<<<<https://juhahalmu.fi/blog/madeiran-teknologiaskene-fi>>>>>>
+    url: <<<<<<<<https://juhahalmu.fi/blog/madeiran-teknologiaskene-fi>>>>>>>>
 
 ```text
 
@@ -143,7 +143,7 @@ text
 text
 
 ```text
-      Jatka lukemista: <<<<<<https://juhahalmu.fi/blog/madeiran-teknologiaskene-fi>>>>>>
+      Jatka lukemista: <<<<<<<<https://juhahalmu.fi/blog/madeiran-teknologiaskene-fi>>>>>>>>
 
 ```text
 
@@ -176,7 +176,7 @@ text
 text
 
 ```text
-    url: <<<<<<https://juhahalmu.fi/blog/madeiran-teknologiaskene-fi>>>>>>
+    url: <<<<<<<<https://juhahalmu.fi/blog/madeiran-teknologiaskene-fi>>>>>>>>
 
 ```text
 
@@ -285,7 +285,7 @@ text
 text
 
 ```text
-    url: <<<<<<https://juhahalmu.fi/blog/madeiran-teknologiaskene-fi>>>>>>
+    url: <<<<<<<<https://juhahalmu.fi/blog/madeiran-teknologiaskene-fi>>>>>>>>
 
 ```text
 

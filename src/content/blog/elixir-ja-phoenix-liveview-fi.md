@@ -94,7 +94,7 @@ text
 text
 
 ```text
-        '@context': '<<<<<<https://schema.org',>>>>>>
+        '@context': '<<<<<<<<https://schema.org',>>>>>>>>
 
 ```text
 
@@ -229,7 +229,7 @@ text
 text
 
 ```text
-        'url': '<<<<<<https://juhahalmu.fi/blog/elixir-ja-phoenix-liveview-fi',>>>>>>
+        'url': '<<<<<<<<https://juhahalmu.fi/blog/elixir-ja-phoenix-liveview-fi',>>>>>>>>
 
 ```text
 
@@ -317,7 +317,7 @@ text
 text
 
 ```text
-        'url': '<<<<<<https://juhahalmu.fi/blog/elixir-ja-phoenix-liveview-fi',>>>>>>
+        'url': '<<<<<<<<https://juhahalmu.fi/blog/elixir-ja-phoenix-liveview-fi',>>>>>>>>
 
 ```text
 
@@ -405,7 +405,7 @@ text
 text
 
 ```text
-        'url': '<<<<<<https://juhahalmu.fi/blog/elixir-ja-phoenix-liveview-fi',>>>>>>
+        'url': '<<<<<<<<https://juhahalmu.fi/blog/elixir-ja-phoenix-liveview-fi',>>>>>>>>
 
 ```text
 

@@ -67,7 +67,7 @@ text
 text
 
 ```text
-      Lue lisää: <<<<<<https://juhahalmu.fi/blog/valokuvauskohteet-porvoossa-fi>>>>>>
+      Lue lisää: <<<<<<<<https://juhahalmu.fi/blog/valokuvauskohteet-porvoossa-fi>>>>>>>>
 
 ```text
 
@@ -89,7 +89,7 @@ text
 text
 
 ```text
-    url: <<<<<<https://juhahalmu.fi/blog/valokuvauskohteet-porvoossa-fi>>>>>>
+    url: <<<<<<<<https://juhahalmu.fi/blog/valokuvauskohteet-porvoossa-fi>>>>>>>>
 
 ```text
 
@@ -147,7 +147,7 @@ text
 text
 
 ```text
-      Jatka lukemista: <<<<<<https://juhahalmu.fi/blog/valokuvauskohteet-porvoossa-fi>>>>>>
+      Jatka lukemista: <<<<<<<<https://juhahalmu.fi/blog/valokuvauskohteet-porvoossa-fi>>>>>>>>
 
 ```text
 
@@ -180,7 +180,7 @@ text
 text
 
 ```text
-    url: <<<<<<https://juhahalmu.fi/blog/valokuvauskohteet-porvoossa-fi>>>>>>
+    url: <<<<<<<<https://juhahalmu.fi/blog/valokuvauskohteet-porvoossa-fi>>>>>>>>
 
 ```text
 
@@ -291,7 +291,7 @@ text
 text
 
 ```text
-    url: <<<<<<https://juhahalmu.fi/blog/valokuvauskohteet-porvoossa-fi>>>>>>
+    url: <<<<<<<<https://juhahalmu.fi/blog/valokuvauskohteet-porvoossa-fi>>>>>>>>
 
 ```text
 

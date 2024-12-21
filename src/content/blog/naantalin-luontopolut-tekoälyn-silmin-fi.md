@@ -76,7 +76,7 @@ text
 text
 
 ```text
-      <<<<<<https://juhahalmu.fi/blog/naantalin-luontopolut-tekoälyn-silmin-fi>>>>>>
+      <<<<<<<<https://juhahalmu.fi/blog/naantalin-luontopolut-tekoälyn-silmin-fi>>>>>>>>
 
 ```text
 
@@ -98,7 +98,7 @@ text
 text
 
 ```text
-    url: <<<<<<https://juhahalmu.fi/blog/naantalin-luontopolut-tekoälyn-silmin-fi>>>>>>
+    url: <<<<<<<<https://juhahalmu.fi/blog/naantalin-luontopolut-tekoälyn-silmin-fi>>>>>>>>
 
 ```text
 
@@ -167,7 +167,7 @@ text
 text
 
 ```text
-      <<<<<<https://juhahalmu.fi/blog/naantalin-luontopolut-tekoälyn-silmin-fi>>>>>>
+      <<<<<<<<https://juhahalmu.fi/blog/naantalin-luontopolut-tekoälyn-silmin-fi>>>>>>>>
 
 ```text
 
@@ -200,7 +200,7 @@ text
 text
 
 ```text
-    url: <<<<<<https://juhahalmu.fi/blog/naantalin-luontopolut-tekoälyn-silmin-fi>>>>>>
+    url: <<<<<<<<https://juhahalmu.fi/blog/naantalin-luontopolut-tekoälyn-silmin-fi>>>>>>>>
 
 ```text
 
@@ -309,7 +309,7 @@ text
 text
 
 ```text
-    url: <<<<<<https://juhahalmu.fi/blog/naantalin-luontopolut-tekoälyn-silmin-fi>>>>>>
+    url: <<<<<<<<https://juhahalmu.fi/blog/naantalin-luontopolut-tekoälyn-silmin-fi>>>>>>>>
 
 ```text
 

@@ -152,8 +152,7 @@ text
 text
 text
 
-## #
- 1. Cloud Solutions
+## 1. Cloud Solutions
 
 ## # # # ### AWS CloudWatch
 
@@ -654,6 +653,7 @@ text
   -$2Check table consistency
 
 ## VACUUM ANALYZE tablename
+
   -$2Repair indexes
 
    REINDEX TABLE tablename;
@@ -780,7 +780,7 @@ bash
 
 ## # # # Web server health
 
-   curl -I <<<<<http://localhost>>>>>
+   curl -I <<<<<<http://localhost>>>>>>
 
 ```text
 text

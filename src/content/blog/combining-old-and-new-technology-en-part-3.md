@@ -79,7 +79,7 @@ text
 text
 
 ```text
-    url: <<<<<<https://juhahalmu.fi/blog/combining-old-and-new-technology-en>>>>>>
+    url: <<<<<<<<https://juhahalmu.fi/blog/combining-old-and-new-technology-en>>>>>>>>
 
 ```text
 
@@ -169,7 +169,7 @@ text
 text
 
 ```text
-    url: <<<<<<https://juhahalmu.fi/blog/combining-old-and-new-technology-en>>>>>>
+    url: <<<<<<<<https://juhahalmu.fi/blog/combining-old-and-new-technology-en>>>>>>>>
 
 ```text
 
@@ -245,7 +245,7 @@ text
 text
 
 ```text
-    url: <<<<<<https://juhahalmu.fi/blog/combining-old-and-new-technology-en>>>>>>
+    url: <<<<<<<<https://juhahalmu.fi/blog/combining-old-and-new-technology-en>>>>>>>>
 
 ```text
 

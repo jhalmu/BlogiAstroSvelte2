@@ -71,7 +71,7 @@ text
 text
 
 ```text
-        '@context': '<<<<<<https://schema.org',>>>>>>
+        '@context': '<<<<<<<<https://schema.org',>>>>>>>>
 
 ```text
 
@@ -206,7 +206,7 @@ text
 text
 
 ```text
-        'url': '<<<<<<https://juhahalmu.fi/blog/dna-sukututkimus-suomessa-fi',>>>>>>
+        'url': '<<<<<<<<https://juhahalmu.fi/blog/dna-sukututkimus-suomessa-fi',>>>>>>>>
 
 ```text
 
@@ -294,7 +294,7 @@ text
 text
 
 ```text
-        'url': '<<<<<<https://juhahalmu.fi/blog/dna-sukututkimus-suomessa-fi',>>>>>>
+        'url': '<<<<<<<<https://juhahalmu.fi/blog/dna-sukututkimus-suomessa-fi',>>>>>>>>
 
 ```text
 
@@ -382,7 +382,7 @@ text
 text
 
 ```text
-        'url': '<<<<<<https://juhahalmu.fi/blog/dna-sukututkimus-suomessa-fi',>>>>>>
+        'url': '<<<<<<<<https://juhahalmu.fi/blog/dna-sukututkimus-suomessa-fi',>>>>>>>>
 
 ```text
 

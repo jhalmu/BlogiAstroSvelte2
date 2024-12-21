@@ -149,7 +149,7 @@ text
 ```text
 text
   -$2NODE_ENV=development
-  -$2NEXT_PUBLIC_API_URL=<<<<<http://localhost:4000>>>>>
+  -$2NEXT_PUBLIC_API_URL=<<<<<<http://localhost:4000>>>>>>
 
 ```text
 text
@@ -386,7 +386,7 @@ text
 ```text
 text
   -$2NODE_ENV=production
-  -$2NEXT_PUBLIC_API_URL=<<<<<https://api.production.com>>>>>
+  -$2NEXT_PUBLIC_API_URL=<<<<<<https://api.production.com>>>>>>
 
 ```text
 text
@@ -559,7 +559,7 @@ text
 ```text
 text
   -$2NODE_ENV=development
-  -$2VUE_APP_API_URL=<<<<<http://localhost:8000>>>>>
+  -$2VUE_APP_API_URL=<<<<<<http://localhost:8000>>>>>>
 
 ```text
 text
@@ -796,7 +796,7 @@ text
 ```text
 text
   -$2NODE_ENV=production
-  -$2VUE_APP_API_URL=<<<<<https://api.production.com>>>>>
+  -$2VUE_APP_API_URL=<<<<<<https://api.production.com>>>>>>
 
 ```text
 text
@@ -894,8 +894,7 @@ text
 >
   -$2For AI integration: See [00_ai_guidelines.md](00_ai_guidelines.md)
 
-## #
- 1. Kubernetes Templates
+## 1. Kubernetes Templates
 
 ```text
 text
@@ -1230,8 +1229,7 @@ text
 text
 text
 
-## #
- 1. Service Mesh Configuration
+## 1. Service Mesh Configuration
 
 ```text
 text
@@ -1353,8 +1351,7 @@ text
 text
 text
 
-## #
- 1. Helm Charts
+## 1. Helm Charts
 
 ```text
 text
@@ -1460,8 +1457,7 @@ text
 text
 text
 
-## #
- 1. Docker Compose for Development
+## 1. Docker Compose for Development
 
 ```text
 text
@@ -1642,8 +1638,7 @@ text
 text
 text
 
-## #
- 1. Multi-Stage Builds
+## 1. Multi-Stage Builds
 
 ```text
 text
@@ -1698,8 +1693,7 @@ text
 >
   -$2Deployment testing: [09_deployment_platforms.md](09_deployment_platforms.md)
 
-## #
- 1. Pre-Deployment Validation
+## 1. Pre-Deployment Validation
 
 ```text
 text
@@ -1819,8 +1813,7 @@ text
 text
 text
 
-## #
- 1. Schema Validation
+## 1. Schema Validation
 
 ```text
 text
@@ -1854,8 +1847,7 @@ text
 text
 text
 
-## #
- 1. Environment Variable Testing
+## 1. Environment Variable Testing
 
 ```text
 text
@@ -1865,7 +1857,9 @@ bash
 
 ## # # # test_env_substitution.sh
 
+```bash
 #!/bin/bash
+```
 
 test_env_substitution() {
 
@@ -2017,8 +2011,7 @@ text
 text
 text
 
-## #
- 1. CI/CD Integration
+## 1. CI/CD Integration
 
 ```text
 text
@@ -2303,7 +2296,7 @@ yaml
 ## # # # .env.development
 
 NODE_ENV=development
-API_URL=<<<<<http://localhost:8000>>>>>
+API_URL=<<<<<<http://localhost:8000>>>>>>
 DATABASE_URL=postgresql://user:pass@localhost:5432/devdb
 REDIS_URL=redis://localhost:6379
 
@@ -2324,7 +2317,7 @@ yaml
 ## # # # .env.production
 
 NODE_ENV=production
-API_URL=<<<<<https://api.production.com>>>>>
+API_URL=<<<<<<https://api.production.com>>>>>>
 DATABASE_URL=${PROD_DATABASE_URL}
 REDIS_URL=${PROD_REDIS_URL}
 

@@ -48,7 +48,7 @@ text
 text
 text
 bash
-git clone <<<<<<https://github.com/jhalmu/BlogiAstroSvelte.git>>>>>>
+git clone <<<<<<<<https://github.com/jhalmu/BlogiAstroSvelte.git>>>>>>>>
 cd BlogiAstroSvelte
 
 ```text
@@ -87,7 +87,7 @@ text
 text
 
 
-1. Open your browser and visit `<<<<<<http://localhost:4321`>>>>>>
+1. Open your browser and visit `<<<<<<<<http://localhost:4321`>>>>>>>>
 
 ## # # # # Available Scripts
 

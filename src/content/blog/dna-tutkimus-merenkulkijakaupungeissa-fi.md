@@ -76,7 +76,7 @@ text
 text
 
 ```text
-      <<<<<<https://juhahalmu.fi/blog/dna-tutkimus-merenkulkijakaupungeissa-fi>>>>>>
+      <<<<<<<<https://juhahalmu.fi/blog/dna-tutkimus-merenkulkijakaupungeissa-fi>>>>>>>>
 
 ```text
 
@@ -98,7 +98,7 @@ text
 text
 
 ```text
-    url: <<<<<<https://juhahalmu.fi/blog/dna-tutkimus-merenkulkijakaupungeissa-fi>>>>>>
+    url: <<<<<<<<https://juhahalmu.fi/blog/dna-tutkimus-merenkulkijakaupungeissa-fi>>>>>>>>
 
 ```text
 
@@ -166,7 +166,7 @@ text
 text
 
 ```text
-    url: <<<<<<https://juhahalmu.fi/blog/dna-tutkimus-merenkulkijakaupungeissa-fi>>>>>>
+    url: <<<<<<<<https://juhahalmu.fi/blog/dna-tutkimus-merenkulkijakaupungeissa-fi>>>>>>>>
 
 ```text
 
@@ -261,7 +261,7 @@ text
 text
 
 ```text
-    url: <<<<<<https://juhahalmu.fi/blog/dna-tutkimus-merenkulkijakaupungeissa-fi>>>>>>
+    url: <<<<<<<<https://juhahalmu.fi/blog/dna-tutkimus-merenkulkijakaupungeissa-fi>>>>>>>>
 
 ```text
 

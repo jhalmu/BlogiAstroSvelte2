@@ -64,7 +64,7 @@ text
 text
 
 ```text
-    url: <<<<<<https://juhahalmu.fi/blog/tekoäly-luontokuvauksessa-fi>>>>>>
+    url: <<<<<<<<https://juhahalmu.fi/blog/tekoäly-luontokuvauksessa-fi>>>>>>>>
 
 ```text
 
@@ -132,7 +132,7 @@ text
 text
 
 ```text
-    url: <<<<<<https://juhahalmu.fi/blog/tekoäly-luontokuvauksessa-fi>>>>>>
+    url: <<<<<<<<https://juhahalmu.fi/blog/tekoäly-luontokuvauksessa-fi>>>>>>>>
 
 ```text
 
@@ -181,7 +181,7 @@ text
 text
 
 ```text
-    url: <<<<<<https://juhahalmu.fi/blog/tekoäly-luontokuvauksessa-fi>>>>>>
+    url: <<<<<<<<https://juhahalmu.fi/blog/tekoäly-luontokuvauksessa-fi>>>>>>>>
 
 ```text
 

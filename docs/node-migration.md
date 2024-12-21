@@ -22,7 +22,7 @@ bash
 ## # # # Install NVM if not installed
 
 curl -o
-  -$2<<<<<https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh>>>>> | bash
+  -$2<<<<<<https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh>>>>>> | bash
 
 ## # # # Add to ~/.zshrc or ~/.bash_profile
 
@@ -94,8 +94,7 @@ text
   -$2[ ] Verify image processing
   -$2[ ] Test deployment process
 
-## #
- 1. Production Preparation
+## 1. Production Preparation
 
 ## # # # ### CI/CD Updates
 
@@ -110,8 +109,7 @@ text
   -$2[ ] Update deployment documentation
   -$2[ ] Update development setup guide
 
-## #
- 1. Monitoring Plan
+## 1. Monitoring Plan
 
 ## # # # ### Performance Metrics
 
